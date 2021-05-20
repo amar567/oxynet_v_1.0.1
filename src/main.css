@@ -1,0 +1,327 @@
+body{
+  height:100vh;
+  margin: 0;
+  font-family: 'Jost'
+}
+
+.hidden{
+  display: none;
+}
+
+.mainImage{
+  width: 360px;
+  display: block;
+  margin: auto;
+  /* z-index:  */
+}
+
+select.clear{
+    font-family: 'Montserrat';
+    color: #858592;
+    background-color: white;
+    font-size:17px;
+    padding: 1vh;
+    text-align: center;
+    border-width: 8px;
+    border-radius: 7px;
+    border-left: 1px solid #96a8fc;
+    border-right: 1px solid #96a8fc;
+    border-top: 1px solid #96a8fc;
+    border-bottom: 1px solid #96a8fc;
+    font-size: small;
+    padding: 2vh 1vh;
+}
+
+
+select::-ms-expand {
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    /* IE 5-7 */
+    filter: alpha(opacity=0);
+    /* Good browsers :) */
+    opacity:0;
+}
+
+.submitBtn{
+  color: white;
+  background: #6748F7;
+  border-radius: 5px;
+  display: block;
+  margin:auto;
+  padding:1.8vh 12vh;
+  border: 0;
+  text-align: center;
+}
+
+.submitBtn:focus{
+  outline:0px auto -webkit-focus-ring-color;
+}
+
+.submitBtn:active{
+  background: #5139c4
+}
+
+.lt{
+  display: none;
+}
+
+.gt{
+  display: block;
+}
+
+@media screen and (max-width: 800px){
+  .lt{
+    display: block;
+  }
+  .gt{
+    display: none;
+  }
+}
+
+.navbar{
+  width: 100vw;
+  padding: 15px 0;
+}
+
+.c50-50{
+    display: grid;
+    grid-template-columns:50% 50%;
+    position: relative;
+}
+
+.serchbBox{
+  width: 92vw;
+  display: block;
+  margin: auto;
+  height: 30vh;
+  background-color: white;
+  border-radius: 10px;
+  /* box-shadow: 0px 2px 12px; */
+}
+
+.SBOptions{
+  border: 1px solid #7B65E1;
+  box-sizing: border-box;
+  border-radius: 7px;
+  width: 25vw;
+  padding: 1.5vh 4vh;
+}
+
+.submitBtn_d{
+  color: white;
+  background: #6748F7;
+  border-radius: 5px;
+  padding:1.8vh 8vw;
+  border: 0;
+  text-align: center;
+}
+
+.submitBtn_d:focus{
+  outline:0px auto -webkit-focus-ring-color;
+}
+
+.submitBtn_d:active{
+  background: #5139c4
+}
+
+.c33-67{
+    display: grid;
+    grid-template-columns:33% 67%;
+    position: relative;
+}
+
+#cardContainer{
+  /* height:100vh; */
+  width:100vw;
+  background-color: white;
+  /* position: fixed; */
+  transition: right 0s;
+}
+
+#cardContainer.show{
+  animation-name: showSb;
+  animation-duration: 0.35s;
+  right:0px;
+}
+
+/* animate the transition */
+@keyframes showSb {
+  0%   {right:-100vw}
+  100%   {right:0px}
+}
+
+#cardContainer.hide{
+  animation-name: hideSb;
+  animation-duration: 0.35s;
+  right:-100vw
+}
+
+/* animate the transition */
+@keyframes hideSb {
+  0%   {right:0px}
+  100%   {right:-100vw}
+}
+
+/* .searchBar{
+  width: 100vw;
+} */
+
+.blu{
+  height:12vh;
+  background-color: #7E62FE;
+}
+
+.white{
+  height:9vh;
+  background-color: #FFFFFF;
+}
+
+.c50-50{
+    display: grid;
+    grid-template-columns:50% 50%;
+    position: relative;
+}
+
+select.select_item{
+    font-family: 'Montserrat';
+    color: #FFFFFF;
+    width:80%;
+    background-color: #7E62FE;
+    font-size:17px;
+    padding: 1vh;
+    text-align: center;
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+    border-top: 1px solid #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    font-size: small;
+    padding: 1vh 0vh 1vh 2vh;
+    display: block;margin: auto;
+}
+
+#searchBar{
+  transition: right 0s;
+  z-index: 9;
+  position: sticky;
+  width: 100vw;
+}
+
+#searchBar.show{
+  animation-name: show_SB;
+  animation-duration: 0.35s;
+  top:0px;
+}
+
+/* animate the transition */
+@keyframes show_SB {
+  0%   {top:-100vw}
+  100%   {top:0px;height: 100%;}
+}
+
+#searchBar.hide{
+  animation-name: hide_SB;
+  animation-duration: 0.35s;
+  top:-100vw;
+  height: 0
+}
+
+/* animate the transition */
+@keyframes hide_SB {
+  0%   {top:0px}
+  100%   {top:-100vw; height: 0}
+}
+
+#drawer{
+  height:100vh;
+  width:300px;
+  background-color: #FFFFFF;
+  position: fixed;
+  z-index: 10;
+  transition: left 0s;
+}
+
+#drawer.show{
+  animation-name: show;
+  animation-duration: 0.35s;
+  left:0px;
+}
+
+/* animate the transition */
+@keyframes show {
+  0%   {left:-300px}
+  100%   {left:0px}
+}
+
+#drawer.hide{
+  animation-name: hide;
+  animation-duration: 0.35s;
+  left:-300px
+}
+
+/* animate the transition */
+@keyframes hide {
+  0%   {left:0px}
+  100%   {left:-300px}
+}
+/*
+
+-----------------------------------------------------
+=====================================================
+-----------------------------------------------------
+
+ */
+#drawerD{
+  height:100vh;
+  width:300px;
+  background-color: #FFFFFF;
+  position: absolute;
+  z-index: 10;
+  transition: left 0s;
+}
+
+#drawerD.show{
+  animation-name: show;
+  animation-duration: 0.35s;
+  left:0px;
+}
+
+/* animate the transition */
+@keyframes show {
+  0%   {left:-300px}
+  100%   {left:0px}
+}
+
+#drawerD.hide{
+  animation-name: hide;
+  animation-duration: 0.35s;
+  left:-300px
+}
+
+/* animate the transition */
+@keyframes hide {
+  0%   {left:0px}
+  100%   {left:-300px}
+}
+
+.White_submitBtn_d{
+  color:blue;
+  background: #FFFFFF;
+  border-radius: 5px;
+  padding:1.4vh 2vw;
+  width:10vw;
+  border: 0;
+  text-align: center;
+}
+
+.White_submitBtn_d:focus{
+  outline:0px auto -webkit-focus-ring-color;
+}
+
+.White_submitBtn_d:active{
+  background: #f7f7f7;
+}
+
+.fixedBar{
+  position: fixed;
+  z-index: 100 !important;
+}

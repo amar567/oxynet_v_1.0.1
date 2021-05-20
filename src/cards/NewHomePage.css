@@ -1,0 +1,37 @@
+.card-sec{
+    width: 95%;
+    margin: auto;
+}
+.inside-col-card{
+    height: 350px;
+    width: 95%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.card-render-whole{
+    display: flex;
+}
+
+@media(max-width:991px){
+    .card-sec{
+        width: 70%;
+    }
+    .inside-col-card{
+        height: 350px;
+        width: 95%;
+    }
+}
+
+
+@media(max-width:755px){
+    .card-sec{
+        width: 90%;
+    }
+}
+
+@media(max-width:450px){
+    .inside-col-card{
+        height: 370px;
+    }
+}
