@@ -31,10 +31,7 @@
 }
 
 @media(max-width:450px){
-
-    .card-sec{
-        width: 100%;
-    }
+    
     .inside-col-card{
         height: 400px;
     }

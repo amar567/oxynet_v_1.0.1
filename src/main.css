@@ -135,7 +135,7 @@ select::-ms-expand {
   width:100vw;
   background-color: white;
   /* position: fixed; */
-  transition: right 0s;
+  /* transition: right 0s; */
 }
 
 #cardContainer.show{
@@ -200,7 +200,7 @@ select.select_item{
 }
 
 #searchBar{
-  transition: right 0s;
+  /* transition: right 0s; */
   z-index: 9;
   position: sticky;
   width: 100vw;
@@ -237,7 +237,7 @@ select.select_item{
   background-color: #FFFFFF;
   position: fixed;
   z-index: 10;
-  transition: left 0s;
+  /* transition: left 0s; */
 }
 
 #drawer.show{
@@ -276,7 +276,7 @@ select.select_item{
   background-color: #FFFFFF;
   position: absolute;
   z-index: 10;
-  transition: left 0s;
+  /* transition: left 0s; */
 }
 
 #drawerD.show{

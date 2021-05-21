@@ -19,6 +19,7 @@ const dist = (state)=>{
     return districts
 }
 
+const HospitalData = require('./cards/Navimumbai.json')
 
 export default class Homepage extends Component{
 
@@ -29,12 +30,23 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: false,
+            showcards: true,
             district:'Reset district',
             stateName: '',
             districts: [],
             notfound : false,
+            render :[],
+            data: []
         }
+    }
+
+    data = ()=>{
+      this.setState({data:HospitalData})
+      this.setState({render:HospitalData})
+    }
+
+    componentDidMount=()=>{
+      this.data()
     }
 
     handleDistrict = async(event) => {
@@ -64,19 +76,20 @@ export default class Homepage extends Component{
         var districts = []
         districts = dist(this.state.stateName)
         await this.setState({districts:districts})
-        const result = await fetch(`https://oxynet.herokuapp.com/oxynet/getByState?state=`+this.state.stateName, {
+        const result = await fetch(`https://datascraping001.herokuapp.com/api_oxygen_allahabad`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
+            mode: 'no-cors',
         }).then((res) => res.json())
         // await this.setState({render:result})
-        if(result.status==='ok'){
-          this.setState({render:result.cards})
-          console.log(this.state.render)
+        if(result){
+          this.setState({render:result})
+          console.log(this.state.render,result)
         }
-        await this.setState({searching : true})
-        await this.setState({response: this.state.render})
+        // await this.setState({searching : true})
+        // await this.setState({response: this.state.render})
     }
 
     menu = ()=>{
@@ -99,6 +112,7 @@ export default class Homepage extends Component{
               {(this.state.showcards)?
               <div className="show" id="cardContainer" style={{background: '#FFFFFF'} ,{width:'100vw'}}>
                   <div className="lt">
+                    <div className="searchBar show" id="searchBar">
                     <div className={ (this.state.hidden)? "hidden" : null}>
                       <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                       <div style={{height: '10vh'}} />
@@ -124,7 +138,7 @@ export default class Homepage extends Component{
                       </div>
                     </div>
                     </div>
-                    <div className="searchBar show" id="searchBar">
+                    
                       <div className="blu ">
                       <div className="c50-50">
                           <div style={{display: 'flex'}}>
@@ -169,8 +183,8 @@ export default class Homepage extends Component{
                         <WorkingOnIt/>
                         :
                         <div>
-                          {/* <div style={{height:21vh}}></div> */}
-                          <NewHomePage/>
+                          {/* <div style={{height:'21vh'}}></div> */}
+                          <NewHomePage hospitalData={this.state.render} />
                         </div>                        
                     }
                   </div>
@@ -240,19 +254,18 @@ export default class Homepage extends Component{
                     {
                       (this.state.notfound)? 
                         <div>
-                          <div style={{height: '15vh'}} />
                           <WorkingOnIt/>
                         </div>
                         :
                         <div id="scrollBox"  style={{overflow:'scroll'}}>
                           <div style={{height: '10vh'}} />
-                          <NewHomePage/>
+                          <NewHomePage hospitalData={this.state.render} />
                         </div>
                     }
                   </div>
               </div>
               :
-              <div>
+              <div className="homepage">
                 <div className="lt">
                   <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>

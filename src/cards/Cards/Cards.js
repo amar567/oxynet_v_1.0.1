@@ -81,41 +81,51 @@ export default class Cards extends Component {
                     </div>
                     <div className="hospital-address">
                         <div className="hospital-ic"><Address></Address></div>
-                        <div className="hospital-ad-content">Sahara Hospital Rd, Viraj Khand - 1, Gomti Nagar, Lucknow, Uttar Pradesh 226010</div>
-
+                        <div className="hospital-ad-content">
+                            {this.state.data.hospitalAddress}
+                        </div>
                     </div>
                     <div className="hospital-address">
                         <div className="hospital-ic"><Newphone></Newphone></div>
-                        <div className="hospital-ad-content">+91-8764567891, +91-6745324578,</div>
+                        <div className="hospital-ad-content">
+                            <a href={"tel:"+this.state.data.phoneNo}>
+                                +91-{this.state.data.phoneNo}
+                            </a>
+                        </div>
 
                     </div>
 
                     <div className="btn-tab">
-                        <div className="btn-inside">Google Search</div>
-                        <div className="btn-inside">Call Us</div>
+                        <a style={{width:'40%'}} href={this.state.data.googleSearch}>
+                            <div className="btn-inside" >Google Search</div>
+                        </a>
+                        <a style={{width:'40%'}} href={"tel:"+this.state.data.phoneNo}>
+                            <div className="btn-inside">Call Us</div>
+                        </a>
                     </div>
 
                 </div>
                 <div className="bed-info">
                     <div className="inside-bed">
-                        <div className="number-box">100</div>
+                        <div className="number-box">{this.state.data.normalBedTotal}</div>
                         <div className="heading-box">Total<br/> Beds</div>
                     </div>
                     <div className="inside-bed">
-                        <div className="number-box">86</div>
+                        <div className="number-box">{this.state.data.normalBedAvailable}</div>
                         <div className="heading-box">Available<br/> Beds</div>
                     </div>
                     <div className="inside-bed">
-                        <div className="number-box">77</div>
+                        <div className="number-box">{this.state.data.oxygenBedTotal}</div>
                         <div className="heading-box">Total<br/> Oxygen Beds</div>
                     </div>
                     <div className="inside-bed">
-                        <div className="number-box">66</div>
+                        <div className="number-box">{this.state.data.oxygenBedAvailable}</div>
                         <div className="heading-box">Available<br/> Oxygen Beds</div>
                     </div>
                 </div>
                 <div className="last-updated">
                 Last Updated : 4:30 Pm I 14-05-2021
+                {/* {this.state.data.phoneNo}` */}
                 </div>
 
             </div>
