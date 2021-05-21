@@ -4,6 +4,11 @@ body{
   font-family: 'Jost'
 }
 
+.options{
+  background-color: #FFFFFF;
+  color:black;
+}
+
 .hidden{
   display: none;
 }
@@ -173,6 +178,7 @@ select::-ms-expand {
 
 .white{
   height:9vh;
+  box-shadow: 0px -4px 20px 0px #ccc;
   background-color: #FFFFFF;
 }
 
@@ -184,9 +190,10 @@ select::-ms-expand {
 
 select.select_item{
     font-family: 'Montserrat';
-    color: #FFFFFF;
+    /* color: #FFFFFF; */
     width:80%;
-    background-color: #7E62FE;
+    color: black;
+    /* background-color: #7E62FE; */
     font-size:17px;
     padding: 1vh;
     text-align: center;

@@ -30,10 +30,11 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: true,
-            district:'Reset district',
+            showcards: false,
+            district:'Select district',
             stateName: '',
             districts: [],
+            district:'',
             notfound : false,
             render :[],
             data: []
@@ -46,27 +47,27 @@ export default class Homepage extends Component{
     }
 
     componentDidMount=()=>{
-      this.data()
+      // this.data()
     }
 
     handleDistrict = async(event) => {
         // await this.setState({searching : true})
         let val = event.target.value
-        // await this.setState({render: []})
-        // await this.setState({district: val})
-        // if(this.state.district ===''){
-        //     await this.setState({district:''})
-        // }
+        await this.setState({render: []})
+        await this.setState({district: val})
+        if(this.state.district ===''){
+            await this.setState({district:''})
+        }
         // console.log(this.state.render)
         let filterBydistrict = await this.state.data.filter(
             card => (card.district.includes(val))
         )
         // console.log(filterBydistrict);
-        // if(val !== 'Select District'){
-            this.setState({render: filterBydistrict})
-        // }else{ 
-        //     await this.setState({render: this.state.response})
-        // }
+        if(val !== 'Select district'){
+            await this.setState({render: filterBydistrict})
+        }else{ 
+            await this.setState({render: this.state.data})
+        }
         console.log(this.state.render)
     }
 
@@ -78,18 +79,26 @@ export default class Homepage extends Component{
         var districts = []
         districts = dist(this.state.stateName)
         await this.setState({districts:districts})
-        // const result = await fetch(`https://datascraping001.herokuapp.com/api_oxynet?placename=${val}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        // }).then((res) => res.json())
-        // // await this.setState({render:result})
-        // if(result){
-        //   this.setState({data:result})
-        //   this.setState({render:result})
-        //   console.log(this.state.data)
-        // }
+        const state = val.toLowerCase().split(" ").join("")
+        console.log(state);
+        const result = await fetch(`https://datascraping001.herokuapp.com/api_covinet?placename=${state}`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        }).then((res) => res.json())
+        console.log(result);
+        // await this.setState({render:result})
+        if(result){
+          this.setState({notfound:false})
+          this.setState({data:result})
+          this.setState({render:result})
+          // console.log(this.state.render)
+          // console.log(this.state.data)
+        }else if(result.status == 400) {
+          this.setState({notfound:true})
+        }
+        // if(result.lenght)
         // await this.setState({searching : true})
         // await this.setState({response: this.state.render})
     }
@@ -167,13 +176,13 @@ export default class Homepage extends Component{
                           <div style={{display: 'block', margin: 'auto', padding: '2vh 0 0 0'}}>
                             <select className="select clear" name="stateName" value={this.state.stateName} defaultValue="" onChange={this.handleState}  style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}}>
                                 <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option key={index} name={state}>{state}</option>))}
+                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
                             </select>
                           </div>
                           <div style={{display: 'block', margin: 'auto', padding: '2vh 0 0 0'}}>
                           <select defaultValue={this.state.district}  name="district" id="district"  className="select clear" style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}} onChange={this.handleDistrict}>
-                                <option>Select district</option>
-                                { this.state.districts.map((district,index) => (<option key={index} value={district}>{district}</option>)) }
+                                {(this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>}
+                                { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
                           </select>
                           </div>
                       </div>
@@ -229,16 +238,15 @@ export default class Homepage extends Component{
                         </div>
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleState}>
-                              {/* <select name="district" i{this.state.district} className="select clear" style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}} onChange={this.handleDistrict}> */}
                               <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option key={index} name={state}>{state}</option>))}
+                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
                               </select>
                             {/* </select> */}
                         </div>
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select defaultValue={this.state.district} className="select_item" style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleDistrict} name="district" id={this.state.district}>
-                                  <option>Select district</option>
-                                  { this.state.districts.map((district,index) => (<option key={index} value={district}>{district}</option>)) }
+                                  {(this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>}
+                                  { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
                             </select>
                         </div>
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
@@ -325,12 +333,12 @@ export default class Homepage extends Component{
                         <div style={{height: '5vh'}} />
                         <select className="clear" name="stateName" value={this.state.stateName} onChange={this.handleState} style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}}>
                                 <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option key={index} name={state}>{state}</option>))}
+                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
                         </select>
                         <div style={{height: '5vh'}} />
                         <select defaultValue={this.state.district}  className="clear" style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} onChange={this.handleDistrict} name="district" id={this.state.district}>
-                              <option>Select district</option>
-                              { this.state.districts.map((district,index) => (<option key={index} value={district}>{district}</option>)) }
+                              {(this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>}
+                              { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
                         </select>
                         <div style={{height: '7vh'}} />
                         <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
@@ -339,7 +347,7 @@ export default class Homepage extends Component{
                     <div style={{height: '5vh'}} />
                   </div>
                 </div>
-                <div className="gt">
+                <div className="gt" style={{height:'100vh'}}>
                   <div style={{height: '2vh'}} />
                   <div className="navbar c33-67" style={{borderRadius: 0}}>
                     <div style={{color: 'white', fontWeight: 200, padding: '0 12vw'}}>
@@ -382,17 +390,17 @@ export default class Homepage extends Component{
                           <div style={{padding: '4vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
                             <select className="SBOptions" name="stateName" value={this.state.stateName} onChange={this.handleState}>
                                 <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option key={index} name={state}>{state}</option>))}
+                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
                             </select>
                             <select defaultValue={this.state.district}  className="SBOptions" style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleDistrict} name="district" id={this.state.district}>
-                              <option>Select district</option>
-                              { this.state.districts.map((district,index) => (<option key={index} value={district}>{district}</option>)) }
+                              {(this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>}
+                              { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
                             </select>
                             <button className="submitBtn_d" type="button" name="button" onClick={this.showcards}>Search</button>
                           </div>
                         </form>
                       </div>
-                      <div style={{height:'4vh'}}></div>
+                      {/* <div style={{height:'4vh'}}></div> */}
                     </div>
                   </div>
                 </div>
