@@ -8,7 +8,6 @@ const hospitalData = require('./Navimumbai.json')
 export default class NewHomePage extends Component {
   
     render() {
-        console.log(hospitalData)
         return (
             <div className="card-render-whole">
                 <div className="card-sec">

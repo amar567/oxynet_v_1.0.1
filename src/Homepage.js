@@ -29,7 +29,7 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: true,
+            showcards: false,
             district:'Reset district',
             stateName: '',
             districts: [],
@@ -97,7 +97,7 @@ export default class Homepage extends Component{
         return (
             <div>
               {(this.state.showcards)?
-              <div className="show" id="cardContainer" style={{background: '#FFFFFF'}}>
+              <div className="show" id="cardContainer" style={{background: '#FFFFFF'} ,{width:'100vw'}}>
                   <div className="lt">
                     <div className={ (this.state.hidden)? "hidden" : null}>
                       <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>

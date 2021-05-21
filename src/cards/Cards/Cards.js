@@ -7,7 +7,8 @@ import Newphone from '../Svg/Newphone';
 // import phone from './../Svg/phone.svg'
 import ReactCardFlip from 'react-card-flip';
 import Quote from '../Svg/Quote';
-const arrayData = require('../arrayData.js')
+var arrrayData = require('../arrayData')
+
 export default class Cards extends Component {
 
     constructor(props) {
@@ -15,16 +16,55 @@ export default class Cards extends Component {
           this.state = {
           isFlipped: false,
           data:props.data,
-          index:props.index
+          index:props.index,
+          showMore:false,
+          changeStatement:'',
+          array:arrrayData
+   
         };
         this.handleClick = this.handleClick.bind(this);
       }
 
+      componentDidMount = () => {
+        this.Screen()
+    }
       handleClick(e) {
         e.preventDefault();
         this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));
       }
+
+      readMore = () => {
+          this.setState({
+              showMore:!this.state.showMore
+          })
+      }
+
+      Screen = () => {
+     
+        window.onresize = this.displayWindowSize;
+        window.onload = this.displayWindowSize;
+       
+      }
+      
+      displayWindowSize =() => {
+        let myWidth = window.innerWidth;
+        let myHeight = window.innerHeight;
+        // your size calculation code here
+        if(myWidth<=500){
+          this.setState({
+              changeStatement:9
+          })
+        }
+        if(myWidth>=500){
+          this.setState({
+              changeStatement:18
+          })
+        }
+      }
+   
     render() {
+      
+    
         return (
             <div className="flip-whole">
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
@@ -32,7 +72,11 @@ export default class Cards extends Component {
                 <div className="hospital-info">
                     <div className="hospital-name">
                         <div className="hospital-ic"><NewHospital></NewHospital></div>
-                        <div className= "hospital-name-content" >{this.state.data.hospitalName}</div>
+                        <div className= {this.state.showMore ? "hospital-name-content-lg" : "hospital-name-content"} >  
+                      
+                        {this.state.data.hospitalName}
+                          </div>
+                          {(this.state.data.hospitalName.length >= (this.state.changeStatement ) )? <div className="rd-more-btn" onClick={this.readMore}><p>.</p><p>.</p><p>.</p></div>:null}
                         <div className="hospital-name-verified" onClick={this.handleClick}><Box></Box></div>
                     </div>
                     <div className="hospital-address">
@@ -85,7 +129,7 @@ export default class Cards extends Component {
 
                  <div className="inside-qt">
                     <div className="qt-top"><Quote></Quote></div>
-                {/* {arrayData.data[this.state.index]} */}
+                {this.state.array.data[this.state.index]}
              <div className="qt-bottom"><Quote></Quote></div>
              </div>
              </div>
