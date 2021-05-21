@@ -50,44 +50,46 @@ export default class Homepage extends Component{
     }
 
     handleDistrict = async(event) => {
-        await this.setState({searching : true})
+        // await this.setState({searching : true})
         let val = event.target.value
         // await this.setState({render: []})
-        await this.setState({district: val})
+        // await this.setState({district: val})
         // if(this.state.district ===''){
         //     await this.setState({district:''})
         // }
-        // console.log(this.state.district)
-        // let filterBydistrict = this.state.response.filter(
-        //     card => (card.district === this.state.district)
-        // )
-        // if(val !== 'Reset district'){
-        //     this.setState({render: filterBydistrict})
+        // console.log(this.state.render)
+        let filterBydistrict = await this.state.data.filter(
+            card => (card.district.includes(val))
+        )
+        // console.log(filterBydistrict);
+        // if(val !== 'Select District'){
+            this.setState({render: filterBydistrict})
         // }else{ 
-        //     this.setState({render: this.state.response})
+        //     await this.setState({render: this.state.response})
         // }
+        console.log(this.state.render)
     }
 
     handleState = async(event) => {
         let val = event.target.value
         await this.setState({stateName: val})
-        await this.setState({render: []})
+        // await this.setState({render: []})
         await this.setState({district:'Reset district'})
         var districts = []
         districts = dist(this.state.stateName)
         await this.setState({districts:districts})
-        const result = await fetch(`https://datascraping001.herokuapp.com/api_oxygen_allahabad`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            mode: 'no-cors',
-        }).then((res) => res.json())
-        // await this.setState({render:result})
-        if(result){
-          this.setState({render:result})
-          console.log(this.state.render,result)
-        }
+        // const result = await fetch(`https://datascraping001.herokuapp.com/api_oxynet?placename=${val}`, {
+        //     method: 'GET',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        // }).then((res) => res.json())
+        // // await this.setState({render:result})
+        // if(result){
+        //   this.setState({data:result})
+        //   this.setState({render:result})
+        //   console.log(this.state.data)
+        // }
         // await this.setState({searching : true})
         // await this.setState({response: this.state.render})
     }
@@ -110,7 +112,7 @@ export default class Homepage extends Component{
         return (
             <div>
               {(this.state.showcards)?
-              <div className="show" id="cardContainer" style={{background: '#FFFFFF'} ,{width:'100vw'}}>
+              <div className="show" id="cardContainer" style={{background: '#FFFFFF',width:'100vw'}}>
                   <div className="lt">
                     <div className="searchBar show" id="searchBar">
                     <div className={ (this.state.hidden)? "hidden" : null}>

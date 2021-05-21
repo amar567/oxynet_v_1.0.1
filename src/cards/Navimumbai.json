@@ -928,19 +928,22 @@
     "phoneNo": ""
   },
   {
-    "hospitalName": "HOTEL CENTER POINT ",
-    "hospitalAddress": "",
-    "normalBedTotal": "30",
-    "normalBedOccupied": "27",
-    "normalBedAvailable": "3",
-    "oxygenBedTotal": "",
-    "oxygenBedOccupied": "",
-    "oxygenBedAvailable": "",
-    "lastUpdatedDate": "",
-    "lastUpdatedTime": "",
-    "district": "Thane",
-    "state": "Maharastra",
-    "googleSearch": "https://www.google.com/search?q=HOTEL+CENTER POINT +Navimumbai&rlz=1C1CHBF_enIN859IN859&oq=HOTEL+CENTER POINT +Navimumbai&aqs=chrome..69i57j46i10i175i199j0i10l7.11711j0j15&sourceid=chrome&ie=UTF-8",
-    "phoneNo": ""
+    "district": "Sant Ravidas Nagar (Bhadohi)",
+    "googleSearch": "https://www.google.com/search?q=CHC+bhadohi+Sant Ravidas Nagar (Bhadohi)&rlz=1C1CHBF_enIN859IN859&oq=CHC+bhadohi+Sant Ravidas Nagar (Bhadohi)&aqs=chrome..69i57j46i10i175i199j0i10l7.11711j0j15&sourceid=chrome&ie=UTF-8",
+    "hospitalAddress": "NA",
+    "hospitalName": "CHC bhadohi",
+    "icuBed": "No",
+    "isolatedbed": "30",
+    "lastUpdatedDate": "NA",
+    "lastUpdatedTime": "NA",
+    "normalBedAvailable": "-",
+    "normalBedOccupied": "-",
+    "normalBedTotal": "-",
+    "oxygenBedAvailable": "-",
+    "oxygenBedOccupied": "-",
+    "oxygenBedTotal": "-",
+    "phoneNo": "NA",
+    "state": "UttarPradesh",
+    "ventilatorBed": "No"
   }
 ]

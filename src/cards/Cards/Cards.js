@@ -48,7 +48,7 @@ export default class Cards extends Component {
       
       displayWindowSize =() => {
         let myWidth = window.innerWidth;
-        let myHeight = window.innerHeight;
+        // let myHeight = window.innerHeight;
         // your size calculation code here
         if(myWidth<=500){
           this.setState({
