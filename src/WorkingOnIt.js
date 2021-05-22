@@ -1,5 +1,4 @@
 import { Component } from "react";
-import working_on_it from './working_on_it.gif'
 import WorkingOnit from './woi/WorkingOnIt'
 
 export default class WorkingOnIt extends Component {

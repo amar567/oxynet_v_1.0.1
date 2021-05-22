@@ -178,7 +178,7 @@ select::-ms-expand {
 
 .white{
   height:9vh;
-  box-shadow: 0px -4px 20px 0px #ccc;
+  box-shadow: 1px 6px 5px 0px #ccc;
   background-color: #FFFFFF;
 }
 
