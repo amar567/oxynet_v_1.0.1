@@ -332,3 +332,12 @@ select.select_item{
   position: fixed;
   z-index: 100 !important;
 }
+
+.active{
+  display: block;
+}
+
+.active:hover{
+  background-color: #6C4CFF;
+  color: #FFFFFF;
+}

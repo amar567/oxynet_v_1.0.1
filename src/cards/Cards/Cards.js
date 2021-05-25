@@ -96,7 +96,7 @@ export default class Cards extends Component {
                     </div>
 
                     <div className="btn-tab">
-                        <a style={{width:'40%'}} href={this.state.data.googleSearch}>
+                        <a rel="noreferrer" target='_blank' style={{width:'40%'}} href={this.state.data.googleSearch}>
                             <div className="btn-inside" >Google Search</div>
                         </a>
                         <a style={{width:'40%'}} href={"tel:"+this.state.data.phoneNo}>
