@@ -290,7 +290,7 @@ export default class Homepage extends Component{
                     <div style={{height: '5vh'}} />
                   </div>
                 </div>
-                <div className="gt" style={{height:'100vh'}}>
+                <div className="gt" style={{height:'200vh'}}>
                   <div className="" style={{zIndex:'10'}}>
                     {/* <div style={{height: '2vh'}} /> */}
                     <div className="navbar c33-67" style={{borderRadius: 0, padding:"2vh 0",boxShadow:'0px -13px 20px 0px'}}>
@@ -317,18 +317,22 @@ export default class Homepage extends Component{
                             <div className="" style={{fontSize:'12vh',fontWeight:'600',lineHeight:'100%',color:'#7B60F7'}}>
                                 DOCTORS
                             </div>
-                            <div className="" style={{justifyContent:"left"}}>
-                                <hr style={{width:'65%'}}/>
-                            </div>
-                            <div className="" style={{width:'65%'}}>
-                                Oxynet bows a thank you to all the frontliners  who are constantly working to save lives without even thinking about their own. 
+                            <div className="" style={{height:'3.5vh'}} />
+                            <div className="" style={{height:'1px',background:'#CCCCCC',width:'65%'}} />
+                            <div className="" style={{height:'3.5vh'}} />
+                            <div className="" style={{width:'65%',color:'#7388FF',fontSize:'3vh',textAlign: 'justify'}}>
+                              Oxynet bows a thank you to all the frontliners  who are constantly working to save lives without even thinking about their own. 
                             </div>
                         </div>
                   </div>
                   <div className="" style={{background:'inherit', height:'10vh',zIndex:'15'}}>
-                        <div className="">
-                            
+                        <div className=""  style={{fontSize:'7vh',fontWeight:'600',lineHeight:'100%',color:'#FFFFFF',textAlign:'center',padding:'6vh 0'}}>
+                            ABOUT US
                         </div>
+                        <div className="" style={{fontSize:'4vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
+                          We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of  pandemic. We all ardently wish to help and save lives.  The conditions around are severe and the Indian medical system is constantly trying to bring the country out of this swamp of trouble. Although it is not enough for a country of billions. So we are doing our  bit to help others and beat covid-19.
+                        </div>
+                        <div>0</div>
                   </div>
                 </div>
               </div>

@@ -3,7 +3,7 @@
 # dependencies
 /node_modules
 /backend
-/src/Components
+# /src/Components
 /.pnp
 .pnp.js
 /src/example.js
