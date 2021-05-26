@@ -247,6 +247,17 @@ select.select_item{
   /* transition: left 0s; */
 }
 
+@media (max-width:450px) {
+  #drawer{
+    height:100vh;
+    width:100vw;
+    background-color: #FFFFFF;
+    position: fixed;
+    z-index: 10;
+    /* transition: left 0s; */
+  }
+}
+
 #drawer.show{
   animation-name: show;
   animation-duration: 0.35s;
@@ -255,20 +266,20 @@ select.select_item{
 
 /* animate the transition */
 @keyframes show {
-  0%   {left:-300px}
+  0%   {left:-100vh}
   100%   {left:0px}
 }
 
 #drawer.hide{
   animation-name: hide;
   animation-duration: 0.35s;
-  left:-300px
+  left:-100vh
 }
 
 /* animate the transition */
 @keyframes hide {
   0%   {left:0px}
-  100%   {left:-300px}
+  100%   {left:-100vh}
 }
 /*
 
@@ -294,20 +305,20 @@ select.select_item{
 
 /* animate the transition */
 @keyframes show {
-  0%   {left:-300px}
+  0%   {left:-100vh}
   100%   {left:0px}
 }
 
 #drawerD.hide{
   animation-name: hide;
   animation-duration: 0.35s;
-  left:-300px
+  left:-100vh
 }
 
 /* animate the transition */
 @keyframes hide {
   0%   {left:0px}
-  100%   {left:-300px}
+  100%   {left:-100vh}
 }
 
 .White_submitBtn_d{
@@ -341,3 +352,5 @@ select.select_item{
   background-color: #6C4CFF;
   color: #FFFFFF;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@600&display=swap');

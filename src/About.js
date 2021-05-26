@@ -2,10 +2,8 @@ import { Component } from "react";
 import './main.css'
 import './hamburgers.css'
 import img1 from './img1.png'
-import WorkingOnIt from './WorkingOnIt'
+import img2 from './img2.png'
 import './homepage.css'
-import NewHomePage from './cards/NewHomePage'
-// import react from react
 
 
 const states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttarakhand','Uttar Pradesh','West Bengal']
@@ -192,201 +190,29 @@ export default class Homepage extends Component{
       //     return a.oxygenBedAvailable - b.oxygenBedAvailable;
       // }
       // this.state.data.sort(compare)
-      var data = this.state.data
+      var data = this.state.render
       if (val === 'oxygenBedAvailable'){
         data.sort((a, b) => (a.oxygenBedAvailable > b.oxygenBedAvailable) ? 1 : -1)
       }
       if(val === 'normalBedAvailable'){
         data.sort((a, b) => (a.normalBedAvailable > b.normalBedAvailable) ? 1 : -1)
       }
-      await this.setState({data:data})
-      let filterBydistrict = await this.state.data.filter(
-          card => (card.district.includes(this.state.district))
-      )
+      await this.setState({render:data})
+      // let filterBydistrict = await this.state.data.filter(
+      //     card => (card.district.includes(this.state.district))
+      // )
       // console.log(filterBydistrict);
-      if(val !== 'Reset district' & this.state.district !=="Select district"){
-          await this.setState({render: filterBydistrict})
-      }else{
-          await this.setState({render: this.state.data})
-      }
-      console.log(this.state.data)
+      // if(this.state.district !=="Select district" & this.state.district !=="Reset district"){
+      //     await this.setState({render: filterBydistrict})
+      // }else{
+      //     await this.setState({render: this.state.data})
+      // }
+      console.log(this.state.render)
     }
 
     render(){
         return (
             <div>
-              {(this.state.showcards)?
-              <div className="show" id="cardContainer" style={{background: '#FFFFFF',width:'100vw'}}>
-                  <div className="lt">
-                    <div className="searchBar show" id="searchBar">
-                    <div className={ (this.state.hidden)? "hidden" : null}>
-                      <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
-                      <div style={{height: '10vh'}} />
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./a')}} >
-                        <font style={{fontSize: '4vh'}}>
-                          HOME
-                        </font>
-                      </div>
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
-                        <font style={{fontSize: '4vh'}}>
-                          ABOUT US
-                        </font>
-                      </div>
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                        <font style={{fontSize: '4vh'}}>
-                          OUR TEAM
-                        </font>
-                      </div>
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./api')}} >
-                        <font style={{fontSize: '4vh'}}>
-                          API
-                        </font>
-                      </div>
-                    </div>
-                    </div>
-                    
-                      <div className="blu ">
-                      <div className="c50-50">
-                          <div style={{display: 'flex'}}>
-                            <div>
-                                <button className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"}  id="hamburger" style={{outline: 0, transform: 'scale(0.5)', position: 'relative', zIndex: '11', padding: '4vh 1vh 0 3vh'}} onClick={()=>{this.menu();this.toggle();}}>
-                                  <div className="hamburger-box" style={{padding: '1vh 0'}}>
-                                      <div className="hamburger-inner" />
-                                  </div>
-                                </button>
-                            </div>
-                          <div style={{color: 'white', fontWeight: 200, fontSize: '4vh', padding: '3vh 0 0 0'}}>
-                              <font> COVINET </font>
-                          </div>
-                          </div>
-                          <div style={{padding: '3vh 0 0 0', outline: 0}}>
-                            <select className="select_item" value={this.state.Item} onChange={this.sort}>
-                                <option value="" disabled selected >Filter by</option>
-                                <option value="oxygenBedAvailable" >Oxygen beds</option>
-                                <option value="normalBedAvailable" >Normal beds</option>
-                            </select>
-                          </div>
-                      </div>
-                      </div>
-                      <div className="white">
-                      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-                          <div style={{display: 'block', margin: 'auto', padding: '2vh 0 0 0'}}>
-                            <select className="select clear" name="stateName" value={this.state.stateName} onChange={this.handleState}  style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}}>
-                                <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
-                            </select>
-                          </div>
-                          <div style={{display: 'block', margin: 'auto', padding: '2vh 0 0 0'}}>
-                          <select  name="district" id="district" value={this.state.district}  className="select clear" style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}} onChange={this.handleDistrict}>
-                                {(!this.state.searching)?
-                                  <option value="Select district"> Select district</option>
-                                :
-                                (
-                                  (this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>
-                                )
-                                }
-                                { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
-                          </select>
-                          </div>
-                      </div>
-                      </div>
-                  </div>
-                  <div id="scrollBox" >
-                    {
-                      (this.state.notfound)?
-                        <WorkingOnIt/>
-                        :
-                        <div>
-                          {/* <div style={{height:'21vh'}}></div> */}
-                          <NewHomePage hospitalData={this.state.render} />
-                        </div>                        
-                    }
-                  </div>
-                  </div>
-                  <div className="gt">
-                  <div className="fixedBar" style={{width: '100vw', height: '10vh', backgroundColor: '#7B60F7'}}>
-                      <div className={ (this.state.hidden)? "hidden" : null}>
-                        <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
-                        <div style={{height: '10vh'}} />
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./a')}} >
-                            <font style={{fontSize: '4vh'}}>
-                              HOME
-                            </font>
-                          </div>
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
-                            <font style={{fontSize: '4vh'}}>
-                              ABOUT US
-                            </font>
-                          </div>
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                            <font style={{fontSize: '4vh'}}>
-                              OUR TEAM
-                            </font>
-                          </div>
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./api')}} >
-                            <font style={{fontSize: '4vh'}}>
-                              API
-                            </font>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                      <form  style={{display: 'flex', justifyContent: 'space-evenly'}} onSubmit={this.submit}>
-                        <div>
-                            <button type="button" className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"} id="hamburger" style={{outline: 0, transform: 'scale(0.7)', position: 'relative', padding: '4vh 1vh 0 3vh', zIndex: 11}} onClick={()=>{this.menu();this.toggle();}}>
-                              <div className="hamburger-box">
-                                  <div className="hamburger-inner" />
-                              </div>
-                            </button>
-                        </div>
-                        <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
-                            <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleState}>
-                              <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
-                              </select>
-                            {/* </select> */}
-                        </div>
-                        <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
-                            <select className="select_item" style={{borderRadius: '5px', width: '22vw'}} value={this.state.district} onChange={this.handleDistrict} name="district">
-                                  {(!this.state.searching)?
-                                    <option value="Select district"> Select district</option>
-                                 
-                                    :(
-                                  (this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>
-                                )                                  }
-                                  { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
-                            </select>
-                        </div>
-                        <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
-                            <select className="select_item" style={{borderRadius: '5px', width: '22vw'}} value={this.state.Item} onChange={this.sort}>
-                                <option value="" disabled selected >Filter by</option>
-                                <option value="oxygenBedAvailable" >Oxygen beds</option>
-                                <option value="normalBedAvailable" >Normal beds</option>
-                            </select>
-                            {/* <select className="select_item" style={{borderRadius: '5px', width: '22vw'}}>
-                              <option value>Hospitals</option>
-                            </select> */}
-                        </div>
-                        <div style={{display: 'block', marginTop: 'auto'}}>
-                            <button className="White_submitBtn_d" type="submit" name="button" onClick={this.showcards}> Search</button>
-                        </div>
-                      </form>
-                      </div>
-                  </div>
-                    {
-                      (this.state.notfound)? 
-                        <div>
-                          <WorkingOnIt/>
-                        </div>
-                        :
-                        <div id="scrollBox"  style={{overflow:'scroll'}}>
-                          <div style={{height: '10vh'}} />
-                          <NewHomePage hospitalData={this.state.render} />
-                        </div>
-                    }
-                  </div>
-              </div>
-              :
               <div className="homepage">
                 <div className="lt">
                   <div className={ (this.state.hidden)? "hidden" : null}>
@@ -465,70 +291,47 @@ export default class Homepage extends Component{
                   </div>
                 </div>
                 <div className="gt" style={{height:'100vh'}}>
-                  <div style={{height: '2vh'}} />
-                  <div className="navbar c33-67" style={{borderRadius: 0}}>
-                    <div style={{color: 'white', fontWeight: 200, padding: '0 12vw'}}>
-                      <font> COVINET </font>
-                    </div>
-                    <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./api')}} > API </font>
+                  <div className="" style={{zIndex:'10'}}>
+                    {/* <div style={{height: '2vh'}} /> */}
+                    <div className="navbar c33-67" style={{borderRadius: 0, padding:"2vh 0",boxShadow:'0px -13px 20px 0px'}}>
+                        <div style={{color: 'white', fontWeight: 200, padding: '0 12vw'}}>
+                        <font> COVINET </font>
+                        </div>
+                        <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
+                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
+                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
+                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
+                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./api')}} > API </font>
+                        </div>
                     </div>
                   </div>
-                  <div>
-                    <div style={{}}>
-                      <div className="c50-50" style={{padding: '6vh 4vw 0vh 4vw'}}>
-                        <div>
-                          <div style={{height: '8vh'}} />
-                          <font style={{fontSize: '16vh', fontWeight: 'bold', color: 'white', lineHeight: 0}}>COVID19</font><br />
-                          <font style={{fontSize: '12vh', fontWeight: 'bold', color: 'white'}}>ESSENTIALS</font>
-                          <hr style={{color: 'white', border: 'none', margin: 0, height: '1px', backgroundColor: 'white', width: '80%'}} />
-                          <div style={{width: '82%'}}>
-                            <div style={{height: '2vh'}} />
-                            <font style={{color: 'white', fontSize: '4vh'}}>
-                              Helping people reach the resources in time to fight against the crisis.
-                            </font>
-                            <div style={{height: '2vh'}} />
-                          </div>
+                  <div className="c50-50"  style={{background:'white',justifyContent:'center'}}>
+                        <div className="">
+                            <div className="" style={{height:'2vh'}} />
+                            <img className="" src={img2} alt="" style={{width: '100%', maxWidth: '85vh',position:"relative",top:'0.75vh'}} />
                         </div>
-                        <div style={{display: 'flex'}}>
-                          <img src={img1} style={{width: '100%', height: 'max-content', display: 'block', marginTop: 'auto', marginBottom: 0}} alt="" />
+                        <div className="" style={{display:'block',margin:'auto',paddingLeft:'3vw'}}>
+                            <div className="" style={{fontSize:'9.6vh',fontWeight:'600',lineHeight:'100%',color:'#7B60F7'}}>
+                                THANK YOU
+                            </div>
+                            <div className="" style={{fontSize:'12vh',fontWeight:'600',lineHeight:'100%',color:'#7B60F7'}}>
+                                DOCTORS
+                            </div>
+                            <div className="" style={{justifyContent:"left"}}>
+                                <hr style={{width:'65%'}}/>
+                            </div>
+                            <div className="" style={{width:'65%'}}>
+                                Oxynet bows a thank you to all the frontliners  who are constantly working to save lives without even thinking about their own. 
+                            </div>
                         </div>
-                      </div>
-                      <div className="serchbBox">
-                        <div style={{padding:'6vh 10vw 2vh 10vw'}}>
-                          <font style={{fontSize:'2.5vh'}}>
-                            Hospitals 
-                          </font>
+                  </div>
+                  <div className="" style={{background:'inherit', height:'10vh',zIndex:'15'}}>
+                        <div className="">
+                            
                         </div>
-                        <form>
-                          <div style={{padding: '4vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
-                            <select className="SBOptions" name="stateName" value={this.state.stateName} onChange={this.handleState}>
-                                <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
-                            </select>
-                            <select  className="SBOptions" style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleDistrict} name="district" value={this.state.district}>
-                              {(!this.state.searching)?
-                                <option value="Select district"> Select district</option>
-                              :
-                              (
-                                (this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>
-                              )
-                              }
-                              { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
-                            </select>
-                            <button className="submitBtn_d" type="button" name="button" onClick={this.showcards}>Search</button>
-                          </div>
-                        </form>
-                      </div>
-                      {/* <div style={{height:'4vh'}}></div> */}
-                    </div>
                   </div>
                 </div>
               </div>
-              }
             </div>
           );
     }
