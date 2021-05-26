@@ -14,6 +14,7 @@
     "react-card-flip": "^1.1.1",
     "react-confirm-alert": "^2.7.0",
     "react-dom": "^17.0.2",
+    "react-map-gl": "^6.1.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "read-more-react": "^1.0.10",

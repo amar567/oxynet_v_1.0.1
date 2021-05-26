@@ -5,6 +5,7 @@ import img1 from './img1.png'
 import WorkingOnIt from './WorkingOnIt'
 import './homepage.css'
 import NewHomePage from './cards/NewHomePage'
+import Mapbox from './mapbox/Mapbox'
 // import react from react
 
 
@@ -192,24 +193,25 @@ export default class Homepage extends Component{
       //     return a.oxygenBedAvailable - b.oxygenBedAvailable;
       // }
       // this.state.data.sort(compare)
-      var data = this.state.data
+      var data = this.state.render
       if (val === 'oxygenBedAvailable'){
-        data.sort((a, b) => (a.oxygenBedAvailable > b.oxygenBedAvailable) ? 1 : -1)
+        data.sort((a, b) => (parseInt(a.oxygenBedAvailable) > parseInt(b.oxygenBedAvailable)) ? -1 : 1)
       }
       if(val === 'normalBedAvailable'){
-        data.sort((a, b) => (a.normalBedAvailable > b.normalBedAvailable) ? 1 : -1)
+        data.sort((a, b) => (parseInt(a.normalBedAvailable) > parseInt(b.normalBedAvailable)) ? -1 : 1)
       }
-      await this.setState({data:data})
-      let filterBydistrict = await this.state.data.filter(
-          card => (card.district.includes(this.state.district))
-      )
+      await this.setState({render:[]})
+      await this.setState({render:data})
+      // let filterBydistrict = await this.state.data.filter(
+      //     card => (card.district.includes(this.state.district))
+      // )
       // console.log(filterBydistrict);
-      if(val !== 'Reset district' & this.state.district !=="Select district"){
-          await this.setState({render: filterBydistrict})
-      }else{
-          await this.setState({render: this.state.data})
-      }
-      console.log(this.state.data)
+      // if(this.state.district !=="Select district" & this.state.district !=="Reset district"){
+      //     await this.setState({render: filterBydistrict})
+      // }else{
+      //     await this.setState({render: this.state.data})
+      // }
+      console.log(this.state.render)
     }
 
     render(){
@@ -504,7 +506,8 @@ export default class Homepage extends Component{
                           </font>
                         </div>
                         <form>
-                          <div style={{padding: '4vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
+                          <Mapbox></Mapbox>
+                          <div style={{padding: '1vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
                             <select className="SBOptions" name="stateName" value={this.state.stateName} onChange={this.handleState}>
                                 <option value="" disabled >Select state</option>
                                 {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}

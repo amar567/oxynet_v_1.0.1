@@ -1,0 +1,52 @@
+.App {
+  text-align: center;
+}
+
+.btm-whole{
+  height:10vh;
+  width:100vw;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0vh;
+}
+
+.btn-done{
+  box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+  color: rgba(255, 255, 255, 0.8);
+  background: rgb(145, 92, 182);
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 27px;
+  width: fit-content;
+  margin: auto;
+  cursor: pointer;
+}
+ 
+.mapbox-map{
+  z-index: 1000000000000000000;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  cursor: pointer;
+} 
+
+.btn-cancel{
+  position: absolute;
+  top:2vh;
+  right: 30px;
+  border: 2px solid gray;
+  background: rgb(218, 218, 218);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
