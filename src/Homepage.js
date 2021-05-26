@@ -299,7 +299,6 @@ export default class Homepage extends Component{
                         <WorkingOnIt/>
                         :
                         <div>
-                          {/* <div style={{height:'21vh'}}></div> */}
                           <NewHomePage hospitalData={this.state.render} />
                         </div>                        
                     }

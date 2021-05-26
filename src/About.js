@@ -1,6 +1,6 @@
 import { Component } from "react";
 import './main.css'
-import './hamburgers.css'
+import './hamburgers2.css'
 import img1 from './img1.png'
 import img2 from './img2.png'
 import './homepage.css'
@@ -242,55 +242,85 @@ export default class Homepage extends Component{
                     </div>
                   <div>
                     <button className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"} id="hamburger" style={{outline: '0', transform: 'scale(0.7)', position: 'fixed', top: '1.4vh', left: '1.4vh' ,zIndex: '11'}} onClick={()=>{this.menu();this.toggle();}}>
-                      <div className="hamburger-box">
-                        <div className="hamburger-inner" />
+                      <div className="hamburger-box" >
+                        <div className="hamburger-inner"/>
                       </div>
                     </button>
                   </div>
-                  <div>
-                    <div style={{display: 'block', margin: 'auto', textAlign: 'center'}}>
-                      <div style={{height: '12vh'}} />
-                      <font style={{fontSize: '6.5vh', fontWeight: 'bold', color: 'white', lineHeight: 0}}>COVID19</font><br />
-                      <font style={{fontSize: '4.8vh', fontWeight: 'bold', color: 'white'}}>ESSENTIALS</font>
-                      <hr style={{color: 'white', border: 'none', display: 'block', margin: 'auto', height: '1px', backgroundColor: 'white', width: '32vh'}} />
-                      <div style={{width: '36vh', display: 'block', margin: 'auto', textAlign: 'center'}}>
-                        <font style={{color: 'white', fontSize: '1.6vh'}}>
-                          Helping people reach the resources in time to fight against the crisis.
-                        </font>
-                        <div style={{height: '2vh'}} />
+                  <div style={{backgroundColor:'white'}}>
+                    <div style={{height:'14vh'}} />
+                    <div style={{}}>
+                      <div className="" style={{textAlign:'center',fontSize:'5vh',fontWeight:'600',lineHeight:'100%',color:'#7B60F7'}}>
+                        THANK YOU
+                      </div>
+                      <div className="" style={{textAlign:'center',fontSize:'6.1vh',fontWeight:'600',lineHeight:'100%',color:'#7B60F7'}}>
+                        DOCTORS
+                      </div>
+                      <div style={{height:'4vh'}} />
+                    </div>
+                    <div>
+                      <img className="" src={img2} alt="" style={{width: '100%', maxWidth: '100vw',position:"relative",top:'1vh'}} />
+                    </div>
+                    <div style={{backgroundColor:'#7B60F7',height:'80vh',boxShadow:'0px -8px 26px 0px #0000003D'}}>
+                      <div className=""  style={{fontSize:'5vh',fontWeight:'600',lineHeight:'100%',color:'#FFFFFF',textAlign:'center',padding:'6vh 0'}}>
+                        ABOUT US
+                      </div>
+                      <div className="" style={{fontSize:'3.2vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
+                        We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of  pandemic. We all ardently wish to help and save lives.
+                      </div>
+                      <div style={{height:'6vh'}} />
+                      <div style={{display:'block',height:'180vh'}}>
+                          <div style={{padding:'0 2vw',width:'90vw',display:'block',margin:'auto'}}>
+                            <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
+                              <div style={{color:'#7A5FF4',fontSize:'3vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
+                                OUR VISION
+                                <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
+                              </div>
+                              <div style={{color:'#505050',fontSize:'2vh',padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more                              </div>
+                            </div>
+                          </div>
+                          <div style={{height:'4vh'}} />
+                          <div style={{padding:'0 2vw',width:'90vw',display:'block',margin:'auto'}}>
+                            <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
+                              <div style={{color:'#7A5FF4',fontSize:'3vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
+                                OUR VISION
+                                <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
+                              </div>
+                              <div style={{color:'#505050',fontSize:'2vh',padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more                              </div>
+                            </div>
+                          </div>
+                          <div style={{height:'4vh'}} />
+                          <div style={{padding:'0 2vw',width:'90vw',display:'block',margin:'auto'}}>
+                            <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
+                              <div style={{color:'#7A5FF4',fontSize:'3vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
+                                OUR VISION
+                                <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
+                              </div>
+                              <div style={{color:'#505050',fontSize:'2vh',padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div style={{height:'4vh'}} />
+                      <div style={{height:'18vh',backgroundColor:'#7B60F7'}}>
+                        <div style={{height:'2vh'}} />
+                        <div style={{fontSize:'3.5vh',color:'white',textAlign:'center'}}>
+                          COVINET<font style={{fontSize:'4.5vh'}}>©</font>2021
+                        </div>
+                        <hr style={{color:'white',width:'60%'}} />
+                        <div style={{fontSize:'3vh',color:'white',textAlign:'center'}}>
+                          Contact us:  radiok@iiserkol.ac.in
+                        </div>
                       </div>
                     </div>
-                    <img className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
-                    <div style={{height: '50vh', width: '50vh', borderRadius: '10px', backgroundColor: 'white', display: 'block', margin: 'auto'}}>
-                      <form>
-                        <div style={{height: '6vh'}} />
-                        {/* <select className="clear" name="Item" style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} >
-                          <option value>Hospitals</option>
-                        </select> */}
-                        <div style={{height: '5vh'}} />
-                        <select className="clear" name="stateName" value={this.state.stateName} onChange={this.handleState} style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}}>
-                                <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
-                        </select>
-                        <div style={{height: '5vh'}} />
-                        <select  className="clear" value={this.state.district} style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} onChange={this.handleDistrict} name="district">
-                              {(!this.state.searching)?
-                                <option value="Select district"> Select district</option>
-                              :
-                              (
-                                (this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>
-                              )
-                              }
-                              { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
-                        </select>
-                        <div style={{height: '7vh'}} />
-                        <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
-                      </form>
-                    </div>
-                    <div style={{height: '5vh'}} />
                   </div>
                 </div>
-                <div className="gt" style={{height:'200vh'}}>
+                <div className="gt" style={{height:'212vh'}}>
                   <div className="" style={{zIndex:'10'}}>
                     {/* <div style={{height: '2vh'}} /> */}
                     <div className="navbar c33-67" style={{borderRadius: 0, padding:"2vh 0",boxShadow:'0px -13px 20px 0px'}}>
@@ -325,14 +355,61 @@ export default class Homepage extends Component{
                             </div>
                         </div>
                   </div>
-                  <div className="" style={{background:'inherit', height:'10vh',zIndex:'15'}}>
+                  <div className="" style={{background:'inherit', height:'80vh',zIndex:'15'}}>
                         <div className=""  style={{fontSize:'7vh',fontWeight:'600',lineHeight:'100%',color:'#FFFFFF',textAlign:'center',padding:'6vh 0'}}>
                             ABOUT US
                         </div>
                         <div className="" style={{fontSize:'4vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
                           We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of  pandemic. We all ardently wish to help and save lives.  The conditions around are severe and the Indian medical system is constantly trying to bring the country out of this swamp of trouble. Although it is not enough for a country of billions. So we are doing our  bit to help others and beat covid-19.
                         </div>
-                        <div>0</div>
+                        <div style={{height:'6vh'}}/>
+                        <div style={{padding:'0 4vw',display:'flex',justifyContent:'space-evenly'}}>
+                          <div style={{padding:'0 2vw',width:'30vw'}}>
+                            <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
+                              <div style={{color:'#7A5FF4',fontSize:'2.5vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
+                                OUR VISION
+                                <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
+                              </div>
+                              <div style={{color:'#505050',fontSize:'2vh',padding:'2vw',textAlign:'justify',overflow:'scroll',height:'40vh'}}>
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more                              </div>
+                            </div>
+                          </div>
+                          <div style={{padding:'0 2vw',width:'30vw'}}>
+                            <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
+                              <div style={{color:'#7A5FF4',fontSize:'2.5vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
+                                OUR VISION
+                                <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
+                              </div>
+                              <div style={{color:'#505050',fontSize:'2vh',padding:'2vw',textAlign:'justify',overflow:'scroll',height:'40vh'}}>
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more                              </div>
+                            </div>
+                          </div>
+                          <div style={{padding:'0 2vw',width:'30vw'}}>
+                            <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
+                              <div style={{color:'#7A5FF4',fontSize:'2.5vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
+                                OUR VISION
+                                <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
+                              </div>
+                              <div style={{color:'#505050',fontSize:'2vh',padding:'2vw',textAlign:'justify',overflow:'scroll',height:'40vh'}}>
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more
+                                We want India to be out this trap of corona virus as soon as possible. We aim for a morning when the people will leave their homes carefree and mask free. To let this situation come we need perseverance optimism and some  constant efforts to help the Indian Medical System and people in need of covid resources. It’s the time when our collective efforts and unity can bring a change...read more                              </div>
+                            </div>
+                          </div>
+                        </div>
+                  </div>
+                  <div className="" style={{background:'white', height:'38vh',zIndex:'15'}}/>
+                  <div style={{padding:'0 15vw'}}>
+                    <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
+                      Oxygen is a student-initiated project under the able guidance of Professor Sridhar Chimalakonda in association with Rekha lab, IIT Tirupati.
+                    </div>
+                    <div>
+                      <hr></hr>
+                    </div>
+                    <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
+                      Contact us - no-reply@slack.com or  no-reply@slack.com
+                    </div>
                   </div>
                 </div>
               </div>
