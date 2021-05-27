@@ -6,6 +6,7 @@ import WorkingOnIt from './WorkingOnIt'
 import './homepage.css'
 import NewHomePage from './cards/NewHomePage'
 import Mapbox from './mapbox/Mapbox'
+import iittp from './iittp.png'
 // import react from react
 
 
@@ -113,8 +114,13 @@ export default class Homepage extends Component{
       this.setState({render:HospitalData})
     }
 
-    componentDidMount=()=>{
-      // this.data()
+    componentDidMount=async()=>{
+      const result = await fetch(`https://datascraping001.herokuapp.com/coutOne`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+      }).then((res) => res.json())
     }
 
     handleDistrict = async(event) => {
@@ -224,7 +230,7 @@ export default class Homepage extends Component{
                     <div className={ (this.state.hidden)? "hidden" : null}>
                       <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                       <div style={{height: '10vh'}} />
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./a')}} >
+                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./')}} >
                         <font style={{fontSize: '4vh'}}>
                           HOME
                         </font>
@@ -244,6 +250,13 @@ export default class Homepage extends Component{
                           API
                         </font>
                       </div>
+                      <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'60%'}}/>
+                            <div style={{textAlign:"center"}}>
+                              In association with :
+                            </div>
+                            <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
+                              <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
+                            </div>
                     </div>
                     </div>
                     
@@ -329,6 +342,13 @@ export default class Homepage extends Component{
                               API
                             </font>
                           </div>
+                            <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'60%'}}/>
+                            <div style={{textAlign:"center"}}>
+                              In association with :
+                            </div>
+                            <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
+                              <img src={iittp} style={{width:'80%',display:'block',margin:'auto'}}></img>
+                            </div>
                         </div>
                       </div>
                       <div>
@@ -412,6 +432,13 @@ export default class Homepage extends Component{
                               <font style={{fontSize: '4vh'}}>
                                 API
                               </font>
+                            </div>
+                            <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'60%'}}/>
+                            <div style={{textAlign:"center"}}>
+                              In association with :
+                            </div>
+                            <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
+                              <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
                             </div>
                         </div>
                     </div>
