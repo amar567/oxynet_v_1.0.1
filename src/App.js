@@ -1,8 +1,8 @@
 import Homepage from './Homepage'
 import About from './About'
-import Wholecontact from './Components/ContactUs/Wholecontact'
 // import Example from './example'
 import {Route, BrowserRouter as Router} from 'react-router-dom'
+import Wholecontact from './Components/ContactUs/Wholecontact';
 
 function App() {
   return (

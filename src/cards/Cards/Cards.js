@@ -7,6 +7,7 @@ import Newphone from '../Svg/Newphone';
 // import phone from './../Svg/phone.svg'
 import ReactCardFlip from 'react-card-flip';
 import Quote from '../Svg/Quote';
+import Distancesvg from '../Svg/Distancesvg';
 var arrrayData = require('../arrayData')
 
 export default class Cards extends Component {
@@ -72,11 +73,11 @@ export default class Cards extends Component {
                 <div className="hospital-info">
                     <div className="hospital-name">
                         <div className="hospital-ic"><NewHospital></NewHospital></div>
-                        <div className= {this.state.showMore ? "hospital-name-content-lg" : "hospital-name-content"} >  
+                        <div className=  "hospital-name-content-lg" >  
                       
                         {this.state.data.hospitalName}
                           </div>
-                          {(this.state.data.hospitalName.length >= (this.state.changeStatement ) )? <div className="rd-more-btn" onClick={this.readMore}><p>.</p><p>.</p><p>.</p></div>:null}
+                      
                         <div className="hospital-name-verified" onClick={this.handleClick}><Box></Box></div>
                     </div>
                     <div className="hospital-address">
@@ -89,10 +90,14 @@ export default class Cards extends Component {
                         <div className="hospital-ic"><Newphone></Newphone></div>
                         <div className="hospital-ad-content">
                             <a href={"tel:"+this.state.data.phoneNo}>
-                                +91-{this.state.data.phoneNo}
+                                {this.state.data.phoneNo}
                             </a>
                         </div>
 
+                    </div>
+                    <div className="rd-whole">
+                        <div className="rd-icon"><Distancesvg></Distancesvg></div>
+                    <div className="rd-distance">Not Available</div>
                     </div>
 
                     <div className="btn-tab">

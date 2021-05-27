@@ -50,7 +50,6 @@ function Mapbox() {
 
 
 
-  console.log('mk',marker)
   const [events, logEvents] = useState({});
 
   const onMarkerDragStart = useCallback(event => {
