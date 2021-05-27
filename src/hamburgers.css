@@ -21,7 +21,8 @@
   .hamburger.is-active .hamburger-inner,
   .hamburger.is-active .hamburger-inner::before,
   .hamburger.is-active .hamburger-inner::after {
-    background-color: #8F79F5; }
+    background-color: #8F79F5; 
+  }
 
 .hamburger-box {
   width: 40px;
@@ -55,11 +56,14 @@
        */
     .hamburger--spin .hamburger-inner {
       transition-duration: 0.22s;
-      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-      .hamburger--spin .hamburger-inner::before {
-        transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
-      .hamburger--spin .hamburger-inner::after {
-        transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+      transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    }
+    .hamburger--spin .hamburger-inner::before {
+      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+    }
+    .hamburger--spin .hamburger-inner::after {
+      transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+    }
 
     .hamburger--spin.is-active .hamburger-inner {
       transform: rotate(225deg);
