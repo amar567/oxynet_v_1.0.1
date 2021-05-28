@@ -63,7 +63,7 @@ export default class Homepage extends Component{
                                 OUR TEAM
                               </font>
                             </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./api')}} >
+                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                               <font style={{fontSize: '4vh'}}>
                                 API
                               </font>
@@ -134,11 +134,114 @@ export default class Homepage extends Component{
                           <div style={{padding:'0 2vw',width:'90vw',display:'block',margin:'auto'}}>
                             <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
                               <div style={{color:'#7A5FF4',fontSize:'3vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
-                                OUR VISION
+                                CREDITS
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
-                              <div style={{color:'#505050',fontSize:'2vh',padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
-                                We want to free India from the clenched of COVID-19 as soon as possible. We aim for a morning when people will be able to leave their homes carefree and mask-free. To realize this dream, we need to show perseverance, optimism, and constant efforts to help the Indian Medical System and the people in dire need of COVID resources. It’s this time when our collective efforts and unity can bring a change. We hope our efforts can provide the necessary impetus towards national recovery
+                              <div style={{padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
+                                <div>
+                                  <a target="_blank" href="https://goaonline.gov.in/beds" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                    Government of Goa, India
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covid19dashboard.py.gov.in/BedAvailabilityDetails" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Covid-19 Puducherry
+                                  </a>
+                                  <br/>
+                                </div>
+                                
+                                <div>
+                                  <a target="_blank" href="https://nmmchealthfacilities.com/HospitalInfo/showhospitalist" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  नवी मुंबई महानगरपालिका
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://www.divcommpunecovid.com/ccsbeddashboard/hsr" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  COVID CARE SOFTWARE - PUNE DIVISION
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covidinfo.rajasthan.gov.in/Covid-19hospital-wisebedposition-wholeRajasthan.aspx" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Covid-19 Hospital-Wise Bed Position-Whole Rajasthan
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://pratirakshak.co.in/new-report.php" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  RANCHI COVID-19 DASHBOARD
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="http://dgmhup.gov.in/en/CovidReport" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                    Directorate of Medical and Health Services, Uttar Pradesh
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://cg.nic.in/health/covid19/RTPBedAvailable.aspx" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Covid19 Monitoring System Department of Health and Family Welfare Chhattisgarh
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://dshm.delhi.gov.in/mis/(S(gi5p1k4ekxuveylgum0vrqin))/Private/frmFreeBedMonitoringReport.aspx" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Department Of Health And Family Welfare
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covid19jagratha.kerala.nic.in/home/addHospitalDashBoard" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Covid-19 Jagratha
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://excise.wb.gov.in/chms/Public/Page/CHMS_Public_Hospital_Bed_Availability.aspx" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Integrated Covid Management System, West Bengal Government
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covid19.uk.gov.in/bedssummary.aspx" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Department of Medical Health and Family Welfare | COVID19 Management Government of Uttarakhand
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://vmc.gov.in/AhmedabadDistrictRural/Default.aspx" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  COVID 19 - Hospital Bed Occupancy Chart Ahmedabad District Rural
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://coronaharyana.in/" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Health Department, Haryana | स्वास्थ्य विभाग, हरियाणा
+                                  </a>
+                                  <br/>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="http://sarthak.nhmmp.gov.in/covid/facility-bed-occupancy-details/?show=200&pagenum=1&district_id=45&facility_org_type=0&facility=0" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                    State Portal for COVID-19 Monitering - Government of Madhya Pradesh
+                                  </a>
+                                  <br/>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -168,7 +271,7 @@ export default class Homepage extends Component{
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
-                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./api')}} > API </font>
+                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} > API </font>
                         </div>
                     </div>
                   </div>
@@ -226,11 +329,114 @@ export default class Homepage extends Component{
                           <div style={{padding:'0 2vw',width:'30vw'}}>
                             <div style={{height:'55vh',boxShadow:'0px 0px 41px 0px #0000001F',borderRadius:'10px',padding:'1.6vwh',background:'#FFFFFF'}}>
                               <div style={{color:'#7A5FF4',fontSize:'2.5vh',padding:'3.8vh 0 0 0',textAlign:"center"}}>
-                                OUR VISION
+                                CREDITS
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
                               <div style={{color:'#505050',fontSize:'2.2vh',padding:'2vw',textAlign:'justify',overflow:'scroll',height:'40vh'}}>
-                                We want to free India from the clenched of COVID-19 as soon as possible. We aim for a morning when people will be able to leave their homes carefree and mask-free. To realize this dream, we need to show perseverance, optimism, and constant efforts to help the Indian Medical System and the people in dire need of COVID resources. It’s this time when our collective efforts and unity can bring a change. We hope our efforts can provide the necessary impetus towards national recovery
+                              <div>
+                                  <a target="_blank" href="https://goaonline.gov.in/beds" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                    Government of Goa, India
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covid19dashboard.py.gov.in/BedAvailabilityDetails" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Covid-19 Puducherry
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+                                
+                                <div>
+                                  <a target="_blank" href="https://nmmchealthfacilities.com/HospitalInfo/showhospitalist" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  नवी मुंबई महानगरपालिका
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://www.divcommpunecovid.com/ccsbeddashboard/hsr" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  COVID CARE SOFTWARE - PUNE DIVISION
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covidinfo.rajasthan.gov.in/Covid-19hospital-wisebedposition-wholeRajasthan.aspx" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Covid-19 Hospital-Wise Bed Position-Whole Rajasthan
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://pratirakshak.co.in/new-report.php" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  RANCHI COVID-19 DASHBOARD
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="http://dgmhup.gov.in/en/CovidReport" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                    Directorate of Medical and Health Services, Uttar Pradesh
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://cg.nic.in/health/covid19/RTPBedAvailable.aspx" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Covid19 Monitoring System Department of Health and Family Welfare Chhattisgarh
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://dshm.delhi.gov.in/mis/(S(gi5p1k4ekxuveylgum0vrqin))/Private/frmFreeBedMonitoringReport.aspx" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Department Of Health And Family Welfare
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covid19jagratha.kerala.nic.in/home/addHospitalDashBoard" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Covid-19 Jagratha
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://excise.wb.gov.in/chms/Public/Page/CHMS_Public_Hospital_Bed_Availability.aspx" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Integrated Covid Management System, West Bengal Government
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://covid19.uk.gov.in/bedssummary.aspx" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Department of Medical Health and Family Welfare | COVID19 Management Government of Uttarakhand
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://vmc.gov.in/AhmedabadDistrictRural/Default.aspx" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  COVID 19 - Hospital Bed Occupancy Chart Ahmedabad District Rural
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="https://coronaharyana.in/" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                  Health Department, Haryana | स्वास्थ्य विभाग, हरियाणा
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
+
+                                <div>
+                                  <a target="_blank" href="http://sarthak.nhmmp.gov.in/covid/facility-bed-occupancy-details/?show=200&pagenum=1&district_id=45&facility_org_type=0&facility=0" style={{color:'#505050',fontSize:'2.2vh',textDecoration:'none'}}>
+                                    State Portal for COVID-19 Monitering - Government of Madhya Pradesh
+                                  </a>
+                                  <div style={{height:'1.5vh'}}></div>
+                                </div>
                               </div>
                             </div>
                           </div>
@@ -245,7 +451,7 @@ export default class Homepage extends Component{
                       <hr></hr>
                     </div>
                     <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
-                      Contact us - <a href="mailto:info.covinet@gmail.com" style={{color:'white',textDecoration:'none'}}>info.covinet@gmail.com</a>
+                      Contact us - <a target="_blank" href="mailto:contact.covinet@gmail.com" style={{color:'white',textDecoration:'none'}}>contact.covinet@gmail.com</a>
                     </div>
                   </div>
                 </div>

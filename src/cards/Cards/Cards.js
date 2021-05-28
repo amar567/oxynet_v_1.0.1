@@ -89,9 +89,7 @@ export default class Cards extends Component {
                     <div className="hospital-address">
                         <div className="hospital-ic"><Newphone></Newphone></div>
                         <div className="hospital-ad-content">
-                            <a href={"tel:"+this.state.data.phoneNo}>
-                                {this.state.data.phoneNo}
-                            </a>
+                            {(parseInt(this.state.data.phoneNo))?<a href={"tel:"+this.state.data.phoneNo}>{this.state.data.phoneNo}</a>: null}
                         </div>
 
                     </div>
@@ -129,8 +127,8 @@ export default class Cards extends Component {
                     </div>
                 </div>
                 <div className="last-updated">
-                Last Updated : 4:30 Pm I 14-05-2021
-                {/* {this.state.data.phoneNo}` */}
+                {/* Last Updated : 4:30 Pm I 14-05-2021 */}
+                Last Updated : {this.state.data.lastUpdatedTime} | {this.state.data.lastUpdatedDate}
                 </div>
 
             </div>

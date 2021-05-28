@@ -21,7 +21,7 @@ const dist = (state)=>{
     return districts
 }
 
-const HospitalData = require('./cards/Navimumbai.json')
+// const HospitalData = require('./cards/Navimumbai.json')
 
 export default class Homepage extends Component{
 
@@ -38,84 +38,14 @@ export default class Homepage extends Component{
             districts: [],
             notfound : false,
             render :[],
-            data: [
-              {
-                "hospitalName": "DH Agar Malwa - DCHC",
-                "hospitalAddress": "Not Available",
-                "normalBedTotal": "150 ",
-                "normalBedOccupied": "-",
-                "normalBedAvailable": 73,
-                "oxygenBedTotal": "-",
-                "oxygenBedOccupied": "-",
-                "oxygenBedAvailable": 68,
-                "lastUpdatedDate": "23-05-2021",
-                "lastUpdatedTime": "19:53:15",
-                "district": "",
-                "state": "Madhyapradesh",
-                "googleSearch": "https://www.google.com/search?q=DH+Agar Malwa - DCHC+Madhya+Pradesh&rlz=1C1CHBF_enIN859IN859&oq=DH+Agar Malwa - DCHC+Madhya+Pradesh&aqs=chrome..69i57j46i10i175i199j0i10l7.11711j0j15&sourceid=chrome&ie=UTF-8",
-                "phoneNo": "Not Available"
-              },
-              {
-                "hospitalName": "Pichda warg Boys Post matric Hostel Malikhedi road Agar Malwa",
-                "hospitalAddress": "Not Available",
-                "normalBedTotal": "186 ",
-                "normalBedOccupied": "-",
-                "normalBedAvailable": 177,
-                "oxygenBedTotal": "-",
-                "oxygenBedOccupied": "-",
-                "oxygenBedAvailable": 65,
-                "lastUpdatedDate": "23-05-2021",
-                "lastUpdatedTime": "19:51:29",
-                "district": "",
-                "state": "Madhyapradesh",
-                "googleSearch": "https://www.google.com/search?q=Pichda+warg Boys Post matric Hostel Malikhedi road Agar Malwa+Madhya+Pradesh&rlz=1C1CHBF_enIN859IN859&oq=Pichda+warg Boys Post matric Hostel Malikhedi road Agar Malwa+Madhya+Pradesh&aqs=chrome..69i57j46i10i175i199j0i10l7.11711j0j15&sourceid=chrome&ie=UTF-8",
-                "phoneNo": "Not Available"
-              },
-              {
-                "hospitalName": "Pichda warg Boys Post matric Hostel Malikhedi road Agar Malwa",
-                "hospitalAddress": "Not Available",
-                "normalBedTotal": "186 ",
-                "normalBedOccupied": "-",
-                "normalBedAvailable": 17787,
-                "oxygenBedTotal": "-",
-                "oxygenBedOccupied": "-",
-                "oxygenBedAvailable": 55,
-                "lastUpdatedDate": "23-05-2021",
-                "lastUpdatedTime": "19:51:29",
-                "district": "",
-                "state": "Madhyapradesh",
-                "googleSearch": "https://www.google.com/search?q=Pichda+warg Boys Post matric Hostel Malikhedi road Agar Malwa+Madhya+Pradesh&rlz=1C1CHBF_enIN859IN859&oq=Pichda+warg Boys Post matric Hostel Malikhedi road Agar Malwa+Madhya+Pradesh&aqs=chrome..69i57j46i10i175i199j0i10l7.11711j0j15&sourceid=chrome&ie=UTF-8",
-                "phoneNo": "Not Available"
-              },
-              {
-                "hospitalName": "Pichda warg Boys Post matric Hostel Malikhedi road Agar Malwa",
-                "hospitalAddress": "Not Available",
-                "normalBedTotal": "186 ",
-                "normalBedOccupied": "-",
-                "normalBedAvailable": 18,
-                "oxygenBedTotal": "-",
-                "oxygenBedOccupied": "-",
-                "oxygenBedAvailable": 82,
-                "lastUpdatedDate": "23-05-2021",
-                "lastUpdatedTime": "19:51:29",
-                "district": "",
-                "state": "Madhyapradesh",
-                "googleSearch": "https://www.google.com/search?q=Pichda+warg Boys Post matric Hostel Malikhedi road Agar Malwa+Madhya+Pradesh&rlz=1C1CHBF_enIN859IN859&oq=Pichda+warg Boys Post matric Hostel Malikhedi road Agar Malwa+Madhya+Pradesh&aqs=chrome..69i57j46i10i175i199j0i10l7.11711j0j15&sourceid=chrome&ie=UTF-8",
-                "phoneNo": "Not Available"
-              }
-            ],
+            data: [],
             searching:false,
             Item:''
         }
     }
 
-    data = ()=>{
-      this.setState({data:HospitalData})
-      this.setState({render:HospitalData})
-    }
-
     componentDidMount=async()=>{
-      const result = await fetch(`https://datascraping001.herokuapp.com/coutOne`, {
+      const result = await fetch(`https://datascraping001.herokuapp.com/covinetViewCount_`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
@@ -154,23 +84,27 @@ export default class Homepage extends Component{
         await this.setState({districts:districts})
         await this.setState({searching: true})
         const state = val.toLowerCase().split(" ").join("")
-        console.log(state);
-        const result = await fetch(`https://datascraping001.herokuapp.com/api_covinet?placename=${state}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        }).then((res) => res.json())
-        console.log(result);
-        // await this.setState({render:result})
-        if(result){
-          this.setState({notfound:false})
-          this.setState({data:result})
-          this.setState({render:result})
-          // console.log(this.state.render)
-          // console.log(this.state.data)
-        }else if(result.status === 400) {
-          this.setState({notfound:true})
+        // console.log(state);
+        try{
+              const result = await fetch(`https://datascraping001.herokuapp.com/api_covinet?placename=${state}`, {
+                  method: 'GET',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+              }).then((res) => res.json())
+              // console.log(result);
+              // await this.setState({render:result})
+              if(!result.status){
+                this.setState({notfound:false})
+                this.setState({data:result})
+                this.setState({render:result})
+                // console.log(this.state.render)
+                // console.log(this.state.data)
+              }else if(result.status === 'error') {
+                this.setState({notfound:true})
+              }
+        }catch{
+          alert('sorry! state not found')
         }
         // if(result.lenght)
         // await this.setState({searching : true})
@@ -245,7 +179,7 @@ export default class Homepage extends Component{
                           OUR TEAM
                         </font>
                       </div>
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./api')}} >
+                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                         <font style={{fontSize: '4vh'}}>
                           API
                         </font>
@@ -257,7 +191,7 @@ export default class Homepage extends Component{
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
                               <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
                             </div>
-                    </div>
+                      </div>
                     </div>
                     
                       <div className="blu ">
@@ -322,7 +256,7 @@ export default class Homepage extends Component{
                       <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                         <div style={{height: '10vh'}} />
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./a')}} >
+                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./')}} >
                             <font style={{fontSize: '4vh'}}>
                               HOME
                             </font>
@@ -337,7 +271,7 @@ export default class Homepage extends Component{
                               OUR TEAM
                             </font>
                           </div>
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./api')}} >
+                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                             <font style={{fontSize: '4vh'}}>
                               API
                             </font>
@@ -413,7 +347,7 @@ export default class Homepage extends Component{
                   <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                             <div style={{height: '10vh'}} />
-                              <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./a')}} >
+                              <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./')}} >
                               <font style={{fontSize: '4vh'}}>
                                 HOME
                               </font>
@@ -428,7 +362,7 @@ export default class Homepage extends Component{
                                 OUR TEAM
                               </font>
                             </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./api')}} >
+                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                               <font style={{fontSize: '4vh'}}>
                                 API
                               </font>
@@ -503,7 +437,7 @@ export default class Homepage extends Component{
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./api')}} > API </font>
+                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} > API </font>
                     </div>
                   </div>
                   <div>

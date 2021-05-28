@@ -113,8 +113,6 @@ export default class Contactus extends Component {
   console.log(this.state.show3)
         return (
             <div className="contactus-whole">
-                
-           
                 {this.state.show2card ?
                 <div className="card-sec-2-whole">
                  <div className="card-section-2">
@@ -221,7 +219,7 @@ export default class Contactus extends Component {
                 </div>
                 </div> :
                 <div className="card-section-contact">
-                <div className={this.state.show1 ? "whole-card" : "animate-show-1"}>
+                <div className={this.state.show1 ? "whole-card" : "animate-show-1"} style={{overflow:'scroll'}}>
                 <div className="row">
                     <div className="col-md-4">
                         <div className="card-contact">
