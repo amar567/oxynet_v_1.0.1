@@ -9,6 +9,25 @@
     z-index: 8;
 background:whitesmoke;
 }
+
+a{
+    text-decoration: none;
+}
+
+.git-ic{
+    position: relative;
+    top: 20px;
+    
+}
+
+.git-ic svg{
+    position: relative;
+    top:8px;
+    fill:black;
+}
+.yusuf{
+    display: none;
+}
 .card-section-contact{
     width: 100vw;
     display: flex;
@@ -85,6 +104,8 @@ border-radius: 15px;
     position: absolute;
     left: 15%;
     transition: 1s all;
+    display: flex;
+    justify-content: center;
    
 }
 
@@ -94,6 +115,8 @@ border-radius: 15px;
     margin: auto;
     left:100vw;
     transition: 1s all;
+    display: flex;
+    justify-content: center;
   
 }
 
@@ -273,6 +296,8 @@ cursor: pointer;
         width: 100vw;
         height: 80vh;
         display: flex;
+        justify-content: center;
+
     }
 
   
@@ -425,6 +450,7 @@ bottom: 0;
         width: 100vw;
         height: 80vh;
         display: flex;
+        justify-content: center;
     }
 
   
@@ -432,18 +458,24 @@ bottom: 0;
         width: 80%;
         margin: auto;
         left:10%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-2{
         width: 80%;
         margin: auto;
         left:10%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-3{
         width: 80%;
         margin: auto;
         left:10%;
+        display: flex;
+        justify-content: center;
     }
  
   
@@ -485,6 +517,9 @@ bottom: 0;
         width: 100vw;
         height: 80vh;
         display: flex;
+        display: flex;
+        justify-content: center;
+    
     }
 
   
@@ -492,18 +527,24 @@ bottom: 0;
         width: 90%;
         margin: auto;
         left:5%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-2{
         width: 90%;
         margin: auto;
         left:5%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-3{
         width: 90%;
         margin: auto;
         left:5%;
+        display: flex;
+        justify-content: center;
     }
  
   
@@ -552,18 +593,24 @@ bottom: 0;
         width: 95%;
         margin: auto;
         left:2.5%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-2{
         width: 95%;
         margin: auto;
         left:2.5%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-3{
         width: 95%;
         margin: auto;
         left:2.5%;
+        display: flex;
+        justify-content: center;
     }
  
   
@@ -623,6 +670,7 @@ bottom: 0;
         width: 100vw;
         height: 80vh;
         display: flex;
+        justify-content: center;
     }
 
   
@@ -630,18 +678,24 @@ bottom: 0;
         width: 95%;
         margin: auto;
         left:2.5%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-2{
         width: 95%;
         margin: auto;
         left:2.5%;
+        display: flex;
+        justify-content: center;
     }
  
     .whole-card-sm-3{
         width: 95%;
         margin: auto;
         left:2.5%;
+        display: flex;
+        justify-content: center;
     }
  
   

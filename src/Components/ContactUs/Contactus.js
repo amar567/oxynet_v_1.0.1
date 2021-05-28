@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
+import Github from '../../cards/Svg/Github'
 import './Contactus.css'
+import Linkedin from './../../cards/Svg/Linkedin';
 
 export default class Contactus extends Component {
 
@@ -127,7 +129,7 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">Sridhar  Chimalakonda</div>
                                         <div className="work">Mentor</div>
-                                        <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                        <div className="description">I get excited when my reasearch turns into product and reflects back to the society</div>
                                     </div>
                             </div>
                             </div>
@@ -140,7 +142,10 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">Shubham Raj</div>
                                         <div className="work">Front & Back-End</div>
-                                        <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                        <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/Shubh-RAZ" ><Github></Github> </a>
+                                </div>
                                     </div>
                             </div>
                             </div>
@@ -157,7 +162,10 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">TalhA Shamim</div>
                                         <div className="work">Front & Back-End</div>
-                                        <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                        <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/Talha-shamim" ><Github></Github> </a>
+                                </div>
                                     </div>
                             </div>
                             </div>
@@ -170,7 +178,10 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">Abhirrop Chauhan</div>
                                         <div className="work">UI Design</div>
-                                        <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                        <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://www.linkedin.com/in/abhiroop-chauhan-8a74aa157/" ><Linkedin></Linkedin> </a>
+                                </div>
                                     </div>
                             </div>
                             </div>
@@ -187,7 +198,10 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">Amardeep Khushwaha</div>
                                         <div className="work">Front & Back-End</div>
-                                        <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                        <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/amar567/" ><Github></Github> </a>
+                                </div>
                                     </div>
                             </div>
                             </div>
@@ -200,7 +214,26 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">Adarsh Shivhare</div>
                                         <div className="work">Back-End</div>
-                                        <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                        <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/adarsh-appmaster" ><Github></Github> </a>
+                                </div>
+                                    </div>
+                            </div>
+                            </div>
+                            <div className="col-sm-6 yusuf">
+                                <div className="card-contact">
+                                    <div className="contact-top">
+                                        <img src="./pp_11.png" className="img-avatar"></img>
+                                    </div>
+                            
+                                    <div className="contact-info">
+                                        <div className="name-info">Yusuf</div>
+                                        <div className="work">Content Writer</div>
+                                        <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://www.linkedin.com/in/abhiroop-chauhan-8a74aa157/" ><Linkedin></Linkedin> </a>
+                                </div>
                                     </div>
                             </div>
                             </div>
@@ -230,7 +263,7 @@ export default class Contactus extends Component {
                             <div className="contact-info">
                                 <div className="name-info">Sridhar  Chimalakonda</div>
                                 <div className="work">Mentor</div>
-                                <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                <div className="description">I get excited when my reasearch turns into product and reflects back to the society</div>
                             </div>
                         </div>
                     </div>
@@ -243,7 +276,10 @@ export default class Contactus extends Component {
                             <div className="contact-info">
                                 <div className="name-info">Shubham Raj</div>
                                 <div className="work">Front & Back-End</div>
-                                <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/Shubh-RAZ" ><Github></Github> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -257,7 +293,10 @@ export default class Contactus extends Component {
                             <div className="contact-info">
                                 <div className="name-info">Talha Shamim</div>
                                 <div className="work">Front & Back-End</div>
-                                <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/Talha-shamim" ><Github></Github> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -276,7 +315,10 @@ export default class Contactus extends Component {
                             <div className="contact-info">
                                 <div className="name-info">Abhiroop Chauhan</div>
                                 <div className="work">UI Designing</div>
-                                <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://www.linkedin.com/in/abhiroop-chauhan-8a74aa157/" ><Linkedin></Linkedin></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -289,7 +331,10 @@ export default class Contactus extends Component {
                             <div className="contact-info">
                                 <div className="name-info">Amardeep Khuswaha</div>
                                 <div className="work">Front & Back-End</div>
-                                <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/amar567/" ><Github></Github></a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -302,7 +347,10 @@ export default class Contactus extends Component {
                             <div className="contact-info">
                                 <div className="name-info">Adarsh Shivhare</div>
                                 <div className="work">Back-End</div>
-                                <div className="description">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the in</div>
+                                <div className="description">
+                                  <p></p>
+                                   <a className="git-ic" href="https://github.com/adarsh-appmaster" ><Github></Github> </a>
+                                </div>
                             </div>
                         </div>
                     </div>
