@@ -103,7 +103,7 @@ export default class Homepage extends Component{
                         ABOUT US
                       </div>
                       <div className="" style={{fontSize:'3.2vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
-                        We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of  pandemic. We all ardently wish to help and save lives.
+                      We're a group of students from different institutes who have been observing the crippled condition of the nation in this time of the pandemic. We sincerely wish to help in saving lives. The situation around us is grim, and the Indian medical system is constantly under stress to bring the country out of this quagmire of suffering. Still, the relief efforts are falling short for a country of billions. Hence, we are doing our bit to help the community and beat COVID-19.
                       </div>
                       <div style={{height:'6vh'}} />
                       <div style={{display:'block',height:'180vh'}}>
