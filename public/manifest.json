@@ -16,14 +16,14 @@
   ],
   "background_color": "#ffffff",
   "start_url": "/",
-  "short_name": "OXYNET",
+  "short_name": "COVINET",
   "display": "standalone",
   "scope": "/",
   "theme_color": "#6F50FF",
   "shortcuts": [
     
   ],
-  "description": "At OXYNET we connect users and oxygen cylinder suppliers directly. Needy people visiting our site will see the updated and real-time availability of oxygen.",
+  "description": "We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of pandemic. We all ardently wish to help and save lives. The conditions around are severe and the Indian medical system is constantly trying to bring the country out of this swamp of trouble. Although it is not enough for a country of billions. So we are doing our bit to help others and beat covid-19.",
   "screenshots": [
     
   ]
