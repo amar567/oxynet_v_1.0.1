@@ -7,7 +7,11 @@ import './homepage.css'
 import NewHomePage from './cards/NewHomePage'
 import Mapbox from './mapbox/Mapbox'
 import iittp from './iittp.png'
+import { ToastContainer } from 'react-toastify'
+import '../node_modules/react-toastify/dist/ReactToastify.css'
+import { toast } from 'react-toastify'
 // import react from react
+import distance from './Distance/Distance';
 
 
 const states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttarakhand','Uttar Pradesh','West Bengal']
@@ -40,7 +44,7 @@ export default class Homepage extends Component{
             render :[],
             data: [],
             searching:false,
-            Item:''
+            Item:'',
         }
     }
 
@@ -65,12 +69,19 @@ export default class Homepage extends Component{
         let filterBydistrict = await this.state.data.filter(
             card => (card.district.toLowerCase().includes(val.toLowerCase().replaceAll(" ","")))
         )
-        // console.log(filterBydistrict);
+        console.log(filterBydistrict);
         if(val !== 'Reset district'){
+    
             await this.setState({render: filterBydistrict})
             if(this.state.render.length===0){
               this.setState({notfound:true})
             }
+        
+          
+          else{
+            this.setState({notfound:false})
+          }
+       
         }
         if(val === 'Reset district'){ 
             await this.setState({render: this.state.data})
@@ -99,19 +110,48 @@ export default class Homepage extends Component{
                       'Content-Type': 'application/json'
                   },
               }).then((res) => res.json())
-              console.log(result);
+
               // await this.setState({render:result})
+
+              
+              var latlocal =localStorage.getItem("latitude")
+              var longlocal = localStorage.getItem("longitude")
+              var newarray = []
+              
+              result.map(dt => {
+                const obj = dt
+                var distances = distance(dt.latitude,dt.longitude,latlocal,longlocal,'K')
+                if(isNaN(distances)){
+                obj.distance = 'Not Available'
+              }
+              
+            else{
+              obj.distance=distances
+              console.log('dt',distances)
+            
+            }
+            newarray.push(obj)
+            
+          })
+          
+          
+          if(this.state.Item!=="oxygenBedAvailable" || this.state.Item!=="normalBedTotal"){
+    newarray.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? -1 : 1)
+}
               if(!result.status){
                 this.setState({notfound:false})
                 this.setState({data:result})
-                this.setState({render:result})
+                this.setState({render:newarray})
                 // console.log(this.state.render)
                 // console.log(this.state.data)
               }else if(result.status === 'error') {
                 this.setState({notfound:true})
               }
-        }catch{
-          alert('sorry! state not found')
+
+            
+        }
+        catch{
+          toast('Sorry we dont have data for this state with us')
         }
         // if(result.lenght)
         // await this.setState({searching : true})
@@ -164,6 +204,7 @@ export default class Homepage extends Component{
     render(){
         return (
             <div>
+                <ToastContainer></ToastContainer>
               {(this.state.showcards)?
               <div className="show" id="cardContainer" style={{background: '#FFFFFF',width:'100vw'}}>
                   <div className="lt">
@@ -218,8 +259,8 @@ export default class Homepage extends Component{
                           <div style={{padding: '3vh 0 0 0', outline: 0}}>
                             <select className="select_item" value={this.state.Item} onChange={this.sort}>
                                 <option value="" disabled selected >Filter by</option>
-                                <option value="oxygenBedAvailable" >Oxygen beds</option>
-                                <option value="normalBedAvailable" >Normal beds</option>
+                                <option value="oxygenBedAvailable" >Oxygen Beds Available</option>
+                                <option value="normalBedAvailable" >Normal Beds Available</option>
                             </select>
                           </div>
                       </div>
@@ -253,7 +294,7 @@ export default class Homepage extends Component{
                         <WorkingOnIt/>
                         :
                         <div>
-                          <NewHomePage hospitalData={this.state.render} />
+                          <NewHomePage hospitalData={this.state.render} item={this.state.item} />
                         </div>                        
                     }
                   </div>
@@ -350,6 +391,7 @@ export default class Homepage extends Component{
               </div>
               :
               <div className="homepage">
+              
                 <div className="lt">
                   <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
@@ -475,7 +517,7 @@ export default class Homepage extends Component{
                           </font>
                         </div>
                         <form>
-                         {true ? null: <Mapbox></Mapbox> }
+                         <Mapbox></Mapbox> 
                           <div style={{padding: '1vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
                             <select className="SBOptions" name="stateName" value={this.state.stateName} onChange={this.handleState}>
                                 <option value="" disabled >Select state</option>

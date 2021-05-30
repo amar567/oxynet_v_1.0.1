@@ -63,9 +63,8 @@ export default class Cards extends Component {
         }
       }
    
-    render() {
-      
-    
+    render() {  
+   
         return (
             <div className="flip-whole">
                 <ReactCardFlip isFlipped={this.state.isFlipped} flipDirection="horizontal">
@@ -95,7 +94,7 @@ export default class Cards extends Component {
                     </div>
                     <div className="rd-whole">
                         <div className="rd-icon"><Distancesvg></Distancesvg></div>
-                    <div className="rd-distance">Not Available</div>
+                    <div className="rd-distance">{this.state.data.distance==="Not Available" ? "Not Available" : `Within ${this.state.data.distance} Km radius`}</div>
                     </div>
 
                     <div className="btn-tab">

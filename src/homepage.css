@@ -23,6 +23,13 @@
 
   }
 
+  .submitBtn_d{
+    cursor: pointer;
+  }
+
+.Toastify_toast-body{
+  color: #4A2EC7;
+} 
 
 
   .logo-covinet{

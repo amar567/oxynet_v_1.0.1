@@ -177,7 +177,7 @@ export default class Contactus extends Component {
                             
                                     <div className="contact-info">
                                         <div className="name-info">Abhirrop Chauhan</div>
-                                        <div className="work">UI Design</div>
+                                        <div className="work">Product Architect</div>
                                         <div className="description">
                                   <p></p>
                                    <a className="git-ic" href="https://www.linkedin.com/in/abhiroop-chauhan-8a74aa157/" ><Linkedin></Linkedin> </a>
@@ -232,7 +232,7 @@ export default class Contactus extends Component {
                                         <div className="work">Content Writer</div>
                                         <div className="description">
                                   <p></p>
-                                   <a className="git-ic" href="https://www.linkedin.com/in/abhiroop-chauhan-8a74aa157/" ><Linkedin></Linkedin> </a>
+                                   <a className="git-ic" href="https://www.linkedin.com/in/yusuf-hasan-914696179/" ><Linkedin></Linkedin> </a>
                                 </div>
                                     </div>
                             </div>
@@ -314,7 +314,7 @@ export default class Contactus extends Component {
                            
                             <div className="contact-info">
                                 <div className="name-info">Abhiroop Chauhan</div>
-                                <div className="work">UI Designing</div>
+                                <div className="work">Product Architect</div>
                                 <div className="description">
                                   <p></p>
                                    <a className="git-ic" href="https://www.linkedin.com/in/abhiroop-chauhan-8a74aa157/" ><Linkedin></Linkedin></a>
