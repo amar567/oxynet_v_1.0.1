@@ -129,7 +129,7 @@ export default class Contactus extends Component {
                                     <div className="contact-info">
                                         <div className="name-info">Sridhar  Chimalakonda</div>
                                         <div className="work">Mentor</div>
-                                        <div className="description">I get excited when my reasearch turns into product and reflects back to the society</div>
+                                        <div className="description">I get excited when my research turns into product and reflects back to the society</div>
                                     </div>
                             </div>
                             </div>
@@ -176,7 +176,7 @@ export default class Contactus extends Component {
                                     </div>
                             
                                     <div className="contact-info">
-                                        <div className="name-info">Abhirrop Chauhan</div>
+                                        <div className="name-info">Abhiroop Chauhan</div>
                                         <div className="work">Product Architect</div>
                                         <div className="description">
                                   <p></p>
@@ -196,7 +196,7 @@ export default class Contactus extends Component {
                                     </div>
                             
                                     <div className="contact-info">
-                                        <div className="name-info">Amardeep Khushwaha</div>
+                                        <div className="name-info">Amardeepsingh Khushwah</div>
                                         <div className="work">Front & Back-End</div>
                                         <div className="description">
                                   <p></p>
@@ -228,8 +228,8 @@ export default class Contactus extends Component {
                                     </div>
                             
                                     <div className="contact-info">
-                                        <div className="name-info">Yusuf</div>
-                                        <div className="work">Content Writer</div>
+                                        <div className="name-info">Yusuf Hasan</div>
+                                        <div className="work">Content  Strategist</div>
                                         <div className="description">
                                   <p></p>
                                    <a className="git-ic" href="https://www.linkedin.com/in/yusuf-hasan-914696179/" ><Linkedin></Linkedin> </a>

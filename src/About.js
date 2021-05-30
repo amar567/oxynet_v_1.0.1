@@ -102,7 +102,7 @@ export default class Homepage extends Component{
                       <div className=""  style={{fontSize:'5vh',fontWeight:'600',lineHeight:'100%',color:'#FFFFFF',textAlign:'center',padding:'6vh 0'}}>
                         ABOUT US
                       </div>
-                      <div className="" style={{fontSize:'3.2vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
+                      <div className="" style={{fontSize:'2.5vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
                       We're a group of students from different institutes who have been observing the crippled condition of the nation in this time of the pandemic. We sincerely wish to help in saving lives. The situation around us is grim, and the Indian medical system is constantly under stress to bring the country out of this quagmire of suffering. Still, the relief efforts are falling short for a country of billions. Hence, we are doing our bit to help the community and beat COVID-19.
                       </div>
                       <div style={{height:'6vh'}} />
@@ -114,7 +114,7 @@ export default class Homepage extends Component{
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
                               <div style={{color:'#505050',fontSize:'2vh',padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
-                                This website is an initiative  by students  as an attempt to provided consolidated information regarding availability of covid medical resources.<br/>During this massive surge of the COVID-19 pandemic, it was noticed that the above-mentioned information was present in a scattered manner without a centralized database for the same. Hence, this website aims to present this data in a readily..read more
+                              This website is an initiative by students as an attempt to provide consolidated information regarding the availability of covid medical resources. During this massive surge of the COVID-19 pandemic, it was noticed that the above-mentioned information was present in a scattered manner without a centralized database for the same. Hence, this website aims to present this data in a readily-accessible manner for the user’s convenient perusal.
                               </div>
                             </div>
                           </div>
@@ -126,7 +126,7 @@ export default class Homepage extends Component{
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
                               <div style={{color:'#505050',fontSize:'2vh',padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
-                                We want to free India from the clenched of COVID-19 as soon as possible. We aim for a morning when people will be able to leave their homes carefree and mask-free. To realize this dream, we need to show perseverance, optimism, and constant efforts to help the Indian Medical System and the people in dire need of COVID resources. It’s this time when our collective efforts and unity can bring a change. We hope our efforts can provide the necessary impetus towards national recovery
+                              We want to free India from the clenched of COVID-19 as soon as possible. We aim for a morning when people will be able to leave their homes carefree and mask-free. To realise this dream, we need to show perseverance, optimism and constant efforts to help the Indian Medical System and the people in dire need of COVID resources. It’s time when our collective efforts and unity can bring a change. We hope our efforts can provide the necessary impetus towards national recovery.
                               </div>
                             </div>
                           </div>
@@ -254,7 +254,7 @@ export default class Homepage extends Component{
                         </div>
                         <hr style={{color:'white',width:'60%'}} />
                         <div style={{fontSize:'3vh',color:'white',textAlign:'center'}}>
-                          Contact us:  radiok@iiserkol.ac.in
+                          Contact us: <a href="mailto:contact.covinet@gmail.com" style={{textDecoration:'none',color:'white'}}>contact.covinet@gmail.com</a>
                         </div>
                       </div>
                     </div>
@@ -291,7 +291,7 @@ export default class Homepage extends Component{
                             <div className="" style={{height:'1px',background:'#CCCCCC',width:'65%'}} />
                             <div className="" style={{height:'3.5vh'}} />
                             <div className="" style={{width:'65%',color:'#7388FF',fontSize:'3vh',textAlign: 'justify'}}>
-                              Oxynet bows a thank you to all the frontliners  who are constantly working to save lives without even thinking about their own. 
+                              Covinet bows a thank you to all the frontliners  who are constantly working to save lives without even thinking about their own. 
                             </div>
                         </div>
                   </div>
@@ -311,7 +311,7 @@ export default class Homepage extends Component{
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
                               <div style={{color:'#505050',fontSize:'2.2vh',padding:'2vw',textAlign:'justify',overflow:'scroll',height:'40vh'}}>
-                                This website is an initiative by students as an attempt to provide consolidated information regarding the availability of covid medical resources. During this massive surge of the COVID-19 pandemic, it was noticed that the above-mentioned information was present in a scattered manner without a centralized database for the same. Hence, this website aims to present this data in a readily-accessible manner for the user’s convenient perusal. State wise information has been collected here on this one-stop solution regarding user-friendly and accurate information in this unforeseen crisis.
+                                This website is an initiative by students as an attempt to provide consolidated information regarding the availability of covid medical resources. During this massive surge of the COVID-19 pandemic, it was noticed that the above-mentioned information was present in a scattered manner without a centralized database for the same. Hence, this website aims to present this data in a readily-accessible manner for the user’s convenient perusal.
                               </div>
                             </div>
                           </div>
@@ -322,7 +322,7 @@ export default class Homepage extends Component{
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
                               <div style={{color:'#505050',fontSize:'2.2vh',padding:'2vw',textAlign:'justify',overflow:'scroll',height:'40vh'}}>
-                              We want to free India from the clenched of COVID-19 as soon as possible. We aim for a morning when people will be able to leave their homes carefree and mask-free. To realise this dream, we need to show perseverance, optimism and constant efforts to help the Indian Medical System and the peopl in dire need of COVID resources. It’s this time when our collective efforts and unity can bring a change. We hope our efforts can provite the necessary impetus towards national recovery.
+                              We want to free India from the clenched of COVID-19 as soon as possible. We aim for a morning when people will be able to leave their homes carefree and mask-free. To realise this dream, we need to show perseverance, optimism and constant efforts to help the Indian Medical System and the people in dire need of COVID resources. It’s time when our collective efforts and unity can bring a change. We hope our efforts can provide the necessary impetus towards national recovery.
                               </div>
                             </div>
                           </div>
@@ -445,7 +445,7 @@ export default class Homepage extends Component{
                   <div className="" style={{background:'white', height:'38vh',zIndex:'15'}}/>
                   <div style={{padding:'0 15vw'}}>
                     <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
-                      Covinet is a student-initiated project under the able guidance of Professor Sridhar Chimalakonda in association with Rekha lab, IIT Tirupati.
+                      Covinet is a student-initiated project under the able guidance of Professor Sridhar Chimalakonda in association with Risha lab, IIT Tirupati.
                     </div>
                     <div>
                       <hr></hr>

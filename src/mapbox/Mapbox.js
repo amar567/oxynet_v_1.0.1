@@ -71,10 +71,10 @@ function Mapbox() {
     <React.Fragment>
 
 <div style={{padding: '1vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
-                            <input className="SBOptions" name="stateName" placeholder="Latitude" value= {viewport.latitude}>
+                            <input className="SBOptions gt" name="stateName" placeholder="Latitude" value= {viewport.latitude}>
                             
                             </input>
-                            <input  className="SBOptions"   value={viewport.longitude} style={{borderRadius: '5px', width: '22vw'}} placeholder="Longitude" name="district" >
+                            <input  className="SBOptions gt"   value={viewport.longitude} style={{borderRadius: '5px', width: '22vw'}} placeholder="Longitude" name="district" >
                           
                             </input>
                             <button className="submitBtn_d" type="button" name="button" onClick={handleMapDisplay}> Map </button>

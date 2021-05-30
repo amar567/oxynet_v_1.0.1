@@ -113,45 +113,48 @@ export default class Homepage extends Component{
 
               // await this.setState({render:result})
 
+              console.log(result);
               
               var latlocal =localStorage.getItem("latitude")
               var longlocal = localStorage.getItem("longitude")
               var newarray = []
               
-              result.map(dt => {
-                const obj = dt
-                var distances = distance(dt.latitude,dt.longitude,latlocal,longlocal,'K')
-                if(isNaN(distances)){
-                obj.distance = 'Not Available'
+              try{
+                result.map(dt => {
+                  const obj = dt
+                  var distances = distance(dt.latitude,dt.longitude,latlocal,longlocal,'K')
+                  if(isNaN(distances)){
+                  obj.distance = 'Not Available'
+                  }else{
+                    obj.distance=distances
+                    console.log('dt',distances)
+                  }
+                  newarray.push(obj)
+                })
+              }catch{
+                console.log('no data');
               }
-              
-            else{
-              obj.distance=distances
-              console.log('dt',distances)
-            
-            }
-            newarray.push(obj)
-            
-          })
           
           
-          if(this.state.Item!=="oxygenBedAvailable" || this.state.Item!=="normalBedTotal"){
-    newarray.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? -1 : 1)
-}
+              if(this.state.Item===""){
+                  newarray.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? -1 : 1)
+              }
               if(!result.status){
                 this.setState({notfound:false})
-                this.setState({data:result})
+                this.setState({data:newarray})
                 this.setState({render:newarray})
                 // console.log(this.state.render)
                 // console.log(this.state.data)
-              }else if(result.status === 'error') {
+              }
+              if(result.status === 'error') {
+                toast('Currently not available')
                 this.setState({notfound:true})
               }
 
             
         }
         catch{
-          toast('Sorry we dont have data for this state with us')
+          console.log('');
         }
         // if(result.lenght)
         // await this.setState({searching : true})
@@ -363,8 +366,8 @@ export default class Homepage extends Component{
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select className="select_item" style={{borderRadius: '5px', width: '22vw'}} value={this.state.Item} onChange={this.sort}>
                                 <option value="" disabled selected >Filter by</option>
-                                <option value="oxygenBedAvailable" >Oxygen beds</option>
-                                <option value="normalBedAvailable" >Normal beds</option>
+                                <option value="oxygenBedAvailable" >Oxygen beds available</option>
+                                <option value="normalBedAvailable" >Normal beds available</option>
                             </select>
                             {/* <select className="select_item" style={{borderRadius: '5px', width: '22vw'}}>
                               <option value>Hospitals</option>
@@ -470,6 +473,8 @@ export default class Homepage extends Component{
                         </select>
                         <div style={{height: '7vh'}} />
                         <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
+                        {/* <div style={{height:'5vh'}}></div>
+                        <Mapbox></Mapbox> */}
                       </form>
                     </div>
                     <div style={{height: '5vh'}} />
@@ -517,13 +522,13 @@ export default class Homepage extends Component{
                           </font>
                         </div>
                         <form>
-                         <Mapbox></Mapbox> 
+                         {/* <Mapbox></Mapbox>  */}
                           <div style={{padding: '1vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
-                            <select className="SBOptions" name="stateName" value={this.state.stateName} onChange={this.handleState}>
+                            <select className="SBOptions" style={{borderRadius: '5px', width: '22vw',background:'#FFFFFF'}} name="stateName" value={this.state.stateName} onChange={this.handleState} >
                                 <option value="" disabled >Select state</option>
                                 {states.map((state,index) => (<option className="options" key={index} name={state}>{state}</option>))}
                             </select>
-                            <select  className="SBOptions" style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleDistrict} name="district" value={this.state.district}>
+                            <select  className="SBOptions" style={{borderRadius: '5px', width: '22vw',background:'#FFFFFF'}} onChange={this.handleDistrict} name="district" value={this.state.district}>
                               {(!this.state.searching)?
                                 <option value="Select district"> Select district</option>
                               :

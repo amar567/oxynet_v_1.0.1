@@ -17,7 +17,7 @@
     "react-map-gl": "^6.1.15",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
-    "react-toastify": "^4.1.0",
+    "react-toastify": "^4.5.2",
     "read-more-react": "^1.0.10",
     "universal-cookie": "^4.0.4",
     "web-vitals": "^1.1.1"
