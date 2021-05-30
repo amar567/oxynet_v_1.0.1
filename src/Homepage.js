@@ -36,7 +36,7 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: false,
+            showcards: true,
             district:'Select district',
             stateName: '',
             districts: [],
@@ -127,7 +127,7 @@ export default class Homepage extends Component{
                   obj.distance = 'Not Available'
                   }else{
                     obj.distance=distances
-                    console.log('dt',distances)
+                    // console.log('dt',distances)
                   }
                   newarray.push(obj)
                 })
@@ -297,7 +297,7 @@ export default class Homepage extends Component{
                         <WorkingOnIt/>
                         :
                         <div>
-                          <NewHomePage hospitalData={this.state.render} item={this.state.item} />
+                          <NewHomePage hospitalData={this.state.render} />
                         </div>                        
                     }
                   </div>
