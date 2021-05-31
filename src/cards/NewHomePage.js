@@ -44,6 +44,72 @@ export default class NewHomePage extends Component {
 }
 
 
+
+
+// import React, { useState, useEffect } from 'react';
+// import ReactPaginate from 'react-paginate';
+// import Cards from './Cards/Cards'
+// import './NewHomePage.css'
+// import distance from './../Distance/Distance';
+// import './bootstrap.css'
+// const maha = require('./maharastra.json')
+
+// function NewHomePage(props) {
+//   const [pagination, setPagination] = useState({
+//     data: props.hospitalData,
+//     offset: 0,
+//     numberPerPage: 10,
+//     pageCount: 0,
+//     currentData: []
+//   });
+//   useEffect(() => {
+//     setPagination((prevState) => ({
+//       ...prevState,
+//       pageCount: prevState.data.length / prevState.numberPerPage,
+//       currentData: prevState.data.slice(pagination.offset, pagination.offset + pagination.numberPerPage)
+//     }))
+//   }, [pagination.numberPerPage, pagination.offset])
+//   const handlePageClick = event => {
+//     const selected = event.selected;
+//     const offset = selected * pagination.numberPerPage
+//     setPagination({ ...pagination, offset })
+//   }
+//   return (
+//     <div>
+//             {/* <div className="card-render-whole">
+//                  <div className="card-sec">
+//                  <div className="row"> */}
+//                          {props.hospitalData.map((dt,ind) => (
+//                          <div className="col-xl-4 col-lg-6" style={{paddingRight:'0'}}>
+//                          <div className="inside-col-card">
+//                              <Cards data={dt} index={ind}></Cards>
+//                          </div>
+//                      </div>
+//                          )
+//                      )
+//                      }
+//                  {/* </div>
+//                  </div>
+              
+//             </div> */}
+//       <ReactPaginate
+//         previousLabel={'previous'}
+//         nextLabel={'next'}
+//         breakLabel={'...'}
+//         pageCount={pagination.pageCount}
+//         marginPagesDisplayed={2}
+//         pageRangeDisplayed={5}
+//         onPageChange={handlePageClick}
+//         containerClassName={'pagination'}
+//         activeClassName={'active'}
+//       />
+//     </div>
+//   );
+// }
+// export default NewHomePage;
+
+
+
 // import React, { Component,useState } from 'react'
 // import Cards from './Cards/Cards'
 // import './NewHomePage.css'
