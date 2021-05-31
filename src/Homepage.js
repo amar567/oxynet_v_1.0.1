@@ -7,6 +7,7 @@ import './homepage.css'
 import NewHomePage from './cards/NewHomePage'
 import Mapbox from './mapbox/Mapbox'
 import iittp from './iittp.png'
+import risha from './rishalab.jpg'
 import { ToastContainer } from 'react-toastify'
 import '../node_modules/react-toastify/dist/ReactToastify.css'
 import { toast } from 'react-toastify'
@@ -248,6 +249,8 @@ export default class Homepage extends Component{
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
                               <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
+                              <img src={risha} style={{width:'40%',display:'block',margin:'auto',marginTop:'20px'}}></img>
+                      
                             </div>
                       </div>
                     </div>
@@ -340,6 +343,7 @@ export default class Homepage extends Component{
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
                               <img src={iittp} style={{width:'80%',display:'block',margin:'auto'}}></img>
+                              <img src={risha} style={{width:'40%',display:'block',margin:'auto',marginTop:'20px'}}></img>
                             </div>
                         </div>
                       </div>
@@ -432,6 +436,7 @@ export default class Homepage extends Component{
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
                               <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
+                              <img src={risha} style={{width:'40%',display:'block',margin:'auto',marginTop:'20px'}}></img>
                             </div>
                         </div>
                     </div>
@@ -493,6 +498,7 @@ export default class Homepage extends Component{
                     <div className="logo-class" style={{color: 'white', fontWeight: 200, padding: '0 12vw'},
                     {display:'flex'}}>
                       <img src={iittp} className="iittp-logo"></img>
+                      <img src={risha} className="risha-logo"></img>
                       <font className="logo-covinet"> COVINET </font>
                     </div>
                     <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './Contactus'
 import Contactus from './Contactus'
 import iittp from '../../iittp.png'
+import risha from '../../rishalab.jpg'
 
 export default class Wholecontact extends Component {
 
@@ -59,6 +60,7 @@ export default class Wholecontact extends Component {
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
                               <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
+                              <img src={risha} style={{width:'40%',display:'block',margin:'auto',marginTop:'20px'}}></img>
                             </div>
                       </div>
                     </div>

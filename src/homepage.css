@@ -13,6 +13,13 @@
     position: absolute;
     left: 65px;
   }
+  .risha-logo{
+    width: 80px;
+    height: 50px;
+    float: left;
+    position: absolute;
+    left: 180px;
+  }
 
   .logo-class{
     justify-content: center;
@@ -20,7 +27,6 @@
     color: white;
     position: relative;
     bottom: 5px;
-
   }
 
   .submitBtn_d{
@@ -37,31 +43,21 @@
     font-weight: 300;
     font-family: 'Roboto', sans-serif;
     font-size: 35px;
-    margin-left: 25px;
+    margin-left: 230px;
    
   }
 
   @media(max-width:1450px){
     .logo-covinet{
-      margin-left: 150px;
-    }
-  }
-
-  @media(max-width:1263px){
-    .logo-covinet{
-      margin-left: 180px;
-    }
-  }
-
-  @media(max-width:1190px){
-    .logo-covinet{
-      margin-left: 200px;
-    }
-  }
-
-  @media(max-width:992px){
-    .logo-covinet{
-      margin-left: 250px;
+      margin-left: 320px;
       font-size: 25px;
     }
   }
+
+  @media(max-width:1026px){
+    .logo-covinet{
+      display: none;
+    }
+  }
+
+
