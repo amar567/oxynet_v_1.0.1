@@ -10,7 +10,6 @@ import iittp from './iittp.png'
 import { ToastContainer } from 'react-toastify'
 import '../node_modules/react-toastify/dist/ReactToastify.css'
 import { toast } from 'react-toastify'
-// import react from react
 import distance from './Distance/Distance';
 
 
@@ -36,7 +35,7 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: true,
+            showcards: false,
             district:'Select district',
             stateName: '',
             districts: [],
@@ -44,7 +43,7 @@ export default class Homepage extends Component{
             render :[],
             data: [],
             searching:false,
-            Item:'',
+            Item:''
         }
     }
 
@@ -55,6 +54,8 @@ export default class Homepage extends Component{
                 'Content-Type': 'application/json'
             },
       }).then((res) => res.json())
+
+
     }
 
     handleDistrict = async(event) => {
@@ -90,7 +91,11 @@ export default class Homepage extends Component{
         // console.log(this.state.render)
     }
 
+ 
     handleState = async(event) => {
+      localStorage.setItem("prev",0)
+      localStorage.setItem("next",3)
+
         this.setState({notfound:false})
         this.setState({Item:""})
         let val = event.target.value
@@ -113,7 +118,6 @@ export default class Homepage extends Component{
 
               // await this.setState({render:result})
 
-              console.log(result);
               
               var latlocal =localStorage.getItem("latitude")
               var longlocal = localStorage.getItem("longitude")
@@ -134,11 +138,14 @@ export default class Homepage extends Component{
               }catch{
                 console.log('no data');
               }
-          
-          
+        
+
+
+
               if(this.state.Item===""){
                   newarray.sort((a, b) => (parseInt(a.rank) > parseInt(b.rank)) ? -1 : 1)
               }
+
               if(!result.status){
                 this.setState({notfound:false})
                 this.setState({data:newarray})

@@ -8,7 +8,7 @@ import Newphone from '../Svg/Newphone';
 import ReactCardFlip from 'react-card-flip';
 import Quote from '../Svg/Quote';
 import Distancesvg from '../Svg/Distancesvg';
-var arrrayData = require('../arrayData')
+const arrayData = require('../arrayData.js')
 
 export default class Cards extends Component {
 
@@ -20,7 +20,7 @@ export default class Cards extends Component {
           index:props.index,
           showMore:false,
           changeStatement:'',
-          array:arrrayData
+          array:arrayData
    
         };
         this.handleClick = this.handleClick.bind(this);
