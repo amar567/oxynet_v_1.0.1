@@ -13,6 +13,52 @@
     display: flex;
 }
 
+.svg-dwn{
+    border: 2px solid #6F50FF;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.svg-dwn svg{
+    fill: #6F50FF;
+    animation: transform 0.8s ease-in-out infinite;
+}
+
+.Toastify__toast-body {
+    margin: auto 0;
+    flex: 1 1;
+    color:salmon !important;
+    letter-spacing: 3px;
+    text-align: center;
+    
+}
+
+@keyframes transform{
+    from{
+        transform: translateY(5px);
+    }
+
+    to{
+        transform: translateY(0);
+    }
+}
+
+
+.btn-load{
+    width:100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+
+}
+
 @media(max-width:991px){
     .card-sec{
         width: 70%;

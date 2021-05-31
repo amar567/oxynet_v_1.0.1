@@ -4,6 +4,7 @@ import './hamburgers2.css'
 import img1 from './img1.png'
 import img2 from './img2.png'
 import iittp from './iittp.png'
+import risha from './rishalab.jpg'
 import './homepage.css'
 
 
@@ -70,10 +71,11 @@ export default class Homepage extends Component{
                             </div>
                             <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'60%'}}/>
                             <div style={{textAlign:"center"}}>
-                              In association with :
+                    
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
-                              <img src={iittp} style={{width:'40%',display:'block',margin:'auto'}}></img>
+                              <img src={iittp} style={{width:'150px',display:'block',margin:'auto',height:'100px'}}></img>
+                              <img src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px',height:'100px'}}></img>
                             </div>
                         </div>
                     </div>
@@ -253,8 +255,11 @@ export default class Homepage extends Component{
                           COVINET<font style={{fontSize:'4.5vh'}}>©</font>2021
                         </div>
                         <hr style={{color:'white',width:'60%'}} />
-                        <div style={{fontSize:'3vh',color:'white',textAlign:'center'}}>
-                          Contact us: <a href="mailto:contact.covinet@gmail.com" style={{textDecoration:'none',color:'white'}}>contact.covinet@gmail.com</a>
+                    
+                        <div style={{fontSize:'3vh',color:'white',textAlign:'center', background:'rgb(123, 96, 247',paddingBottom:"20px"}}>
+                          Dr Sridhar Chimalakonda : <a href="mailto:ch@iittp.ac.in" style={{textDecoration:'none',color:'white'}}>ch@iittp.ac.in</a>
+                          <br></br>
+                          Contact us: <a href="mailto:contact.covinet@gmail.com" style={{textDecoration:'none',width:'100%',color:'white',background:'rgb(123, 96, 247'}}>contact.covinet@gmail.com</a>
                         </div>
                       </div>
                     </div>
@@ -451,7 +456,10 @@ export default class Homepage extends Component{
                       <hr></hr>
                     </div>
                     <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
-                      Contact us - <a target="_blank" href="mailto:contact.covinet@gmail.com" style={{color:'white',textDecoration:'none'}}>contact.covinet@gmail.com</a>
+                      Dr Sridhar Chimalakonda : <a target="_blank" href="mailto:ch@iittp.ac.in" style={{color:'white',textDecoration:'none'}}>ch@iittp.ac.in</a>
+                    </div>
+                    <div style={{position:'absolute',left:'0',color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center",background:"#5139c4",width:"100vw"}}>
+                      CONTACT US AT : <a target="_blank" href="mailto:contact.covinet@gmail.com" style={{color:'white',textDecoration:'none'}}>contact.covinet@gmail.com</a>
                     </div>
                   </div>
                 </div>

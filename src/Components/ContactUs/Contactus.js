@@ -127,7 +127,7 @@ export default class Contactus extends Component {
                                     </div>
                             
                                     <div className="contact-info">
-                                        <div className="name-info">Sridhar  Chimalakonda</div>
+                                        <div className="name-info">Dr Sridhar  Chimalakonda</div>
                                         <div className="work">Mentor</div>
                                         <div className="description">I get excited when my research turns into product and reflects back to the society</div>
                                     </div>
@@ -261,7 +261,7 @@ export default class Contactus extends Component {
                             </div>
                            
                             <div className="contact-info">
-                                <div className="name-info">Sridhar  Chimalakonda</div>
+                                <div className="name-info">Dr Sridhar  Chimalakonda</div>
                                 <div className="work">Mentor</div>
                                 <div className="description">I get excited when my reasearch turns into product and reflects back to the society</div>
                             </div>
