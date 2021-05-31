@@ -29,6 +29,15 @@
     animation: transform 0.8s ease-in-out infinite;
 }
 
+.Toastify__toast-body {
+    margin: auto 0;
+    flex: 1 1;
+    color:salmon !important;
+    letter-spacing: 3px;
+    text-align: center;
+    
+}
+
 @keyframes transform{
     from{
         transform: translateY(5px);

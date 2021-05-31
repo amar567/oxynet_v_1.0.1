@@ -38,8 +38,8 @@ this.setState({
         }
        
         return (
-            <div
->            <div className="card-render-whole">
+            <div style={{paddingBottom:"50px"}}>            
+                <div className="card-render-whole">
                 <div className="card-sec">
                 <div className="row">
                         {
