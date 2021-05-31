@@ -29,7 +29,7 @@ this.setState({
 }
     render() {
   
-        console.log("home",this.props.hospitalData)
+        console.log("home",this.props.hospitalData.length)
         var data=this.props.hospitalData
         var newarray = data.slice(0,this.state.next)
         var boolshow = true
