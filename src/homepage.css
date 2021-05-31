@@ -77,3 +77,11 @@
   }
 }
 
+@media(min-width:800px){
+  
+#drawer.show{
+  width: 500px;
+  cursor: pointer;
+}
+
+}

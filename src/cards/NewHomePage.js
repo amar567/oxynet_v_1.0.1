@@ -4,8 +4,8 @@ import './NewHomePage.css'
 import distance from './../Distance/Distance';
 import './bootstrap.css'
 import Down from './Svg/Down';
-const maha = require('./maharastra.json')
-
+import { toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 
 
 export default class NewHomePage extends Component {
@@ -17,7 +17,7 @@ export default class NewHomePage extends Component {
             data:props.hospitalData,
             filter:props.item,
             prev:0,
-            next:60,
+            next:9,
             loadbool:false
         }
     }
@@ -27,8 +27,11 @@ this.setState({
 })
 
 }
+
+
+
     render() {
-  
+       
         console.log("home",this.props.hospitalData.length)
         var data=this.props.hospitalData
         var newarray = data.slice(0,this.state.next)
@@ -36,9 +39,20 @@ this.setState({
         if(this.state.next>=data.length){
             boolshow=false
         }
+        // else{
+        //     var inter =setInterval(()=> {
+        //         this.handleLoad()
+
+        //         if(this.state.next>=data.length){
+        //             clearInterval(inter)
+        //         }
+        //     },10000)
+        // }
+        
        
         return (
-            <div style={{paddingBottom:"50px"}}>            
+    
+            <div style={{paddingBottom:"50px"}}>          
                 <div className="card-render-whole">
                 <div className="card-sec">
                 <div className="row">
