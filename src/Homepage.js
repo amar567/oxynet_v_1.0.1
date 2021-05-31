@@ -401,7 +401,7 @@ export default class Homepage extends Component{
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleState}>
                               <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" key={index} name={state.name}>{state.name} -- {state.data}</option>))}
+                                {states.map((state,index) => (<option className="options" value={state.name} key={index} name={state.name}>{state.name} -- {state.data}</option>))}
                               </select>
                             {/* </select> */}
                         </div>
