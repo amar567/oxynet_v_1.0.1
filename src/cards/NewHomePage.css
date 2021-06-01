@@ -13,6 +13,10 @@
     display: flex;
 }
 
+
+.render-whole{
+    padding-top: 70px;
+}
 .svg-dwn{
     border: 2px solid #6F50FF;
     width: 60px;
@@ -80,5 +84,11 @@
     
     .inside-col-card{
         height: 400px;
+    }
+}
+
+@media (max-width:800px){
+    .render-whole{
+        padding-top: 10px;
     }
 }

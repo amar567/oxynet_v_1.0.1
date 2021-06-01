@@ -91,14 +91,13 @@ word-break: break-all;
     font-weight: 600;
     padding-right: 15px;
     font-size:2vh;
-    max-height: 60px;
-    overflow: hidden;
-    overflow-wrap: normal;
+    max-height: 40px;
+    overflow-wrap: scroll;
+    overflow: auto;
     letter-spacing: 2px;
     text-transform: uppercase;
     /* width: 90%; */
     text-align: left;  
-   
 }
 
 .hospital-name-verified{
@@ -261,6 +260,13 @@ a{
     .card-whole{
         height: 400px;
     }
+
+    .btn-inside{
+        width: 100%;
+        font-size: 12px;
+    }
+
+    
 
     .hospital-name-content{
         max-width: 50%;
