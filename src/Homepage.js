@@ -104,15 +104,20 @@ export default class Homepage extends Component{
 
     handletransition = (e) => {
       if(e>this.state.lastScrollPos){
-        this.setState({
-          direction:'down',
-          transitionStyle:{display:'none'},
-          transitionStyle2:{display:'none'},
-          transitionStyle3:{display:'none'},
-
-        })
+       
+          this.setState({
+            direction:'down',
+            transitionStyle:{display:'none'},
+            transitionStyle2:{display:'none'},
+            transitionStyle3:{display:'none'},
+  
+          })
+    
       }
       else{
+        setTimeout(()=> {
+          
+        })
         this.setState({
           direction:'up',
           transitionStyle:{transform:'translateY(0)'},
@@ -192,7 +197,7 @@ export default class Homepage extends Component{
               // await this.setState({render:result})
               setTimeout(()=> {
                 toast(`Showing ${result.length} results`)
-              },5000)
+              },1000)
            
               
               var latlocal =localStorage.getItem("latitude")
@@ -308,7 +313,7 @@ export default class Homepage extends Component{
 
 
         return (
-            <div style={{height:'100vh',overflow:'scroll'}}>
+            <div >
                 <ToastContainer></ToastContainer>
               {(this.state.showcards)?
               <div className="show" id="cardContainer" style={{background: '#FFFFFF',width:'100vw'}}>
@@ -500,7 +505,7 @@ export default class Homepage extends Component{
               :
               <div className="homepage">
               
-                <div className="lt">
+                <div className="lt"  style={{background:'black'}}>
                   <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                             <div style={{height: '10vh'}} />
