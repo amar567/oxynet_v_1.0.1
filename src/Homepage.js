@@ -28,7 +28,7 @@ var states =[
 {name: "Madhya Pradesh", data: 1094},
 {name: "Maharashtra", data: 20},
 {name: "Puducherry", data: 20},
-{name: "Rajasthan", data: 2262},
+{name: "Rajasthan", data: 756},
 {name: "Uttarakhand", data: 167},
 {name: "Uttar Pradesh", data: 32},
 {name: "West Bengal", data: 110}]
