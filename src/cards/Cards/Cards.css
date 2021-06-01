@@ -277,6 +277,8 @@ a{
 
     .hospital-name-content-lg{
         max-width: 75%;
+        height: 60px;
+        overflow: scroll;
     }
     .card-whole-back{
         height: 400px;
