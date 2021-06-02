@@ -642,6 +642,7 @@ export default class Homepage extends Component{
                         </div>
                         <form>
                         <div className="mapbox-class"> <Mapbox></Mapbox> </div> 
+                  
                           <div style={{padding: '1vh 6vw' , display: 'flex', justifyContent: 'space-evenly'}}>
                             <select className="SBOptions" style={{borderRadius: '5px', cursor:'pointer', width: '22vw',background:'#FFFFFF'}} name="stateName" value={this.state.stateName} onChange={this.handleState} >
                                 <option value="" disabled >Select state</option>

@@ -85,7 +85,7 @@ function Mapbox() {
       {...viewport} 
       onViewportChange={(newview) => setViewport(newview)}
       mapboxApiAccessToken={"pk.eyJ1IjoiY2UxOWIwMzAiLCJhIjoiY2twNDA0a28wMDlqaTMybHJzcjJsODV5NCJ9.TqYUNaeCPJgguJgZUBM5_g"}
-      mapStyle="mapbox://styles/mapbox/dark-v9"
+   
     
       >
 
