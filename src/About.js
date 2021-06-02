@@ -60,11 +60,6 @@ export default class Homepage extends Component{
                                 ABOUT US
                               </font>
                             </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                OUR TEAM
-                              </font>
-                            </div>
                             <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                               <font style={{fontSize: '4vh'}}>
                                 API
@@ -277,7 +272,6 @@ export default class Homepage extends Component{
                         <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
-                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} > API </font>
                         </div>
                     </div>
