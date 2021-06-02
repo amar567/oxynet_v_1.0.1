@@ -19,9 +19,7 @@ const navStyle = {
 
 function Mapbox() {
 
-  const location = useGeolocation()
-  localStorage.setItem("defaultlatitude",location.coordinates.lat)
-  localStorage.setItem("defaultlongitude",location.coordinates.lng)
+
   const [showMap , handleMap ] = useState(false)
   const [firstTime , handleFirst] =useState(false)
 
@@ -37,8 +35,8 @@ function Mapbox() {
  }
 
   const [viewport, setViewport] = useState({
-    latitude:  location.loaded ? location.coordinates.lat  : 19.477733720546357,
-    longitude:   location.loaded ? location.coordinates.lng : 82.97313918863661,
+    latitude:   19.477733720546357,
+    longitude:   82.97313918863661,
     zoom: 3,
     bearing: 0,
     pitch: 0,
@@ -47,8 +45,8 @@ function Mapbox() {
   });
 
   const [marker, setMarker] = useState({
-    latitude: location.loaded ? location.coordinates.lat  : 19.477733720546357,
-    longitude:  location.loaded ? location.coordinates.lng : 82.97313918863661, 
+    latitude: 19.477733720546357,
+    longitude:  82.97313918863661, 
   });
 
 
