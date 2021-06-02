@@ -277,15 +277,13 @@ a{
 
 @media(max-width:450px){
     .card-whole{
-        height: 360px;
+        height: 370px;
     }
 
     .btn-inside{
         width: 100%;
         font-size: 12px;
     }
-
-    
 
     .hospital-name-content{
         max-width: 50%;
@@ -300,7 +298,7 @@ a{
         overflow: scroll;
     }
     .card-whole-back{
-        height: 360px;
+        height: 370px;
     }
     .bed-info{
         height:25%;
