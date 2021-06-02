@@ -278,6 +278,9 @@ export default class Homepage extends Component{
       if(val === 'normalBedAvailable'){
         data.sort((a, b) => (parseInt(a.normalBedAvailable) > parseInt(b.normalBedAvailable)) ? -1 : 1)
       }
+      if(val === 'distance'){
+        data.sort((a, b) => ((a.distance) < (b.distance)) ? -1 : 1)
+      }
       await this.setState({render:[]})
       await this.setState({render:data})
       // let filterBydistrict = await this.state.data.filter(
@@ -373,6 +376,7 @@ export default class Homepage extends Component{
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen Beds Available</option>
                                 <option value="normalBedAvailable" >Normal Beds Available</option>
+                                <option value="distance" >Distance</option>
                             </select>
                           </div>
                       </div>
@@ -448,6 +452,7 @@ export default class Homepage extends Component{
                       </div>
                       <div>
                       <form  style={{display: 'flex', justifyContent: 'space-evenly'}} onSubmit={this.submit}>
+                   
                         <div>
                             <button type="button" className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"} id="hamburger" style={{outline: 0, transform: 'scale(0.7)', position: 'relative', padding: '4vh 1vh 0 3vh', zIndex: 11}} onClick={()=>{this.menu();this.toggle();}}>
                               <div className="hamburger-box">
@@ -455,6 +460,7 @@ export default class Homepage extends Component{
                               </div>
                             </button>
                         </div>
+                  
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px',cursor:'pointer',  width: '22vw'}} onChange={this.handleState}>
                               <option value="" disabled >Select state</option>
@@ -478,6 +484,7 @@ export default class Homepage extends Component{
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen beds available</option>
                                 <option value="normalBedAvailable" >Normal beds available</option>
+                                <option value="distance" >Distance</option>
                             </select>
                             {/* <select className="select_item" style={{borderRadius: '5px', width: '22vw'}}>
                               <option value>Hospitals</option>
@@ -503,7 +510,7 @@ export default class Homepage extends Component{
                   </div>
               </div>
               :
-              <div className="homepage">
+              <div className="homepage" style={{height:'100vh',overflow:'hidden'}}>
               
                 <div className="lt"  style={{background:'black'}}>
                   <div className={ (this.state.hidden)? "hidden" : null}>
@@ -561,8 +568,8 @@ export default class Homepage extends Component{
                     </div>
                     <img className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
                     <div style={{height: '50vh', width: '50vh', borderRadius: '10px', backgroundColor: 'white', display: 'block', margin: 'auto'}}>
-                      <form>
-                        <div style={{height: '6vh'}} />
+                      <form >
+                        <div style={{height: '6vh',position:'absolute',bottom:'5vh',paddingBottom:'10px'}} />
                         {/* <select className="clear" name="Item" style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} >
                           <option value>Hospitals</option>
                         </select> */}
@@ -584,8 +591,8 @@ export default class Homepage extends Component{
                         </select>
                         <div style={{height: '7vh'}} />
                         <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
-                        {/* <div style={{height:'5vh'}}></div>
-                        <Mapbox></Mapbox> */}
+                        {/* <div style={{height:'5vh'}}></div> */}
+                     <div className="mapbox-class">   <Mapbox></Mapbox></div>
                       </form>
                     </div>
                     <div style={{height: '5vh'}} />
@@ -634,7 +641,7 @@ export default class Homepage extends Component{
                           </font>
                         </div>
                         <form>
-                         {/* <Mapbox></Mapbox>  */}
+                        <div className="mapbox-class"> <Mapbox></Mapbox> </div> 
                           <div style={{padding: '1vh 6vw' , display: 'flex', justifyContent: 'space-evenly'}}>
                             <select className="SBOptions" style={{borderRadius: '5px', cursor:'pointer', width: '22vw',background:'#FFFFFF'}} name="stateName" value={this.state.stateName} onChange={this.handleState} >
                                 <option value="" disabled >Select state</option>

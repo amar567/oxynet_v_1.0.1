@@ -29,6 +29,7 @@
 
   .submitBtn_d{
     cursor: pointer;
+    width: 4vw;
   }
 
 .Toastify_toast-body{
@@ -54,6 +55,8 @@
     margin-left: 360px;
    
   }
+
+ 
 
   @media(max-width:1480px){
     .logo-covinet{
@@ -89,4 +92,18 @@
   cursor: pointer;
 }
 
+}
+
+@media(max-width:800px){
+  .submitBtn_d{
+    position: relative;
+    bottom: 25px;
+
+  }
+
+  .submitBtn{
+    position: relative;
+    bottom: 25px;
+
+  }
 }

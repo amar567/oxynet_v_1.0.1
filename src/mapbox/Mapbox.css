@@ -25,12 +25,12 @@
 }
  
 .mapbox-map{
-  z-index: 1000000000000000000;
+  z-index: 100000;
   width: 100vw;
   height: 100vh;
   position: absolute;
-  top:0;
   left: 0;
+  top:0;
   cursor: pointer;
 } 
 
@@ -49,8 +49,27 @@
   cursor: pointer;
 }
 
-/* @media (max-width:800px) {
+.submitBtn_d{
+  width: 4vw;
+}
+
+.overlays{
+  width: 100vw !important;
+  height: 100vh !important;
+
+}
+
+
+
+ @media (max-width:800px) {
   .submitBtn_d{
     padding: 1.8vh 15vh;
+   
   }
-} */
+/* 
+  .mapbox-map{
+    position: absolute;
+    left: 0;
+    top:12vh;
+  } */
+} 

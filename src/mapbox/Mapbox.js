@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useCallback, useEffect } from 'react';
 import {render} from 'react-dom';
-import ReactMapGL, {Marker, NavigationControl} from 'react-map-gl';
+import ReactMapGL, {Marker, GeolocateControl} from 'react-map-gl';
 import './Mapbox.css'
 import ControlPanel from './control-panel';
 import Pin from './pin';
@@ -20,10 +20,15 @@ const navStyle = {
 function Mapbox() {
 
   const location = useGeolocation()
+  localStorage.setItem("defaultlatitude",location.coordinates.lat)
+  localStorage.setItem("defaultlongitude",location.coordinates.lng)
   const [showMap , handleMap ] = useState(false)
+  const [firstTime , handleFirst] =useState(false)
 
  const handleMapDisplay = () => {
    handleMap(!showMap)
+   handleFirst(true)
+  
  }
  const handleMapDisplaydone = () => {
    handleMap(!showMap)
@@ -32,20 +37,18 @@ function Mapbox() {
  }
 
   const [viewport, setViewport] = useState({
-    latitude:  19.477733720546357 ,
-    longitude:   82.97313918863661 ,
-    zoom: 3.5,
+    latitude:  location.loaded ? location.coordinates.lat  : 19.477733720546357,
+    longitude:   location.loaded ? location.coordinates.lng : 82.97313918863661,
+    zoom: 3,
     bearing: 0,
     pitch: 0,
     height:'100vh',
-    width:'100vw'
+    width:'100vw '
   });
 
   const [marker, setMarker] = useState({
-    latitude:19.477733720546357 ,
-    longitude:82.97313918863661 ,
-
-
+    latitude: location.loaded ? location.coordinates.lat  : 19.477733720546357,
+    longitude:  location.loaded ? location.coordinates.lng : 82.97313918863661, 
   });
 
 
@@ -69,13 +72,12 @@ function Mapbox() {
   }, []);
   return (
     <React.Fragment>
+    
 
 <div style={{padding: '1vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
-                            <input className="SBOptions gt" name="stateName" placeholder="Latitude" value= {viewport.latitude}>
-                            
+                            <input className="SBOptions gt" name="stateName" style={{borderRadius: '5px', width: '22vw'}} placeholder="Latitude" value= {firstTime ? marker.latitude : 'Latitude'} >
                             </input>
-                            <input  className="SBOptions gt"   value={viewport.longitude} style={{borderRadius: '5px', width: '22vw'}} placeholder="Longitude" name="district" >
-                          
+                            <input  className="SBOptions gt"   value=   {firstTime ? marker.longitude : 'Longitude'} style={{borderRadius: '5px', width: '22vw'}} placeholder="Longitude" name="district" >
                             </input>
                             <button className="submitBtn_d" type="button" name="button" onClick={handleMapDisplay}> Map </button>
                           </div>
@@ -85,7 +87,7 @@ function Mapbox() {
       {...viewport} 
       onViewportChange={(newview) => setViewport(newview)}
       mapboxApiAccessToken={"pk.eyJ1IjoiY2UxOWIwMzAiLCJhIjoiY2twNDA0a28wMDlqaTMybHJzcjJsODV5NCJ9.TqYUNaeCPJgguJgZUBM5_g"}
-      mapStyle="mapbox://styles/ce19b030/ckp42nasm0gxl18ojtkjnlsoz"
+      mapStyle="mapbox://styles/mapbox/dark-v9"
     
       >
 
@@ -101,13 +103,14 @@ function Mapbox() {
         >
           <Pin size={20} />
         </Marker>
-{/* 
-        <div className="nav" style={navStyle}>
-          <NavigationControl />
-        </div> */}
+
         </ReactMapGL>
-        <div className="btm-whole"><div className="btn-done" onClick={handleMapDisplaydone}>Done</div></div> 
+        
+      
         <div className="btn-cancel" onClick={handleMapDisplay}><Cancel></Cancel></div> 
+  
+
+        <div className="btm-whole"><div className="btn-done" onClick={handleMapDisplaydone}>Done</div> </div>
         </div>:null}
 
     </React.Fragment>
