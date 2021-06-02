@@ -92,11 +92,11 @@ export default class Cards extends Component {
                         </div>
 
                     </div>
-                    <div className="rd-whole">
+                    {/* <div className="rd-whole">
                         <div className="rd-icon"><Distancesvg></Distancesvg></div>
                     <div className="rd-distance">Currently unavailable</div>
-                    {/* <div className="rd-distance">{this.state.data.distance==="Not Available" ? "Not Available" : `Within ${this.state.data.distance} Km radius`}</div>*/}
-                    </div> 
+                    <div className="rd-distance">{this.state.data.distance==="Not Available" ? "Not Available" : `Within ${this.state.data.distance} Km radius`}</div>
+                    </div>  */}
 
                     <div className="btn-tab">
                         <a rel="noreferrer" target='_blank' style={{width:'40%'}} href={this.state.data.googleSearch}>
@@ -126,10 +126,12 @@ export default class Cards extends Component {
                         <div className="heading-box">Available<br/> Oxygen Beds</div>
                     </div>
                 </div>
-                <div className="last-updated">
-                {/* Last Updated : 4:30 Pm I 14-05-2021 */}
-                Last Updated : {this.state.data.lastUpdatedTime} | {this.state.data.lastUpdatedDate}
-                </div>
+               {this.state.data.lastUpdatedDate.length > 4 ? <div className="last-updated">
+              Last Updated : {this.state.data.lastUpdatedDate} | {this.state.data.lastUpdatedTime}
+                </div> :
+                <div className="server-updated">
+                   <p>    Last Server Update : {this.state.data.ServerUpdatedate} | {this.state.data.ServerUpdatetime}</p>
+                    </div>}
 
             </div>
             <div className="card-whole-back">

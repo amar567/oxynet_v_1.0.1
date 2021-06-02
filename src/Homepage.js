@@ -18,7 +18,7 @@ import axios from "axios";
 // const states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttarakhand','Uttar Pradesh','West Bengal']
 
 var states =[  
-  {name:'Andhra Pradesh',data:575},
+  {name:'Andhra Pradesh',data:568},
 {name: "Chhattisgarh", data: 477},
 {name: "Delhi", data: 52},
 {name: "Goa", data: 29},
@@ -26,7 +26,7 @@ var states =[
 {name: "Haryana", data: 488},
 {name: "Jharkhand", data: 44},
 {name: "Madhya Pradesh", data: 1094},
-{name: "Maharashtra", data: 20},
+{name: "Maharashtra", data: 159},
 {name: "Puducherry", data: 20},
 {name: "Rajasthan", data: 758},
 {name: "Uttarakhand", data: 167},
@@ -335,11 +335,6 @@ export default class Homepage extends Component{
                           ABOUT US
                         </font>
                       </div>
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                        <font style={{fontSize: '4vh'}}>
-                          OUR TEAM
-                        </font>
-                      </div>
                       <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                         <font style={{fontSize: '4vh'}}>
                           API
@@ -428,11 +423,6 @@ export default class Homepage extends Component{
                           <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
                             <font style={{fontSize: '4vh'}}>
                               ABOUT US
-                            </font>
-                          </div>
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                            <font style={{fontSize: '4vh'}}>
-                              OUR TEAM
                             </font>
                           </div>
                           <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
@@ -526,11 +516,6 @@ export default class Homepage extends Component{
                                 ABOUT US
                               </font>
                             </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                OUR TEAM
-                              </font>
-                            </div>
                             <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                               <font style={{fontSize: '4vh'}}>
                                 API
@@ -610,7 +595,6 @@ export default class Homepage extends Component{
                     <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} > API </font>
                     </div>
                   </div>

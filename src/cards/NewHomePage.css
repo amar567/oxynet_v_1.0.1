@@ -92,3 +92,10 @@
         padding-top: 10px;
     }
 }
+
+@media (max-width:500px){
+    .inside-col-card{
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
