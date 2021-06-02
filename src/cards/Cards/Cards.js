@@ -94,9 +94,9 @@ export default class Cards extends Component {
                     </div>
                     <div className="rd-whole">
                         <div className="rd-icon"><Distancesvg></Distancesvg></div>
-                    {/* <div className="rd-distance">Currently unavailable</div> */}
-                    <div className="rd-distance">{this.state.data.distance==="Not Available" ? "Not Available" : `Within ${this.state.data.distance} Km radius`}</div>
-                    </div>
+                    <div className="rd-distance">Currently unavailable</div>
+                    {/* <div className="rd-distance">{this.state.data.distance==="Not Available" ? "Not Available" : `Within ${this.state.data.distance} Km radius`}</div>*/}
+                    </div> 
 
                     <div className="btn-tab">
                         <a rel="noreferrer" target='_blank' style={{width:'40%'}} href={this.state.data.googleSearch}>

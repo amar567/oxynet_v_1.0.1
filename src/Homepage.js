@@ -28,7 +28,7 @@ var states =[
 {name: "Madhya Pradesh", data: 1094},
 {name: "Maharashtra", data: 20},
 {name: "Puducherry", data: 20},
-{name: "Rajasthan", data: 756},
+{name: "Rajasthan", data: 758},
 {name: "Uttarakhand", data: 167},
 {name: "Uttar Pradesh", data: 32},
 {name: "West Bengal", data: 110}]
@@ -376,7 +376,7 @@ export default class Homepage extends Component{
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen Beds Available</option>
                                 <option value="normalBedAvailable" >Normal Beds Available</option>
-                                <option value="distance" >Distance</option>
+                                {/* <option value="distance" >Distance</option> */}
                             </select>
                           </div>
                       </div>
@@ -484,7 +484,7 @@ export default class Homepage extends Component{
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen beds available</option>
                                 <option value="normalBedAvailable" >Normal beds available</option>
-                                <option value="distance" >Distance</option>
+                                {/* <option value="distance" >Distance</option> */}
                             </select>
                             {/* <select className="select_item" style={{borderRadius: '5px', width: '22vw'}}>
                               <option value>Hospitals</option>
@@ -592,7 +592,7 @@ export default class Homepage extends Component{
                         <div style={{height: '7vh'}} />
                         <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
                         {/* <div style={{height:'5vh'}}></div> */}
-                     <div className="mapbox-class">   <Mapbox></Mapbox></div>
+                     {/* <div className="mapbox-class">   <Mapbox></Mapbox></div> */}
                       </form>
                     </div>
                     <div style={{height: '5vh'}} />
@@ -641,7 +641,7 @@ export default class Homepage extends Component{
                           </font>
                         </div>
                         <form>
-                        <div className="mapbox-class"> <Mapbox></Mapbox> </div> 
+                        {/* <div className="mapbox-class"> <Mapbox></Mapbox> </div>  */}
                   
                           <div style={{padding: '1vh 6vw' , display: 'flex', justifyContent: 'space-evenly'}}>
                             <select className="SBOptions" style={{borderRadius: '5px', cursor:'pointer', width: '22vw',background:'#FFFFFF'}} name="stateName" value={this.state.stateName} onChange={this.handleState} >

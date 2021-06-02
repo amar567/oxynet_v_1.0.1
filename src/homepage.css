@@ -94,16 +94,3 @@
 
 }
 
-@media(max-width:800px){
-  .submitBtn_d{
-    position: relative;
-    bottom: 25px;
-
-  }
-
-  .submitBtn{
-    position: relative;
-    bottom: 25px;
-
-  }
-}
