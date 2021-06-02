@@ -84,8 +84,8 @@ function Mapbox() {
       <ReactMapGL 
       {...viewport} 
       onViewportChange={(newview) => setViewport(newview)}
-      mapboxApiAccessToken={"pk.eyJ1IjoiY2UxOWIwMzAiLCJhIjoiY2twNDA0a28wMDlqaTMybHJzcjJsODV5NCJ9.TqYUNaeCPJgguJgZUBM5_g"}
-   
+      mapboxApiAccessToken={"pk.eyJ1IjoiY2UxOWIwMzAiLCJhIjoiY2twZjR1OXhyMDIxYjJ2bXM0MHR6dzBoaiJ9.D44hgFy9P2lg-cxkbfFQIA"}
+      mapStyle="mapbox://styles/mapbox/dark-v9"
     
       >
 
