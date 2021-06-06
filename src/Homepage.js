@@ -502,12 +502,12 @@ export default class Homepage extends Component{
               :
               <div className="homepage" style={{minHeight:'100vh'}}>
               
-                <div className="lt"  style={{minHeight:'100vh',overflow:"hidden"}}>
+                <div className="lt"  style={{minHeight:'100vh'}}>
                 {
                   (this.state.popUp)?
-                  <div style={{height :'100vh',padding :'20vh 0'}}>
+                  <div style={{height :'100vh',padding :'20vh 5vw',position:"fixed",background:"rgba(0,0,0,0.8)"}}>
                     <div style={{background:'white', height : '60vh',borderRadius:'20px',width :'90vw',display:'block',margin:'auto' ,justifyContent: "center"}}>
-                      <div style={{padding:'3vh'}}>
+                      <div style={{padding:'3vh',height:'50vh',overflow:"scroll"}}>
                         <b>Disclaimer :</b><br/>
                         The website is under active development. The content on this website comes from Govt. websites and we do not fact check any of the content and thereby hold no responsibility for content that is incorrect. Please use at your discretion, and contact the hospital before reaching there. Also, please note that this is a student initiative and IIT Tirupati is not responsible for any issues whatsoever!
                       </div>
@@ -601,7 +601,7 @@ export default class Homepage extends Component{
                     </div>
                   </div>                  
                 </div>
-                <div className="gt" style={{minHeight : '100vh'}}>
+                <div className="gt" style={{minHeight : '100vh',overflow:"scroll"}}>
                   <div style={{height: '2vh'}} />
                   <div className="navbar c33-67" style={{borderRadius: 0}}>
                     <div className="logo-class" style={{color: 'white', fontWeight: 200, padding: '0 12vw'},
