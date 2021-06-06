@@ -27,6 +27,7 @@
 
   .submitBtn_d{
     cursor: pointer;
+    width: 4vw;
   }
 
 .Toastify_toast-body{
@@ -37,6 +38,13 @@
   width: 100vw;
 }
 
+.fixedBar{
+  width: 100vw;
+  height: 10vh;
+  background-color: #7B60F7
+}
+
+
   .logo-covinet{
     letter-spacing: 3px;
     font-weight: 300;
@@ -45,6 +53,8 @@
     margin-left: 360px;
    
   }
+
+ 
 
   @media(max-width:1480px){
     .logo-covinet{
@@ -81,3 +91,4 @@
 }
 
 }
+

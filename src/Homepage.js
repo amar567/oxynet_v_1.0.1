@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React , { Component } from "react";
 import './main.css'
 import './hamburgers.css'
 import img1 from './img1.png'
@@ -18,8 +18,7 @@ import axios from "axios";
 // const states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttarakhand','Uttar Pradesh','West Bengal']
 
 var states =[  
-  {name:'Andhra Pradesh',data:4190},
-{name: "Chandigarh", data: 0},
+  {name:'Andhra Pradesh',data:568},
 {name: "Chhattisgarh", data: 477},
 {name: "Delhi", data: 52},
 {name: "Goa", data: 29},
@@ -27,10 +26,9 @@ var states =[
 {name: "Haryana", data: 488},
 {name: "Jharkhand", data: 44},
 {name: "Madhya Pradesh", data: 1094},
-{name: "Maharashtra", data: undefined},
+{name: "Maharashtra", data: 159},
 {name: "Puducherry", data: 20},
-{name: "Rajasthan", data: 2262},
-{name: "Tamil Nadu", data: 20},
+{name: "Rajasthan", data: 758},
 {name: "Uttarakhand", data: 167},
 {name: "Uttar Pradesh", data: 32},
 {name: "West Bengal", data: 110}]
@@ -39,18 +37,17 @@ const SD = {
     "states":[
       {"state":"Andhra Pradesh","districts":["Anantapur","Chittoor","East Godavari","Guntur","Krishna","Kurnool","Nellore","Prakasam","Srikakulam","Visakhapatnam","Vizianagaram","West Godavari","YSR Kadapa"]},
       {"state":"Chandigarh","districts":["Chandigarh"]},
-      {"state":"Chhattisgarh","districts":["Balod","Baloda Bazar","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dantewada (South Bastar)","Dhamtari","Durg","Gariyaband","Janjgir-Champa","Jashpur","Kabirdham (Kawardha)","Kanker (North Bastar)","Kondagaon","Korba","Korea (Koriya)","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur  ","Surguja"]},
+      {"state":"Chhattisgarh","districts":["Balod","Balrampur","Bastar","Bemetara","Bijapur","Bilaspur","Dhamtari","Durg","Gariyaband","Janjgir-Champa","Jashpur","Kondagaon","Korba","Mahasamund","Mungeli","Narayanpur","Raigarh","Raipur","Rajnandgaon","Sukma","Surajpur  ","Surguja"]},
       {"state":"Delhi","districts":[]},
       {"state":"Goa","districts":[]},
       {"state":"Gujarat","districts":["Ahmedabad"]},
-      {"state":"Haryana","districts":["Ambala","Bhiwani","Charkhi Dadri","Faridabad","Fatehabad","Gurgaon","Hisar","Jhajjar","Jind","Kaithal","Karnal","Kurukshetra","Mahendragarh","Mewat","Palwal","Panchkula","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"]},
+      {"state":"Haryana","districts":["Ambala","Bhiwani","Faridabad","Fatehabad","Hisar","Jind","Karnal","Mahendragarh","Palwal","Panipat","Rewari","Rohtak","Sirsa","Sonipat","Yamunanagar"]},
       {"state":"Jharkhand","districts":["Ranchi"]},
       {"state":"Madhya Pradesh","districts":["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna","Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"]},{"state":"Maharashtra","districts":["Pune","Thane"]},
       {"state":"Puducherry","districts":["Karaikal","Mahe","Pondicherry","Yanam"]},
       {"state":"Rajasthan","districts":["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Sri Ganganagar","Tonk","Udaipur"]},{"state":"Sikkim","districts":["East Sikkim","North Sikkim","South Sikkim","West Sikkim"]},
-      {"state":"Tamil Nadu","districts":["Ariyalur","Chennai","Coimbatore","Cuddalore","Dharmapuri","Dindigul","Erode","Kanchipuram","Kanyakumari","Karur","Krishnagiri","Madurai","Nagapattinam","Namakkal","Nilgiris","Perambalur","Pudukkottai","Ramanathapuram","Salem","Sivaganga","Thanjavur","Theni","Thoothukudi (Tuticorin)","Tiruchirappalli","Tirunelveli","Tiruppur","Tiruvallur","Tiruvannamalai","Tiruvarur","Vellore","Viluppuram","Virudhunagar"]},
-    {"state":"Uttarakhand","districts":["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pauri Garhwal","Pithoragarh","Rudraprayag","Tehri Garhwal","Udham Singh Nagar","Uttarkashi"]},
-      {"state":"Uttar Pradesh","districts":["Agra","Aligarh","Allahabad","Ambedkar Nagar","Amethi (Chatrapati Sahuji Mahraj Nagar)","Amroha (J.P. Nagar)","Auraiya","Azamgarh","Baghpat","Bahraich","Ballia","Balrampur","Banda","Barabanki","Bareilly","Basti","Bhadohi","Bijnor","Budaun","Bulandshahr","Chandauli","Chitrakoot","Deoria","Etah","Etawah","Faizabad","Farrukhabad","Fatehpur","Firozabad","Gautam Buddha Nagar","Ghaziabad","Ghazipur","Gonda","Gorakhpur","Hamirpur","Hapur (Panchsheel Nagar)","Hardoi","Hathras","Jalaun","Jaunpur","Jhansi","Kannauj","Kanpur Dehat","Kanpur Nagar","Kanshiram Nagar (Kasganj)","Kaushambi","Kushinagar (Padrauna)","Lakhimpur - Kheri","Lalitpur","Lucknow","Maharajganj","Mahoba","Mainpuri","Mathura","Mau","Meerut","Mirzapur","Moradabad","Muzaffarnagar","Pilibhit","Pratapgarh","RaeBareli","Rampur","Saharanpur","Sambhal (Bhim Nagar)","Sant Kabir Nagar","Shahjahanpur","Shamali (Prabuddh Nagar)","Shravasti","Siddharth Nagar","Sitapur","Sonbhadra","Sultanpur","Unnao","Varanasi"]},
+    {"state":"Uttarakhand","districts":["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pithoragarh","Rudraprayag","Tehri Garhwal","Uttarkashi"]},
+      {"state":"Uttar Pradesh","districts":["Azamgarh","Bahraich","Bhadohi","Ghaziabad","Ghazipur","Gorakhpur","Jhansi","Lucknow","Mainpuri","Rampur","Sultanpur","Varanasi"]},
       {"state":"West Bengal","districts":["Alipurduar","Bankura","Birbhum","Burdwan (Bardhaman)","Cooch Behar","Dakshin Dinajpur (South Dinajpur)","Darjeeling","Hooghly","Howrah","Jalpaiguri","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","Uttar 24 Pargana","Paschim Medinipur (West Medinipur)","Purba Medinipur (East Medinipur)","Purulia","Dakshin 24 Pargana","Uttar Dinajpur (North Dinajpur)"]}]
 }
 
@@ -68,6 +65,7 @@ export default class Homepage extends Component{
 
     constructor(props){
         super(props)
+        this.myRef = React.createRef()
 
         this.state = {
             sidebar: false,
@@ -82,7 +80,12 @@ export default class Homepage extends Component{
             data: [],
             searching:false,
             Item:'',
-            state:[]
+            state:[],
+            direction:'',
+            lastScrollPos:0,
+            transitionStyle:{},
+            transitionStyle2:{},
+            transitionStyle3:{},
         }
     }
 
@@ -97,6 +100,36 @@ export default class Homepage extends Component{
    
 
 
+    }
+
+    handletransition = (e) => {
+      if(e>this.state.lastScrollPos){
+       
+          this.setState({
+            direction:'down',
+            transitionStyle:{display:'none'},
+            transitionStyle2:{display:'none'},
+            transitionStyle3:{display:'none'},
+  
+          })
+    
+      }
+      else{
+        setTimeout(()=> {
+          
+        })
+        this.setState({
+          direction:'up',
+          transitionStyle:{transform:'translateY(0)'},
+          transitionStyle2:{transform:'translateY(0)'},
+          transitionStyle3:{transform:'translateY(0)'},
+        })
+      }
+
+      this.setState({
+        lastScrollPos:e
+      })
+   
     }
 
     handleDistrict = async(event) => {
@@ -144,12 +177,10 @@ export default class Homepage extends Component{
         this.setState({notfound:false})
         this.setState({Item:""})
         let val = event.target.value
-        console.log(val);
         await this.setState({stateName: val})
         await this.setState({render: []})
         await this.setState({district:'Reset district'})
         var districts = []
-        console.log(this.state.stateName);
         districts = dist(val)
         await this.setState({districts:districts})
         await this.setState({searching: true})
@@ -164,7 +195,10 @@ export default class Homepage extends Component{
               }).then((res) => res.json())
 
               // await this.setState({render:result})
-              toast(`Showing ${result.length} results`)
+              setTimeout(()=> {
+                toast(`Showing ${result.length} results`)
+              },1000)
+           
               
               var latlocal =localStorage.getItem("latitude")
               var longlocal = localStorage.getItem("longitude")
@@ -244,6 +278,9 @@ export default class Homepage extends Component{
       if(val === 'normalBedAvailable'){
         data.sort((a, b) => (parseInt(a.normalBedAvailable) > parseInt(b.normalBedAvailable)) ? -1 : 1)
       }
+      if(val === 'distance'){
+        data.sort((a, b) => ((a.distance) < (b.distance)) ? -1 : 1)
+      }
       await this.setState({render:[]})
       await this.setState({render:data})
       // let filterBydistrict = await this.state.data.filter(
@@ -257,6 +294,7 @@ export default class Homepage extends Component{
       // }
       console.log(this.state.render)
     }
+
 
     render(){
       
@@ -273,13 +311,17 @@ export default class Homepage extends Component{
 
 // const newstate=states
 //       console.log("states",states)
+
+
+
+
         return (
-            <div>
+            <div >
                 <ToastContainer></ToastContainer>
               {(this.state.showcards)?
               <div className="show" id="cardContainer" style={{background: '#FFFFFF',width:'100vw'}}>
                   <div className="lt">
-                    <div className="searchBar show" id="searchBar">
+                    <div className="searchBar show" id="searchBar" >
                     <div className={ (this.state.hidden)? "hidden" : null}>
                       <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                       <div style={{height: '10vh'}} />
@@ -291,11 +333,6 @@ export default class Homepage extends Component{
                       <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
                         <font style={{fontSize: '4vh'}}>
                           ABOUT US
-                        </font>
-                      </div>
-                      <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                        <font style={{fontSize: '4vh'}}>
-                          OUR TEAM
                         </font>
                       </div>
                       <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
@@ -315,7 +352,7 @@ export default class Homepage extends Component{
                       </div>
                     </div>
                     
-                      <div className="blu ">
+                      <div className="blu " style={this.state.transitionStyle}>
                       <div className="c50-50">
                           <div style={{display: 'flex'}}>
                             <div>
@@ -334,20 +371,21 @@ export default class Homepage extends Component{
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen Beds Available</option>
                                 <option value="normalBedAvailable" >Normal Beds Available</option>
+                                {/* <option value="distance" >Distance</option> */}
                             </select>
                           </div>
                       </div>
                       </div>
-                      <div className="white">
+                      <div className="white" style={this.state.transitionStyle2} >
                       <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
                           <div style={{display: 'block', margin: 'auto', padding: '2vh 0 0 0'}}>
-                            <select className="select clear" name="stateName" onChange={this.handleState} value={this.state.stateName}  style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}}>
+                            <select className="select clear" name="stateName" onChange={this.handleState} value={this.state.stateName}  style={{display: 'block', cursor:'pointer', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}}>
                                 <option value="" disabled >Select state</option>
                                {states.map((state,index) => (<option className="options" value={state.name} key={index} >{state.name} ~ {state.data} results</option>))}
                             </select>
                           </div>
                           <div style={{display: 'block', margin: 'auto', padding: '2vh 0 0 0'}}>
-                          <select  name="district" id="district" value={this.state.district}  className="select clear" style={{display: 'block', margin: 'auto', padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}} onChange={this.handleDistrict}>
+                          <select  name="district" id="district" value={this.state.district}  className="select clear" style={{display: 'block', margin: 'auto',cursor:'pointer',  padding: '1vh 4.5vh', borderRadius: 0, maxWidth:'45vw'}} onChange={this.handleDistrict}>
                                 {(!this.state.searching)?
                                   <option value="Select district"> Select district</option>
                                 :
@@ -366,14 +404,14 @@ export default class Homepage extends Component{
                       (this.state.notfound)?
                         <WorkingOnIt/>
                         :
-                        <div>
-                          <NewHomePage hospitalData={this.state.render} />
+                        <div  >
+                          <NewHomePage hospitalData={this.state.render} handleTransform={this.handletransition}/>
                         </div>                        
                     }
                   </div>
                   </div>
                   <div className="gt">
-                  <div className="fixedBar" style={{width: '100vw', height: '10vh', backgroundColor: '#7B60F7'}}>
+                  <div className="fixedBar" style={this.state.transitionStyle3}>
                       <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                         <div style={{height: '10vh'}} />
@@ -385,11 +423,6 @@ export default class Homepage extends Component{
                           <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
                             <font style={{fontSize: '4vh'}}>
                               ABOUT US
-                            </font>
-                          </div>
-                          <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                            <font style={{fontSize: '4vh'}}>
-                              OUR TEAM
                             </font>
                           </div>
                           <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
@@ -409,6 +442,7 @@ export default class Homepage extends Component{
                       </div>
                       <div>
                       <form  style={{display: 'flex', justifyContent: 'space-evenly'}} onSubmit={this.submit}>
+                   
                         <div>
                             <button type="button" className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"} id="hamburger" style={{outline: 0, transform: 'scale(0.7)', position: 'relative', padding: '4vh 1vh 0 3vh', zIndex: 11}} onClick={()=>{this.menu();this.toggle();}}>
                               <div className="hamburger-box">
@@ -416,15 +450,16 @@ export default class Homepage extends Component{
                               </div>
                             </button>
                         </div>
+                  
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
-                            <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px', width: '22vw'}} onChange={this.handleState}>
+                            <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px',cursor:'pointer',  width: '22vw'}} onChange={this.handleState}>
                               <option value="" disabled >Select state</option>
                                 {states.map((state,index) => (<option className="options" value={state.name} key={index} name={state.name}>{state.name} ~ {state.data} results</option>))}
                               </select>
                             {/* </select> */}
                         </div>
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
-                            <select className="select_item" style={{borderRadius: '5px', width: '22vw'}} value={this.state.district} onChange={this.handleDistrict} name="district">
+                            <select className="select_item" style={{borderRadius: '5px',cursor:'pointer',  width: '22vw'}} value={this.state.district} onChange={this.handleDistrict} name="district">
                                   {(!this.state.searching)?
                                     <option value="Select district"> Select district</option>
                                  
@@ -439,6 +474,7 @@ export default class Homepage extends Component{
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen beds available</option>
                                 <option value="normalBedAvailable" >Normal beds available</option>
+                                {/* <option value="distance" >Distance</option> */}
                             </select>
                             {/* <select className="select_item" style={{borderRadius: '5px', width: '22vw'}}>
                               <option value>Hospitals</option>
@@ -456,17 +492,17 @@ export default class Homepage extends Component{
                           <WorkingOnIt/>
                         </div>
                         :
-                        <div id="scrollBox"  style={{overflow:'scroll'}}>
-                          <div style={{height: '10vh'}} />
-                          <NewHomePage hospitalData={this.state.render} />
+                        <div id="scrollBox"  style={{height:'100vh',overflow:'scroll',width:'100vw'}}>
+                          <div style={{height: '10vh'}} style={this.state.transitionStyle3} />
+                          <NewHomePage hospitalData={this.state.render} handleTransform={this.handletransition} />
                         </div>
                     }
                   </div>
               </div>
               :
-              <div className="homepage">
+              <div className="homepage" style={{height:'100vh',overflow:'hidden'}}>
               
-                <div className="lt">
+                <div className="lt"  style={{background:'black'}}>
                   <div className={ (this.state.hidden)? "hidden" : null}>
                         <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
                             <div style={{height: '10vh'}} />
@@ -478,11 +514,6 @@ export default class Homepage extends Component{
                             <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
                               <font style={{fontSize: '4vh'}}>
                                 ABOUT US
-                              </font>
-                            </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                OUR TEAM
                               </font>
                             </div>
                             <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
@@ -522,18 +553,18 @@ export default class Homepage extends Component{
                     </div>
                     <img alt="" className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
                     <div style={{height: '50vh', width: '50vh', borderRadius: '10px', backgroundColor: 'white', display: 'block', margin: 'auto'}}>
-                      <form>
-                        <div style={{height: '6vh'}} />
+                      <form >
+                        <div style={{height: '6vh',position:'absolute',bottom:'5vh',paddingBottom:'10px'}} />
                         {/* <select className="clear" name="Item" style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} >
                           <option value>Hospitals</option>
                         </select> */}
                         <div style={{height: '5vh'}} />
-                        <select className="clear" name="stateName" value={this.state.stateName} onChange={this.handleState} style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}}>
+                        <select className="clear" name="stateName" value={this.state.stateName} onChange={this.handleState} style={{background: 'rgba(158, 158, 158, 0.17)',cursor:'pointer',  borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}}>
                                 <option value="" disabled >Select state</option>
                                 {states.map((state,index) => (<option className="options" key={index} value={state.name}name={state.name}>{state.name} ~ {state.data} results </option>))}
                         </select>
                         <div style={{height: '5vh'}} />
-                        <select  className="clear" value={this.state.district} style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} onChange={this.handleDistrict} name="district">
+                        <select  className="clear" value={this.state.district} style={{background: 'rgba(158, 158, 158, 0.17)', cursor:'pointer', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} onChange={this.handleDistrict} name="district">
                               {(!this.state.searching)?
                                 <option value="Select district"> Select district</option>
                               :
@@ -545,8 +576,8 @@ export default class Homepage extends Component{
                         </select>
                         <div style={{height: '7vh'}} />
                         <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
-                        {/* <div style={{height:'5vh'}}></div>
-                        <Mapbox></Mapbox> */}
+                        {/* <div style={{height:'5vh'}}></div> */}
+                     {/* <div className="mapbox-class">   <Mapbox></Mapbox></div> */}
                       </form>
                     </div>
                     <div style={{color:"white",fontSize:'1.5vh',padding : '3vh 10vw'}}>
@@ -566,7 +597,6 @@ export default class Homepage extends Component{
                     <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
-                      <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
                       <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} > API </font>
                     </div>
                   </div>
@@ -597,13 +627,14 @@ export default class Homepage extends Component{
                           </font>
                         </div>
                         <form>
-                         {/* <Mapbox></Mapbox>  */}
-                          <div style={{padding: '1vh 6vw', display: 'flex', justifyContent: 'space-evenly'}}>
-                            <select className="SBOptions" style={{borderRadius: '5px', width: '22vw',background:'#FFFFFF'}} name="stateName" value={this.state.stateName} onChange={this.handleState} >
+                        {/* <div className="mapbox-class"> <Mapbox></Mapbox> </div>  */}
+                  
+                          <div style={{padding: '1vh 6vw' , display: 'flex', justifyContent: 'space-evenly'}}>
+                            <select className="SBOptions" style={{borderRadius: '5px', cursor:'pointer', width: '22vw',background:'#FFFFFF'}} name="stateName" value={this.state.stateName} onChange={this.handleState} >
                                 <option value="" disabled >Select state</option>
                                 {states.map((state,index) => (<option className="options" key={index} value={state.name} name={state.name}>{state.name} ~ {state.data} results</option>))}
                             </select>
-                            <select  className="SBOptions" style={{borderRadius: '5px', width: '22vw',background:'#FFFFFF'}} onChange={this.handleDistrict} name="district" value={this.state.district}>
+                            <select  className="SBOptions" style={{borderRadius: '5px', cursor:'pointer',  width: '22vw',background:'#FFFFFF'}} onChange={this.handleDistrict} name="district" value={this.state.district}>
                               {(!this.state.searching)?
                                 <option value="Select district"> Select district</option>
                               :

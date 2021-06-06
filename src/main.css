@@ -193,6 +193,7 @@ select::-ms-expand {
     position: relative;
 }
 
+
 select.select_item{
     font-family: 'Montserrat';
     /* color: #FFFFFF; */

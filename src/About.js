@@ -6,6 +6,7 @@ import img2 from './img2.png'
 import iittp from './iittp.png'
 import risha from './rishalab.jpg'
 import './homepage.css'
+import Contactus from './Components/ContactUs/Contactus';
 
 
 const states = ['Andhra Pradesh','Arunachal Pradesh','Assam','Bihar','Chandigarh','Chhattisgarh','Dadra and Nagar Haveli','Daman and Diu','Delhi','Goa','Gujarat','Haryana','Himachal Pradesh','Jammu and Kashmir','Jharkhand','Karnataka','Kerala','Lakshadweep','Madhya Pradesh','Maharashtra','Manipur','Meghalaya','Mizoram','Nagaland','Odisha','Puducherry','Punjab','Rajasthan','Sikkim','Tamil Nadu','Telangana','Tripura','Uttarakhand','Uttar Pradesh','West Bengal']
@@ -59,11 +60,6 @@ export default class Homepage extends Component{
                                 ABOUT US
                               </font>
                             </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./team')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                OUR TEAM
-                              </font>
-                            </div>
                             <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
                               <font style={{fontSize: '4vh'}}>
                                 API
@@ -105,7 +101,7 @@ export default class Homepage extends Component{
                         ABOUT US
                       </div>
                       <div className="" style={{fontSize:'2.5vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
-                      We're a group of students from different institutes who have been observing the crippled condition of the nation in this time of the pandemic. We sincerely wish to help in saving lives. The situation around us is grim, and the Indian medical system is constantly under stress to bring the country out of this quagmire of suffering. Still, the relief efforts are falling short for a country of billions. Hence, we are doing our bit to help the community and beat COVID-19.
+                      We're a group of students from different institutes who have been observing the crippled condition of the nation in this time of the pandemic. We sincerely wish to help in saving lives. The situation around us is grim, and the Indian medical system is constantly under stress to bring the country out of this quagmire of suffering. Still, the relief efforts are falling short for a country of billions. Hence, we are doing our bit to help the community and beat COVID-19. All of our data is from goverment websites.
                       </div>
                       <div style={{height:'6vh'}} />
                       <div style={{display:'block',height:'180vh'}}>
@@ -253,6 +249,7 @@ export default class Homepage extends Component{
                         <div style={{height:'2vh'}} />
                         <div style={{fontSize:'3.5vh',color:'white',textAlign:'center'}}>
                           COVINET<font style={{fontSize:'4.5vh'}}>©</font>2021
+                          <div className="risha">RISHA LAB , IIT TIRUPATI</div>
                         </div>
                         <hr style={{color:'white',width:'60%'}} />
                     
@@ -265,7 +262,7 @@ export default class Homepage extends Component{
                     </div>
                   </div>
                 </div>
-                <div className="gt" style={{height:'212vh'}}>
+                <div className="gt" >
                   <div className="" style={{zIndex:'10'}}>
                     {/* <div style={{height: '2vh'}} /> */}
                     <div className="navbar c33-67" style={{borderRadius: 0, padding:"2vh 0",boxShadow:'0px -13px 20px 0px'}}>
@@ -275,7 +272,6 @@ export default class Homepage extends Component{
                         <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./')}} > HOME </font>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./about')}} >ABOUT US</font>
-                        <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('./team')}} >TEAM </font>
                         <font style={{cursor: 'pointer'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} > API </font>
                         </div>
                     </div>
@@ -305,7 +301,7 @@ export default class Homepage extends Component{
                             ABOUT US
                         </div>
                         <div className="" style={{fontSize:'4vh',lineHeight:'150%',color:'#FFFFFF',textAlign:'left',padding:'0 8vw',textAlign: 'justify'}}>
-                          We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of  pandemic. We all ardently wish to help and save lives.  The conditions around are severe and the Indian medical system is constantly trying to bring the country out of this swamp of trouble. Although it is not enough for a country of billions. So we are doing our  bit to help others and beat covid-19.
+                          We're a group of students from different Indian Institutes who have been observing the critical condition of the nation in this time of  pandemic. We all ardently wish to help and save lives.  The conditions around are severe and the Indian medical system is constantly trying to bring the country out of this swamp of trouble. Although it is not enough for a country of billions. So we are doing our  bit to help others and beat covid-19. All of our data is from goverment websites .
                         </div>
                         <div style={{height:'6vh'}}/>
                         <div style={{padding:'0 4vw',display:'flex',justifyContent:'space-evenly'}}>
@@ -447,10 +443,11 @@ export default class Homepage extends Component{
                           </div>
                         </div>
                   </div>
-                  <div className="" style={{background:'white', height:'38vh',zIndex:'15'}}/>
+         
+                  <div className="" style={{background:'white', height:'38vh',zIndex:'15' }}/>
                   <div style={{padding:'0 15vw'}}>
                     <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
-                      Covinet is a student-initiated project under the able guidance of Professor Sridhar Chimalakonda in association with Risha lab, IIT Tirupati.
+                      Covinet is a student-initiated project under the able guidance of notable Dr Sridhar Chimalakonda in association with RISHA LAB, IIT Tirupati.
                     </div>
                     <div>
                       <hr></hr>
@@ -464,6 +461,7 @@ export default class Homepage extends Component{
                   </div>
                 </div>
               </div>
+     
             </div>
           );
     }
