@@ -500,19 +500,19 @@ export default class Homepage extends Component{
                   </div>
               </div>
               :
-              <div className="homepage" style={{}}>
+              <div className="homepage" style={{minHeight:'100vh'}}>
               
-                <div className="lt"  style={{minHeight:'100vh'}}>
+                <div className="lt"  style={{minHeight:'100vh',overflow:"hidden"}}>
                 {
                   (this.state.popUp)?
-                  <div style={{height :'100vh'}}>
-                    <div style={{background:'white', height : '60vh',borderRadius:'20px',width :'90vw',display:'block',margin:'20vh auto',justifyContent: "center"}}>
+                  <div style={{height :'100vh',padding :'20vh 0'}}>
+                    <div style={{background:'white', height : '60vh',borderRadius:'20px',width :'90vw',display:'block',margin:'auto' ,justifyContent: "center"}}>
                       <div style={{padding:'3vh'}}>
                         <b>Disclaimer :</b><br/>
                         The website is under active development. The content on this website comes from Govt. websites and we do not fact check any of the content and thereby hold no responsibility for content that is incorrect. Please use at your discretion, and contact the hospital before reaching there. Also, please note that this is a student initiative and IIT Tirupati is not responsible for any issues whatsoever!
                       </div>
                       <div style={{width:'100%',textAlign : "center"}}>
-                        <button onClick={this.desclaimerHandler} style={{color: 'white',background: '#6748F7',borderRadius: '5px',display: 'block',margin: 'auto',padding: '1.8vh 12vh',border: '0',textAlign: 'center'}}>OK</button>
+                        <button onClick={this.desclaimerHandler} style={{position:'relative',bottom: '0',color: 'white',background: '#6748F7',borderRadius: '5px',display: 'block',margin: 'auto',padding: '1.8vh 12vh',border: '0',textAlign: 'center'}}>OK</button>
                       </div>
                     </div>
                   </div>
