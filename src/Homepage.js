@@ -308,8 +308,8 @@ export default class Homepage extends Component{
                           
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
-                            <img src={iittp} style={{width:'150px',display:'block',margin:'auto',height:'100px'}}></img>
-                              <img src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px',height:'100px'}}></img>
+                            <img alt="" src={iittp} style={{width:'150px',display:'block',margin:'auto'}}></img>
+                              <img alt="" src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px'}}></img>
                       
                             </div>
                       </div>
@@ -402,8 +402,8 @@ export default class Homepage extends Component{
                            
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center",display:'flex',justifyContent:'center',alignItems:'center'}}>
-                              <img src={iittp} style={{width:'150px',display:'block',margin:'auto',height:'100px'}}></img>
-                              <img src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px',height:'100px'}}></img>
+                              <img alt="" src={iittp} style={{width:'150px',display:'block',margin:'auto'}}></img>
+                              <img alt="" src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px'}}></img>
                             </div>
                         </div>
                       </div>
@@ -495,8 +495,8 @@ export default class Homepage extends Component{
                             
                             </div>
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
-                              <img src={iittp} style={{width:'150px',display:'block',margin:'auto',height:'100px'}}></img>
-                              <img src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px',height:'100px'}}></img>
+                              <img alt="" src={iittp} style={{width:'150px',display:'block',margin:'auto'}}></img>
+                              <img alt="" src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px'}}></img>
                             </div>
                         </div>
                     </div>
@@ -520,7 +520,7 @@ export default class Homepage extends Component{
                         <div style={{height: '2vh'}} />
                       </div>
                     </div>
-                    <img className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
+                    <img alt="" className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
                     <div style={{height: '50vh', width: '50vh', borderRadius: '10px', backgroundColor: 'white', display: 'block', margin: 'auto'}}>
                       <form>
                         <div style={{height: '6vh'}} />
@@ -549,16 +549,18 @@ export default class Homepage extends Component{
                         <Mapbox></Mapbox> */}
                       </form>
                     </div>
-                    <div style={{height: '5vh'}} />
+                    <div style={{color:"white",fontSize:'1.5vh',padding : '3vh 10vw'}}>
+                        Disclaimer : The website is under active development. The content on this website comes from Govt. websites and we do not fact check any of the content and thereby hold no responsibility for content that is incorrect. Please use at your discretion, and contact the hospital before reaching there. Also, please note that this is a student initiative and IIT Tirupati is not responsible for any issues whatsoever!
+                    </div>
                   </div>
                 </div>
-                <div className="gt" style={{height:'100vh'}}>
+                <div className="gt" style={{minHeight : '100vh'}}>
                   <div style={{height: '2vh'}} />
                   <div className="navbar c33-67" style={{borderRadius: 0}}>
                     <div className="logo-class" style={{color: 'white', fontWeight: 200, padding: '0 12vw'},
                     {display:'flex'}}>
-                      <img src={iittp} className="iittp-logo"></img>
-                      <img src={risha} className="risha-logo"></img>
+                      <img alt="" src={iittp} className="iittp-logo"></img>
+                      <img alt="" src={risha} className="risha-logo"></img>
                       <font className="logo-covinet"> COVINET </font>
                     </div>
                     <div style={{color: 'white', fontWeight: 200, display: 'flex', justifyContent: 'space-evenly'}}>
@@ -585,7 +587,7 @@ export default class Homepage extends Component{
                           </div>
                         </div>
                         <div style={{display: 'flex'}}>
-                          <img src={img1} style={{width: '100%', height: 'max-content', display: 'block', marginTop: 'auto', marginBottom: 0}} alt="" />
+                          <img alt="" src={img1} style={{width: '100%', height: 'max-content', display: 'block', marginTop: 'auto', marginBottom: 0}} alt="" />
                         </div>
                       </div>
                       <div className="serchbBox">
@@ -615,7 +617,9 @@ export default class Homepage extends Component{
                           </div>
                         </form>
                       </div>
-                      {/* <div style={{height:'4vh'}}></div> */}
+                      <div style={{color:"white",fontSize:'1.5vh',padding : '1vh 10vw'}}>
+                        Disclaimer : The website is under active development. The content on this website comes from Govt. websites and we do not fact check any of the content and thereby hold no responsibility for content that is incorrect. Please use at your discretion, and contact the hospital before reaching there. Also, please note that this is a student initiative and IIT Tirupati is not responsible for any issues whatsoever!
+                      </div>
                     </div>
                   </div>
                 </div>
