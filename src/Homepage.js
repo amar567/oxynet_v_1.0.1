@@ -46,7 +46,7 @@ const SD = {
       {"state":"Madhya Pradesh","districts":["Agar Malwa","Alirajpur","Anuppur","Ashoknagar","Balaghat","Barwani","Betul","Bhind","Bhopal","Burhanpur","Chhatarpur","Chhindwara","Damoh","Datia","Dewas","Dhar","Dindori","Guna","Gwalior","Harda","Hoshangabad","Indore","Jabalpur","Jhabua","Katni","Khandwa","Khargone","Mandla","Mandsaur","Morena","Narsinghpur","Neemuch","Panna","Raisen","Rajgarh","Ratlam","Rewa","Sagar","Satna","Sehore","Seoni","Shahdol","Shajapur","Sheopur","Shivpuri","Sidhi","Singrauli","Tikamgarh","Ujjain","Umaria","Vidisha"]},{"state":"Maharashtra","districts":["Pune","Thane"]},
       {"state":"Puducherry","districts":["Karaikal","Mahe","Pondicherry","Yanam"]},
       {"state":"Rajasthan","districts":["Ajmer","Alwar","Banswara","Baran","Barmer","Bharatpur","Bhilwara","Bikaner","Bundi","Chittorgarh","Churu","Dausa","Dholpur","Dungarpur","Hanumangarh","Jaipur","Jaisalmer","Jalore","Jhalawar","Jhunjhunu","Jodhpur","Karauli","Kota","Nagaur","Pali","Pratapgarh","Rajsamand","Sawai Madhopur","Sikar","Sirohi","Sri Ganganagar","Tonk","Udaipur"]},{"state":"Sikkim","districts":["East Sikkim","North Sikkim","South Sikkim","West Sikkim"]},
-    {"state":"Uttarakhand","districts":["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pithoragarh","Rudraprayag","Tehri Garhwal","Uttarkashi"]},
+      {"state":"Uttarakhand","districts":["Almora","Bageshwar","Chamoli","Champawat","Dehradun","Haridwar","Nainital","Pithoragarh","Rudraprayag","Tehri Garhwal","Uttarkashi"]},
       {"state":"Uttar Pradesh","districts":["Azamgarh","Bahraich","Bhadohi","Ghaziabad","Ghazipur","Gorakhpur","Jhansi","Lucknow","Mainpuri","Rampur","Sultanpur","Varanasi"]},
       {"state":"West Bengal","districts":["Alipurduar","Bankura","Birbhum","Burdwan (Bardhaman)","Cooch Behar","Dakshin Dinajpur (South Dinajpur)","Darjeeling","Hooghly","Howrah","Jalpaiguri","Kalimpong","Kolkata","Malda","Murshidabad","Nadia","Uttar 24 Pargana","Paschim Medinipur (West Medinipur)","Purba Medinipur (East Medinipur)","Purulia","Dakshin 24 Pargana","Uttar Dinajpur (North Dinajpur)"]}]
 }
@@ -86,20 +86,17 @@ export default class Homepage extends Component{
             transitionStyle:{},
             transitionStyle2:{},
             transitionStyle3:{},
+            popUp : true,
         }
     }
 
-    componentDidMount=async()=>{
-      const result = await fetch(`https://datascraping001.herokuapp.com/covinetViewCount_`, {
+    componentDidMount() {
+      const result = fetch(`https://datascraping001.herokuapp.com/covinetViewCount_`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json'
             },
       }).then((res) => res.json())
-
-   
-
-
     }
 
     handletransition = (e) => {
@@ -295,6 +292,9 @@ export default class Homepage extends Component{
       console.log(this.state.render)
     }
 
+    desclaimerHandler = ()=>{
+      this.setState({popUp : false})
+    }
 
     render(){
       
@@ -502,88 +502,104 @@ export default class Homepage extends Component{
               :
               <div className="homepage" style={{height:'100vh',overflow:'hidden'}}>
               
-                <div className="lt"  style={{background:'black'}}>
-                  <div className={ (this.state.hidden)? "hidden" : null}>
-                        <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
-                            <div style={{height: '10vh'}} />
-                              <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                HOME
-                              </font>
-                            </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                ABOUT US
-                              </font>
-                            </div>
-                            <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
-                              <font style={{fontSize: '4vh'}}>
-                                API
-                              </font>
-                            </div>
-                            <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'60%'}}/>
-                            <div style={{textAlign:"center"}}>
-                            
-                            </div>
-                            <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
-                              <img alt="" src={iittp} style={{width:'150px',display:'block',margin:'auto'}}></img>
-                              <img alt="" src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px'}}></img>
-                            </div>
+                <div className="lt"  style={{minHeight:'100vh'}}>
+                {
+                  (this.state.popUp)?
+                  <div style={{height :'100vh'}}>
+                    <div style={{background:'white', height : '60vh',borderRadius:'20px',width :'90vw',display:'block',margin:'20vh auto',justifyContent: "center"}}>
+                      <div style={{padding:'3vh'}}>
+                        <b>Disclaimer :</b><br/>
+                        The website is under active development. The content on this website comes from Govt. websites and we do not fact check any of the content and thereby hold no responsibility for content that is incorrect. Please use at your discretion, and contact the hospital before reaching there. Also, please note that this is a student initiative and IIT Tirupati is not responsible for any issues whatsoever!
+                      </div>
+                      <div style={{width:'100%',textAlign : "center"}}>
+                        <button onClick={this.desclaimerHandler} style={{color: 'white',background: '#6748F7',borderRadius: '5px',display: 'block',margin: 'auto',padding: '1.8vh 12vh',border: '0',textAlign: 'center'}}>OK</button>
+                      </div>
+                    </div>
+                  </div>
+                  :
+                  null
+                  }
+                  <div>
+                    <div className={ (this.state.hidden)? "hidden" : null}>
+                          <div className={(this.state.sidebar)?"show":"hide"} id="drawer" style={{zIndex: 10}}>
+                              <div style={{height: '10vh'}} />
+                                <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./')}} >
+                                <font style={{fontSize: '4vh'}}>
+                                  HOME
+                                </font>
+                              </div>
+                              <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('./about')}} >
+                                <font style={{fontSize: '4vh'}}>
+                                  ABOUT US
+                                </font>
+                              </div>
+                              <div className='active' style={{padding: '3vh', textAlign: 'center'}} onClick={()=>{window.location.assign('https://apicovinet.netlify.app/')}} >
+                                <font style={{fontSize: '4vh'}}>
+                                  API
+                                </font>
+                              </div>
+                              <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'60%'}}/>
+                              <div style={{textAlign:"center"}}>
+                              
+                              </div>
+                              <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
+                                <img alt="" src={iittp} style={{width:'150px',display:'block',margin:'auto'}}></img>
+                                <img alt="" src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px'}}></img>
+                              </div>
+                          </div>
+                      </div>
+                    <div>
+                      <button className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"} id="hamburger" style={{outline: '0', transform: 'scale(0.7)', position: 'fixed', top: '1.4vh', left: '1.4vh' ,zIndex: '11'}} onClick={()=>{this.menu();this.toggle();}}>
+                        <div className="hamburger-box">
+                          <div className="hamburger-inner" />
                         </div>
+                      </button>
                     </div>
-                  <div>
-                    <button className={(this.state.isActive)?"hamburger hamburger--spin is-active":"hamburger hamburger--spin"} id="hamburger" style={{outline: '0', transform: 'scale(0.7)', position: 'fixed', top: '1.4vh', left: '1.4vh' ,zIndex: '11'}} onClick={()=>{this.menu();this.toggle();}}>
-                      <div className="hamburger-box">
-                        <div className="hamburger-inner" />
+                    <div>
+                      <div style={{display: 'block', margin: 'auto', textAlign: 'center'}}>
+                        <div style={{height: '12vh'}} />
+                        <font style={{fontSize: '6.5vh', fontWeight: 'bold', color: 'white', lineHeight: 0}}>COVID19</font><br />
+                        <font style={{fontSize: '4.8vh', fontWeight: 'bold', color: 'white'}}>ESSENTIALS</font>
+                        <hr style={{color: 'white', border: 'none', display: 'block', margin: 'auto', height: '1px', backgroundColor: 'white', width: '32vh'}} />
+                        <div style={{width: '36vh', display: 'block', margin: 'auto', textAlign: 'center'}}>
+                          <font style={{color: 'white', fontSize: '1.6vh'}}>
+                            Helping people reach the resources in time to fight against the crisis.
+                          </font>
+                          <div style={{height: '2vh'}} />
+                        </div>
                       </div>
-                    </button>
-                  </div>
-                  <div>
-                    <div style={{display: 'block', margin: 'auto', textAlign: 'center'}}>
-                      <div style={{height: '12vh'}} />
-                      <font style={{fontSize: '6.5vh', fontWeight: 'bold', color: 'white', lineHeight: 0}}>COVID19</font><br />
-                      <font style={{fontSize: '4.8vh', fontWeight: 'bold', color: 'white'}}>ESSENTIALS</font>
-                      <hr style={{color: 'white', border: 'none', display: 'block', margin: 'auto', height: '1px', backgroundColor: 'white', width: '32vh'}} />
-                      <div style={{width: '36vh', display: 'block', margin: 'auto', textAlign: 'center'}}>
-                        <font style={{color: 'white', fontSize: '1.6vh'}}>
-                          Helping people reach the resources in time to fight against the crisis.
-                        </font>
-                        <div style={{height: '2vh'}} />
+                      <img alt="" className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
+                      <div style={{height: '40vh', width: '50vh', borderRadius: '10px', backgroundColor: 'white', display: 'block', margin: 'auto'}}>
+                        <form >
+                          <div style={{height: '6vh',position:'absolute',bottom:'5vh',paddingBottom:'10px'}} />
+                          {/* <select className="clear" name="Item" style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} >
+                            <option value>Hospitals</option>
+                          </select> */}
+                          <div style={{height: '5vh'}} />
+                          <select className="clear" name="stateName" value={this.state.stateName} onChange={this.handleState} style={{background: 'rgba(158, 158, 158, 0.17)',cursor:'pointer',  borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}}>
+                                  <option value="" disabled >Select state</option>
+                                  {states.map((state,index) => (<option className="options" key={index} value={state.name}name={state.name}>{state.name} ~ {state.data} results </option>))}
+                          </select>
+                          <div style={{height: '5vh'}} />
+                          <select  className="clear" value={this.state.district} style={{background: 'rgba(158, 158, 158, 0.17)', cursor:'pointer', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} onChange={this.handleDistrict} name="district">
+                                {(!this.state.searching)?
+                                  <option value="Select district"> Select district</option>
+                                :
+                                (
+                                  (this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>
+                                )
+                                }
+                                { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
+                          </select>
+                          <div style={{height: '7vh'}} />
+                          <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
+                          {/* <div style={{height:'5vh'}}></div> */}
+                      {/* <div className="mapbox-class">   <Mapbox></Mapbox></div> */}
+                        </form>
                       </div>
+                      
                     </div>
-                    <img alt="" className="mainImage" src={img1} alt="" style={{width: '100%', maxWidth: '50vh'}} />
-                    <div style={{height: '50vh', width: '50vh', borderRadius: '10px', backgroundColor: 'white', display: 'block', margin: 'auto'}}>
-                      <form >
-                        <div style={{height: '6vh',position:'absolute',bottom:'5vh',paddingBottom:'10px'}} />
-                        {/* <select className="clear" name="Item" style={{background: 'rgba(158, 158, 158, 0.17)', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} >
-                          <option value>Hospitals</option>
-                        </select> */}
-                        <div style={{height: '5vh'}} />
-                        <select className="clear" name="stateName" value={this.state.stateName} onChange={this.handleState} style={{background: 'rgba(158, 158, 158, 0.17)',cursor:'pointer',  borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}}>
-                                <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" key={index} value={state.name}name={state.name}>{state.name} ~ {state.data} results </option>))}
-                        </select>
-                        <div style={{height: '5vh'}} />
-                        <select  className="clear" value={this.state.district} style={{background: 'rgba(158, 158, 158, 0.17)', cursor:'pointer', borderRadius: '6px', width: '80%', display: 'block', margin: 'auto', padding: '1.5vh'}} onChange={this.handleDistrict} name="district">
-                              {(!this.state.searching)?
-                                <option value="Select district"> Select district</option>
-                              :
-                              (
-                                (this.state.district !== 'Reset district' )?<option value="Reset district">Reset district</option>:<option value="Select district"> Select district</option>
-                              )
-                              }
-                              { this.state.districts.map((district,index) => (<option className="options" key={index} value={district}>{district}</option>)) }
-                        </select>
-                        <div style={{height: '7vh'}} />
-                        <button className="submitBtn" type="button" name="button" onClick={this.showcards}>Search</button>
-                        {/* <div style={{height:'5vh'}}></div> */}
-                     {/* <div className="mapbox-class">   <Mapbox></Mapbox></div> */}
-                      </form>
-                    </div>
-                    <div style={{color:"white",fontSize:'1.5vh',padding : '3vh 10vw'}}>
-                        Disclaimer : The website is under active development. The content on this website comes from Govt. websites and we do not fact check any of the content and thereby hold no responsibility for content that is incorrect. Please use at your discretion, and contact the hospital before reaching there. Also, please note that this is a student initiative and IIT Tirupati is not responsible for any issues whatsoever!
-                    </div>
-                  </div>
+                  </div>                  
                 </div>
                 <div className="gt" style={{minHeight : '100vh'}}>
                   <div style={{height: '2vh'}} />
