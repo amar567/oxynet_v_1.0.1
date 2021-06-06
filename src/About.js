@@ -447,7 +447,7 @@ export default class Homepage extends Component{
                   <div className="" style={{background:'white', height:'38vh',zIndex:'15' }}/>
                   <div style={{padding:'0 15vw'}}>
                     <div style={{color:'white',fontSize:'3.4vh',padding:'2vh 0',textAlign:"center"}}>
-                      Covinet is a student-initiated project under the able guidance of notable Dr Sridhar Chimalakonda in association with RISHA LAB, IIT Tirupati.
+                      Covinet is a student-initiated project under the guidance of notable Dr Sridhar Chimalakonda in association with RISHA LAB, IIT Tirupati.
                     </div>
                     <div>
                       <hr></hr>
