@@ -500,7 +500,7 @@ export default class Homepage extends Component{
                   </div>
               </div>
               :
-              <div className="homepage" style={{height:'100vh',overflow:'hidden'}}>
+              <div className="homepage" style={{}}>
               
                 <div className="lt"  style={{minHeight:'100vh'}}>
                 {
