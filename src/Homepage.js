@@ -71,7 +71,7 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: false,
+            showcards: true,
             district:'Select district',
             stateName: '',
             districts: [],
@@ -87,6 +87,7 @@ export default class Homepage extends Component{
             transitionStyle2:{},
             transitionStyle3:{},
             popUp : true,
+            search : ''
         }
     }
 
@@ -296,6 +297,29 @@ export default class Homepage extends Component{
       this.setState({popUp : false})
     }
 
+    handlesearch = async (e)=>{
+      try{
+        this.setState({search : e.target.value})
+        const val = this.state.search
+        // var data = []
+        if (val.length > 0){
+          let filterByName = await this.state.data.filter(
+            data => (data.hospitalName.toLowerCase().includes(val.toLowerCase().replaceAll(" ","")))
+          )
+          this.setState({render:filterByName})
+
+        }else{
+          
+          this.handleDistrict()
+
+        }
+      }catch(err){
+        console.log(err.message);
+      }
+      // data => (data.hospitalName.toLowerCase().includes(val.toLowerCase().replaceAll(" ","")))
+      // console.log(filterByName)
+    }
+
     render(){
       
 // states.map(dt=> {
@@ -347,7 +371,6 @@ export default class Homepage extends Component{
                             <div className="" style={{padding:'2vh 0',textAlign:"center"}}>
                             <img alt="" src={iittp} style={{width:'150px',display:'block',margin:'auto'}}></img>
                               <img alt="" src={risha} style={{width:'200px',display:'block',margin:'auto',marginTop:'20px'}}></img>
-                      
                             </div>
                       </div>
                     </div>
@@ -362,11 +385,19 @@ export default class Homepage extends Component{
                                   </div>
                                 </button>
                             </div>
-                          <div style={{color: 'white', fontWeight: 200, fontSize: '4vh', padding: '3vh 0 0 0'}}>
+                            <div style={{padding: '4vh 0 0 0', outline: '0' , display:'flex'}}>
+                              {/* <svg fill-rule="evenodd" clip-rule="evenodd" style={{background: 'white',  padding: '1vh 0vh 1vh 2vh',height:'40px', width:'40px'}}>
+                                <path d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/>
+                              </svg> */}
+                              <form>
+                                <input className="select_item" value={this.state.search} name="search" placeholder="Search" onChange={this.handlesearch} />
+                              </form>
+                            </div>
+                          {/* <div style={{color: 'white', fontWeight: 200, fontSize: '4vh', padding: '3vh 0 0 0'}}>
                               <font> COVINET </font>
+                          </div> */}
                           </div>
-                          </div>
-                          <div style={{padding: '3vh 0 0 0', outline: 0}}>
+                          <div style={{padding: '4vh 0 0 0', outline: '0'}}>
                             <select className="select_item" value={this.state.Item} onChange={this.sort}>
                                 <option value="" disabled selected >Filter by</option>
                                 <option value="oxygenBedAvailable" >Oxygen Beds Available</option>
@@ -454,9 +485,8 @@ export default class Homepage extends Component{
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select className="select_item" name="stateName" value={this.state.stateName} style={{borderRadius: '5px',cursor:'pointer',  width: '22vw'}} onChange={this.handleState}>
                               <option value="" disabled >Select state</option>
-                                {states.map((state,index) => (<option className="options" value={state.name} key={index} name={state.name}>{state.name} ~ {state.data} results</option>))}
-                              </select>
-                            {/* </select> */}
+                              {states.map((state,index) => (<option className="options" value={state.name} key={index} name={state.name}>{state.name} ~ {state.data} results</option>))}
+                            </select>
                         </div>
                         <div style={{display: 'block', marginTop: 'auto', outline: 0}}>
                             <select className="select_item" style={{borderRadius: '5px',cursor:'pointer',  width: '22vw'}} value={this.state.district} onChange={this.handleDistrict} name="district">
@@ -481,7 +511,9 @@ export default class Homepage extends Component{
                             </select> */}
                         </div>
                         <div style={{display: 'block', marginTop: 'auto'}}>
-                            <button className="White_submitBtn_d" type="submit" name="button" onClick={this.showcards}> Search</button>
+                          <form>
+                            <input className="White_submitBtn_d" value={this.state.search} name="search" placeholder="Search" onChange={this.handlesearch} />
+                          </form>
                         </div>
                       </form>
                       </div>
