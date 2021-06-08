@@ -71,7 +71,7 @@ export default class Homepage extends Component{
             sidebar: false,
             hidden : true,
             isActive: false,
-            showcards: true,
+            showcards: false,
             district:'Select district',
             stateName: '',
             districts: [],
