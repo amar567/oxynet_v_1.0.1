@@ -185,7 +185,7 @@ export default class Homepage extends Component{
         const state = val.toLowerCase().split(" ").join("")
 
         try{
-              const result = await fetch(`https://datascraping001.herokuapp.com/api_covinet?placename=${state}`, {
+              const result = await fetch(`https://services.iittp.ac.in/covinet_server/api_covinet?placename=${state}`, {
                   method: 'GET',
                   headers: {
                       'Content-Type': 'application/json'
@@ -298,24 +298,25 @@ export default class Homepage extends Component{
     }
 
     handlesearch = async (e)=>{
-      try{
-        this.setState({search : e.target.value})
-        const val = this.state.search
-        // var data = []
-        if (val.length > 0){
-          let filterByName = await this.state.data.filter(
-            data => (data.hospitalName.toLowerCase().includes(val.toLowerCase().replaceAll(" ","")))
-          )
-          this.setState({render:filterByName})
+      alert('under developement!')
+      // try{
+      //   this.setState({search : e.target.value})
+      //   const val = this.state.search
+      //   // var data = []
+      //   if (val.length > 0){
+      //     let filterByName = await this.state.data.filter(
+      //       data => (data.hospitalName.toLowerCase().includes(val.toLowerCase().replaceAll(" ","")))
+      //     )
+      //     this.setState({render:filterByName})
 
-        }else{
+      //   }else{
           
-          this.handleDistrict()
+      //     this.handleDistrict()
 
-        }
-      }catch(err){
-        console.log(err.message);
-      }
+      //   }
+      // }catch(err){
+      //   console.log(err.message);
+      // }
       // data => (data.hospitalName.toLowerCase().includes(val.toLowerCase().replaceAll(" ","")))
       // console.log(filterByName)
     }
