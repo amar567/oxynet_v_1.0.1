@@ -85,11 +85,17 @@ export default class Cards extends Component {
                             {this.state.data.hospitalAddress}
                         </div>
                     </div>
-                    <div className="hospital-address">
+                            <div className="hospital-address">
+                                <div className="logo-data">
                         <div className="hospital-ic"><Newphone></Newphone></div>
                         <div className="hospital-ad-content">
                             {(parseInt(this.state.data.phoneNo))?<a href={"tel:"+this.state.data.phoneNo}>{this.state.data.phoneNo}</a>: null}
-                        </div>
+                                    </div>
+                                    </div>
+
+                                <a rel="noreferrer" target='_blank' style={{ width: '40%' }} className="google-search" href={this.state.data.googleSearch}>
+                                    <div className="btn-inside" >Google Search</div>
+                                </a>
 
                     </div>
                     {/* <div className="rd-whole">
@@ -98,14 +104,12 @@ export default class Cards extends Component {
                     <div className="rd-distance">{this.state.data.distance==="Not Available" ? "Not Available" : `Within ${this.state.data.distance} Km radius`}</div>
                     </div>  */}
 
-                    <div className="btn-tab">
-                        <a rel="noreferrer" target='_blank' style={{width:'40%'}} href={this.state.data.googleSearch}>
-                            <div className="btn-inside" >Google Search</div>
-                        </a>
+                            {/* <div className="btn-tab">
+                    
                         <a style={{width:'40%'}} href={"tel:"+this.state.data.phoneNo}>
                             <div className="btn-inside">Call Us</div>
                         </a>
-                    </div>
+                    </div> */}
 
                 </div>
                 <div className="bed-info">

@@ -21,6 +21,10 @@
     
 }
 
+.logo-data{
+    display:flex;
+}
+
 .back-card-top{
     position: relative;
 
@@ -39,6 +43,9 @@
 
 .btn-back svg {
     fill: white;
+}
+.google-search{
+    margin-left:30px;
 }
 
 .flip-whole{
@@ -121,6 +128,7 @@ word-break: break-all;
 
 .hospital-address{
     display: flex;
+    align-items:center;
 }
 .hospital-ad-content{
     font-size:2.2vh;
@@ -306,4 +314,14 @@ a{
     .hospital-info{
         height:65%;
     }
+}
+
+@media (max-width:380px){
+   .hospital-address:nth-child(3){
+       display:grid;
+   }
+
+   .google-search{
+       margin-top:15px;
+   }
 }
