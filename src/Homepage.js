@@ -185,7 +185,7 @@ export default class Homepage extends Component{
         const state = val.toLowerCase().split(" ").join("")
 
         try{
-              const result = await fetch(`https://services.iittp.ac.in/covinet_server/api_covinet?placename=${state}`, {
+              const result = await fetch(` https://datascraping001.herokuapp.com/api_covinet?placename=${state}`, {
                   method: 'GET',
                   headers: {
                       'Content-Type': 'application/json'
