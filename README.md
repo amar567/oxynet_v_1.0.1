@@ -1,5 +1,1 @@
-<!-- if (Notification.permission !== "denied") {
-        Notification.requestPermission();
-      } -->
-
-<!-- needs to be added after sign in page -->
+# [Website link (Not maintained anymore)](https://covinet.netlify.app/)
