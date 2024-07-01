@@ -135,6 +135,16 @@ export default class Homepage extends Component{
                                 CREDITS
                                 <hr style={{background:'#7B60F7',border:'0',height:'1px',width:'36%'}}/>
                               </div>
+
+                              <div style={{padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
+                                <div>
+                                  <a target="_blank" href="https://www.linkedin.com/in/yusuf-hasan-914696179" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
+                                  Yusuf Hasan (Content Strategist)
+                                  </a>
+                                  <br/>
+                                </div>
+
+                              <hr style={{width:"100%",padding:"20px 4px 20px 4px"}}/>
                               <div style={{padding:'8vw',textAlign:'justify',overflow:'scroll',height:'45vh'}}>
                                 <div>
                                   <a target="_blank" href="https://goaonline.gov.in/beds" style={{color:'#505050',fontSize:'2vh',textDecoration:'none'}}>
