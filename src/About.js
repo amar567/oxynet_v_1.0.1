@@ -345,6 +345,13 @@ export default class Homepage extends Component {
                     </div>
                     <div style={{ color: '#505050', fontSize: '2.2vh', padding: '2vw', textAlign: 'justify', overflow: 'scroll', height: '40vh' }}>
                       <div>
+                        <a target="_blank" href="https://www.linkedin.com/in/yusuf-hasan-914696179" style={{ color: '#505050', fontSize: '2vh', textDecoration: 'none' }}>
+                          Yusuf Hasan (Content Strategist)
+                        </a>
+                        <div style={{ height: '1.5vh' }}></div>
+                      </div>
+                      <hr style={{ width: "100%", padding: "20px 4px 20px 4px" }} />
+                      <div>
                         <a target="_blank" href="https://goaonline.gov.in/beds" style={{ color: '#505050', fontSize: '2.2vh', textDecoration: 'none' }}>
                           Government of Goa, India
                         </a>
