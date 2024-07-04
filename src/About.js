@@ -3,8 +3,9 @@ import './main.css'
 import './hamburgers2.css'
 import img1 from './img1.png'
 import img2 from './img2.png'
-import iittp from './iittp.png'
-import risha from './rishalab.jpg'
+import iiser from './IISER-K_Logo.png'
+// import iittp from './iittp.png'
+// import risha from './rishalab.jpg'
 import './homepage.css'
 import Contactus from './Components/ContactUs/Contactus';
 
@@ -70,8 +71,8 @@ export default class Homepage extends Component {
 
                 </div>
                 <div className="" style={{ padding: '2vh 0', textAlign: "center" }}>
-                  <img src={iittp} style={{ width: '150px', display: 'block', margin: 'auto' }}></img>
-                  <img src={risha} style={{ width: '200px', display: 'block', margin: 'auto', marginTop: '20px' }}></img>
+                  <img src={iiser} style={{ width: '150px', display: 'block', margin: 'auto' }}></img>
+                  {/* <img src={risha} style={{ width: '200px', display: 'block', margin: 'auto', marginTop: '20px' }}></img> */}
                 </div>
               </div>
             </div>
@@ -259,12 +260,12 @@ export default class Homepage extends Component {
                   <div style={{ height: '2vh' }} />
                   <div style={{ fontSize: '3.5vh', color: 'white', textAlign: 'center' }}>
                     COVINET<font style={{ fontSize: '4.5vh' }}>©</font>2021
-                    <div className="risha">RISHA LAB , IIT TIRUPATI</div>
                   </div>
                   <hr style={{ color: 'white', width: '60%' }} />
 
                   <div style={{ fontSize: '3vh', color: 'white', textAlign: 'center', background: 'rgb(123, 96, 247', paddingBottom: "20px" }}>
-                    Dr Sridhar Chimalakonda : <a href="mailto:ch@iittp.ac.in" style={{ textDecoration: 'none', color: 'white' }}>ch@iittp.ac.in</a>
+                    Dr. Dibyendu Das (Associate Professor
+                    Chemical Sciences, IISER Kolkata) : <a href="mailto:dasd@iiserkol.ac.in" style={{ textDecoration: 'none', color: 'white' }}>dasd@iiserkol.ac.in</a>
                     <br></br>
                     Contact us: <a href="mailto:contact.covinet@gmail.com" style={{ textDecoration: 'none', width: '100%', color: 'white', background: 'rgb(123, 96, 247' }}>contact.covinet@gmail.com</a>
                   </div>
@@ -464,13 +465,16 @@ export default class Homepage extends Component {
             <div className="" style={{ background: 'white', height: '38vh', zIndex: '15' }} />
             <div style={{ padding: '0 15vw' }}>
               <div style={{ color: 'white', fontSize: '3.4vh', padding: '2vh 0', textAlign: "center" }}>
-                Covinet is a student-initiated project under the guidance of Dr Sridhar Chimalakonda in association with RISHA LAB, IIT Tirupati.
+                Covinet is a student-initiated project under the guidance of Dibyendu Das
+                Associate Professor
+                Chemical Sciences, IISER Kolkata
               </div>
               <div>
                 <hr></hr>
               </div>
               <div style={{ color: 'white', fontSize: '3.4vh', padding: '2vh 0', textAlign: "center" }}>
-                Dr Sridhar Chimalakonda : <a target="_blank" href="mailto:ch@iittp.ac.in" style={{ color: 'white', textDecoration: 'none' }}>ch@iittp.ac.in</a>
+                Dr Dibyendu Das (Associate Professor
+                Chemical Sciences, IISER Kolkata) : <a href="mailto:dasd@iiserkol.ac.in" style={{ textDecoration: 'none', color: 'white' }}>dasd@iiserkol.ac.in</a>
               </div>
               <div style={{ position: 'absolute', left: '0', color: 'white', fontSize: '3.4vh', padding: '2vh 0', textAlign: "center", background: "#5139c4", width: "100vw" }}>
                 CONTACT US AT : <a target="_blank" href="mailto:contact.covinet@gmail.com" style={{ color: 'white', textDecoration: 'none' }}>contact.covinet@gmail.com</a>
